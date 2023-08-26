@@ -1,142 +1,182 @@
-import { Widgets } from '@mui/icons-material';
-import './App.css';
-import { AppBar, Box, Container, CssBaseline, Grid, Paper, Tab, TableContainer, Tabs, ThemeProvider, Toolbar, createTheme, useMediaQuery } from '@mui/material';
-import { useEffect, useState } from 'react';
+import "./App.css";
+import {
+  Container,
+  CssBaseline,
+  Grid,
+  Paper,
+  Tab,
+  Tabs,
+  ThemeProvider,
+  Typography,
+  createTheme,
+} from "@mui/material";
+import { useEffect, useState } from "react";
+import SportsEsportsIcon from "@mui/icons-material/SportsEsports";
+import About from "./pages/About";
+import Portfolio from "./pages/Portfolio";
+import Contact from "./pages/Contact";
+import CV from "./pages/CV";
+import Home from "./pages/Home";
 
 function App() {
-  /*
-    const [menuValue, setMenuValue] = useState('Play');
+  const [menuValue, setMenuValue] = useState("Home");
+  const menuItems: Array<MenuItem> = [
+    {
+      Component: <Home />,
+      Text: "Home",
+      Path: "home",
+    },
+    {
+      Component: <Portfolio />,
+      Text: "Portfolio",
+      Path: "portfolio",
+    },
+    { Component: <CV />, Text: "CV", Path: "cv" },
+    {
+      Component: <About />,
+      Text: "About",
+      Path: "about",
+    },
+    {
+      Component: <Contact />,
+      Text: "Contact",
+      Path: "contact",
+    },
+  ];
+  const handleChange = (event: React.SyntheticEvent, newValue: string) => {
+    setMenuValue(newValue);
+  };
 
-    const menuItems: Array<MenuItem> = [
-        { Component: <PlayPage />, Icon: <PlayCircleIcon />, Text: 'Play', Path: "play" },
-        { Component: <ResultsPage />, Icon: <AssignmentTurnedInIcon />, Text: 'Results', Path: "results" },
-        { Component: <MyGamesPage />, Icon: <SportsSoccerIcon />, Text: 'My Games', Path: "mygames" },
-        { Component: <GuidePage />, Icon: <HelpCenterIcon />, Text: 'Guide', Path: "guide" },
-    ];
-    const handleChange = (event: React.SyntheticEvent, newValue: string) => {
-      setMenuValue(newValue);
-    };
-    
-    */
-
-    const theme = createTheme({
-      palette: {
-          mode: 'dark',
-          primary: {
-              main: '#D5D8DD',
-          },
-          secondary: {
-              main: '#C4C7CB',
-
-          },
-          background: {
-              default: '#202124',
-              paper: '#2B2C2E',
-          }
+  const theme = createTheme({
+    palette: {
+      mode: "dark",
+      primary: {
+        main: "#D5D8DD",
       },
-      typography: {
-          fontFamily: '"Roboto", "Helvetica", "Arial", sans-serif',
-          h1: {
-              padding: '1rem 0',
-              fontSize: '2rem',
-          },
-          h2: {
-              padding: '1rem 0',
-              fontSize: '1.5rem',
-          },
-          h3: {
-              padding: '1rem 0',
-              fontSize: '1.25rem',
-          },
-      }
+      secondary: {
+        main: "#1AAEFF",
+      },
+      background: {
+        default: "#282C33",
+        paper: "#282C33",
+      },
+    },
+    typography: {
+      fontFamily: '"Roboto", "Helvetica", "Arial", sans-serif',
+      h1: {
+        padding: "1rem 0",
+        fontSize: "2rem",
+      },
+      h2: {
+        padding: "1rem 0",
+        fontSize: "1.5rem",
+      },
+      h3: {
+        padding: "1rem 0",
+        fontSize: "1.25rem",
+      },
+    },
   });
 
+  useEffect(() => {
+    // set start path to /home
+  }, []);
 
-    useEffect(() => {
-        // set start path to /play
-    }, []);
+  return (
+    <ThemeProvider theme={theme}>
+      <CssBaseline />
+      <Paper
+        sx={{
+          height: "100vh",
+        }}
+        elevation={0}
+      >
+        <Container>
+          <Grid container alignItems={"center"}>
+            <Grid item xs={2}>
+              <Typography
+                variant="body1"
+                sx={{ display: "flex", fontWeight: "700" }}
+              >
+                <SportsEsportsIcon
+                  fontSize="medium"
+                  sx={{ color: (theme) => theme.palette.secondary.main }}
+                ></SportsEsportsIcon>{" "}
+                Elin Forsberg
+              </Typography>
+            </Grid>
+            <Grid item xs={10}>
+              <Tabs
+                variant="standard"
+                defaultValue={"Home"}
+                value={menuValue}
+                onChange={handleChange}
+                sx={{
+                  height: "48px",
+                  ".MuiTabs-indicator": {
+                    height: "1px",
+                  },
+                  ".MuiTabs-flexContainer": {
+                    justifyContent: "flex-end",
+                  },
+                  ".MuiTab-root": {
+                    textTransform: "lowercase",
+                  },
+                }}
+              >
+                {menuItems.map((item) => (
+                  <Tab
+                    value={item.Text.split(" ").join("")}
+                    key={item.Text}
+                    label={<HashTag label={item.Text}></HashTag>}
+                    sx={{
+                      minHeight: "48px",
+                      pt: 0,
+                      pb: 0,
+                      "&.Mui-selected": {
+                        color: "white",
+                      },
+                      overflow: "visible",
+                    }}
+                  />
+                ))}
+              </Tabs>
+            </Grid>
+          </Grid>
 
-    const matchesMediumAndUp = useMediaQuery(theme.breakpoints.up('md'));
+          {/* Content */}
 
-    return (
-        <ThemeProvider theme={theme}>
-            <CssBaseline />
-            <Paper sx={{
-                // height: '100vh'
-            }} elevation={0}>
-                <Container>
-                    <Grid container item justifyContent={'center'}>
-
-                        <Grid item xs={12}>
-
-                            {/* navbar */}
-                            <Grid container sx={{
-                                position: 'sticky', zIndex: 4,
-                                background: 'linear-gradient(0deg, rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), linear-gradient(270deg, #004F58 0.91%, #33B04D 100%)',
-                                boxShadow: '0px 8px 8px rgba(0, 0, 0, 0.2)',
-                            }} >
-                                <Grid item xs={12}>
-                                    <Tabs
-                                        variant='scrollable'
-                                        scrollButtons={true}
-                                        //value={menuValue}
-                                        //onChange={handleChange}
-                                        sx={{
-                                            height: '48px',
-                                            p: 0,
-                                            ml: 2,
-                                            '.MuiTabs-indicator': {
-                                                backgroundColor: 'white',
-                                                height: '4px',
-                                                transition: 'none'
-                                            }
-                                        }}>
-                                          {/* 
-                                        {menuItems.map((item) =>
-                                            <Tab
-                                                value={item.Text.split(' ').join('')}
-                                                key={item.Text}
-                                                label={t(item.Text)}
-                                                icon={item.Icon}
-                                                iconPosition="start"
-                                                sx={{
-                                                    minHeight: '48px',
-                                                    pt: 0,
-                                                    pb: 0,
-                                                    color: 'white',
-                                                    '&.Mui-selected': {
-                                                        color: 'white'
-                                                    },
-                                                    overflow: 'visible'
-                                                }}
-                                            />
-                                        )}
-                                        */}
-                                    </Tabs>
-                                </Grid>
-                            </Grid>
-
-                            {/* Content */}
-                             {/*
-                            {menuValue === 'Play' && <PlayPage />}
-                            {menuValue === 'Results' && <ResultsPage />}
-                            {menuValue === 'MyGames' && <MyGamesPage />}
-                            {menuValue === 'Guide' && <GuidePage />}
-                            */}
-                        </Grid>
-                    </Grid>
-                </Container>
-            </Paper>
-        </ThemeProvider >
-    );
+          {menuValue === "About" && <About />}
+          {menuValue === "Contact" && <Contact />}
+          {menuValue === "CV" && <CV />}
+          {menuValue === "Home" && <Home />}
+          {menuValue === "Portfolio" && <Portfolio />}
+        </Container>
+      </Paper>
+    </ThemeProvider>
+  );
 }
 
 export default App;
 
-
 export type MenuItem = {
-    Text: string;
-    Icon: JSX.Element;
-    Component: JSX.Element;
-    Path: string;
+  Text: string;
+  Component: JSX.Element;
+  Path: string;
+};
+
+type HashTagProps = {
+  label: string;
+};
+export const HashTag = (props: HashTagProps) => {
+  return (
+    <>
+      <Container sx={{ display: "flex" }}>
+        <Typography sx={{ color: (theme) => theme.palette.secondary.main }}>
+          #
+        </Typography>
+        <Typography>{props.label}</Typography>
+      </Container>
+    </>
+  );
 };
