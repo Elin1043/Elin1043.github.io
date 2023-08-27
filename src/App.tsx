@@ -13,10 +13,10 @@ import {
 import { useEffect, useState } from "react";
 import SportsEsportsIcon from "@mui/icons-material/SportsEsports";
 import About from "./pages/About";
-import Portfolio from "./pages/Portfolio";
 import Contact from "./pages/Contact";
 import CV from "./pages/CV";
 import Home from "./pages/Home";
+import Projects from "./pages/Projects";
 
 function App() {
   const [menuValue, setMenuValue] = useState("Home");
@@ -34,9 +34,9 @@ function App() {
       Path: "home",
     },
     {
-      Component: <Portfolio />,
-      Text: "Portfolio",
-      Path: "portfolio",
+      Component: <Projects />,
+      Text: "Projects",
+      Path: "projects",
     },
     { Component: <CV />, Text: "CV", Path: "cv" },
     {
@@ -66,7 +66,7 @@ function App() {
       },
     },
     typography: {
-      fontFamily: '"Roboto", "Helvetica", "Arial", sans-serif',
+      fontFamily: '"Fira Code"',
       h1: {
         padding: "1rem 0",
         fontSize: "2rem",
@@ -156,7 +156,7 @@ function App() {
           {menuValue === "Home" && (
             <Home handleChangeValue={handleChangeValue}></Home>
           )}
-          {menuValue === "Portfolio" && <Portfolio />}
+          {menuValue === "Projects" && <Projects />}
         </Container>
       </Paper>
     </ThemeProvider>

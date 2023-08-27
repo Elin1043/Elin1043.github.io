@@ -67,6 +67,7 @@ function Home(props: HomeProps) {
                 display: "flex",
                 alignItems: "center",
                 padding: "5px",
+                marginTop: "-7px",
                 width: { xs: 150, md: 400 },
               }}
             >
