@@ -20,9 +20,16 @@ import Home from "./pages/Home";
 
 function App() {
   const [menuValue, setMenuValue] = useState("Home");
+  const handleChange = (event: React.SyntheticEvent, newValue: string) => {
+    setMenuValue(newValue);
+  };
+  const handleChangeValue = (newValue: string) => {
+    setMenuValue(newValue);
+  };
+
   const menuItems: Array<MenuItem> = [
     {
-      Component: <Home />,
+      Component: <Home handleChangeValue={handleChangeValue} />,
       Text: "Home",
       Path: "home",
     },
@@ -43,9 +50,6 @@ function App() {
       Path: "contact",
     },
   ];
-  const handleChange = (event: React.SyntheticEvent, newValue: string) => {
-    setMenuValue(newValue);
-  };
 
   const theme = createTheme({
     palette: {
@@ -149,7 +153,9 @@ function App() {
           {menuValue === "About" && <About />}
           {menuValue === "Contact" && <Contact />}
           {menuValue === "CV" && <CV />}
-          {menuValue === "Home" && <Home />}
+          {menuValue === "Home" && (
+            <Home handleChangeValue={handleChangeValue}></Home>
+          )}
           {menuValue === "Portfolio" && <Portfolio />}
         </Container>
       </Paper>
