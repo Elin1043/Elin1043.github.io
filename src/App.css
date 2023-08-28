@@ -14,7 +14,9 @@
 }
 
 .react-pdf__Document{
-  width: fit-content;
+  width: auto;
+  display: flex;
+  justify-content: center;
 }
 
 
