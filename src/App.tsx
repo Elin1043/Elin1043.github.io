@@ -2,30 +2,55 @@ import "./App.css";
 import {
   Container,
   CssBaseline,
-  Grid,
   Paper,
-  Tab,
-  Tabs,
   ThemeProvider,
-  Typography,
   createTheme,
 } from "@mui/material";
 import { useEffect, useState } from "react";
-import SportsEsportsIcon from "@mui/icons-material/SportsEsports";
 import About from "./pages/About";
 import Contact from "./pages/Contact";
 import CV from "./pages/CV";
 import Home from "./pages/Home";
 import Projects from "./pages/Projects";
+import React from "react";
+import { MenuItem } from "./components/MenuItem";
+import DesktopNavBar from "./components/DesktopNavBar";
+import MobileNavBar from "./components/MobileNavbar";
 
 function App() {
   const [menuValue, setMenuValue] = useState("Home");
+  const [screenSize, setScreenSize] = useState(getCurrentDimension());
+
   const handleChange = (event: React.SyntheticEvent, newValue: string) => {
     setMenuValue(newValue);
   };
+
   const handleChangeValue = (newValue: string) => {
     setMenuValue(newValue);
   };
+
+  function getCurrentDimension() {
+    return {
+      width: window.innerWidth,
+      height: window.innerHeight,
+    };
+  }
+
+  function getIfPortraitMode() {
+    return screenSize.height > screenSize.width;
+  }
+
+  useEffect(() => {
+    const updateDimension = () => {
+      setScreenSize(getCurrentDimension());
+    };
+
+    window.addEventListener("resize", updateDimension);
+
+    return () => {
+      window.removeEventListener("resize", updateDimension);
+    };
+  });
 
   const menuItems: Array<MenuItem> = [
     {
@@ -96,60 +121,20 @@ function App() {
         elevation={0}
       >
         <Container>
-          <Grid container alignItems={"center"}>
-            <Grid item xs={2}>
-              <Typography
-                variant="body1"
-                sx={{ display: "flex", fontWeight: "700" }}
-              >
-                <SportsEsportsIcon
-                  fontSize="medium"
-                  sx={{ color: (theme) => theme.palette.secondary.main }}
-                ></SportsEsportsIcon>{" "}
-                Elin Forsberg
-              </Typography>
-            </Grid>
-            <Grid item xs={10}>
-              <Tabs
-                variant="standard"
-                defaultValue={"Home"}
-                value={menuValue}
-                onChange={handleChange}
-                sx={{
-                  height: "48px",
-                  ".MuiTabs-indicator": {
-                    height: "1px",
-                  },
-                  ".MuiTabs-flexContainer": {
-                    justifyContent: "flex-end",
-                  },
-                  ".MuiTab-root": {
-                    textTransform: "lowercase",
-                  },
-                }}
-              >
-                {menuItems.map((item) => (
-                  <Tab
-                    value={item.Text.split(" ").join("")}
-                    key={item.Text}
-                    label={<HashTag label={item.Text}></HashTag>}
-                    sx={{
-                      minHeight: "48px",
-                      pt: 0,
-                      pb: 0,
-                      "&.Mui-selected": {
-                        color: "white",
-                      },
-                      overflow: "visible",
-                    }}
-                  />
-                ))}
-              </Tabs>
-            </Grid>
-          </Grid>
+          {getIfPortraitMode() ? (
+            <MobileNavBar
+              handleChange={handleChangeValue}
+              menuItems={menuItems}
+            ></MobileNavBar>
+          ) : (
+            <DesktopNavBar
+              menuValue={menuValue}
+              handleChange={handleChange}
+              menuItems={menuItems}
+            ></DesktopNavBar>
+          )}
 
           {/* Content */}
-
           {menuValue === "About" && <About />}
           {menuValue === "Contact" && <Contact />}
           {menuValue === "CV" && <CV />}
@@ -164,25 +149,3 @@ function App() {
 }
 
 export default App;
-
-export type MenuItem = {
-  Text: string;
-  Component: JSX.Element;
-  Path: string;
-};
-
-type HashTagProps = {
-  label: string;
-};
-export const HashTag = (props: HashTagProps) => {
-  return (
-    <>
-      <Container sx={{ display: "flex" }}>
-        <Typography sx={{ color: (theme) => theme.palette.secondary.main }}>
-          #
-        </Typography>
-        <Typography>{props.label}</Typography>
-      </Container>
-    </>
-  );
-};
