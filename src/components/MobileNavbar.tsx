@@ -81,26 +81,36 @@ const MobileNavBar = (props: MobileNavBarProps) => {
               <CloseIcon />
             </IconButton>
 
-            <Divider sx={{ mb: 2 }} />
-
             <Box sx={{ mb: 2 }}>
               {menuItems.map((item) => (
-                <>
-                  <ListItemButton onClick={() => handleChange(item.Text)}>
+                <Box
+                  sx={{
+                    borderBottom: "1px solid",
+                    borderColor: "rgba(255, 255, 255, 0.12)",
+                    alignItems: "center",
+                    display: "flex",
+                  }}
+                >
+                  <ListItemButton
+                    key={item.Text}
+                    style={{ alignItems: "center", display: "flex" }}
+                    onClick={() => handleChange(item.Text)}
+                  >
                     <ListItemText
                       sx={{
-                        minHeight: "48px",
+                        minHeight: "30px",
                         pt: 0,
                         pb: 0,
                         "&.Mui-selected": {
                           color: "white",
                         },
-                        overflow: "visible",
+                        alignItems: "center",
+                        display: "flex",
                       }}
                       primary={<HashTag label={item.Text}></HashTag>}
                     />
                   </ListItemButton>
-                </>
+                </Box>
               ))}
             </Box>
           </Box>
