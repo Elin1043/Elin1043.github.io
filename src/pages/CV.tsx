@@ -5,9 +5,12 @@ import "react-pdf/dist/esm/Page/TextLayer.css";
 import { Button, Container, Typography, useTheme } from "@mui/material";
 pdfjs.GlobalWorkerOptions.workerSrc = `https://cdnjs.cloudflare.com/ajax/libs/pdf.js/${pdfjs.version}/pdf.worker.js`;
 
-type CVProps = {};
+type CVProps = {
+  displayCV: boolean;
+};
 
 function CV(props: CVProps) {
+  const { displayCV } = props;
   const theme = useTheme();
   const onDownload = () => {
     const link = document.createElement("a");
@@ -21,16 +24,18 @@ function CV(props: CVProps) {
         onClick={onDownload}
         variant="contained"
         sx={{
-          marginBottom: "10px",
+          margin: "10px 0",
           color: "#FFF",
           backgroundColor: (theme) => theme.palette.secondary.main,
         }}
       >
         <Typography variant="body1">Download CV</Typography>
       </Button>
-      <Document file={cvPDF}>
-        <Page pageNumber={1} />
-      </Document>
+      {displayCV && (
+        <Document file={cvPDF}>
+          <Page pageNumber={1} />
+        </Document>
+      )}
     </Container>
   );
 }

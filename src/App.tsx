@@ -63,7 +63,7 @@ function App() {
       Text: "Projects",
       Path: "projects",
     },
-    { Component: <CV />, Text: "CV", Path: "cv" },
+    { Component: <CV displayCV={false} />, Text: "CV", Path: "cv" },
     {
       Component: <About />,
       Text: "About",
@@ -137,7 +137,7 @@ function App() {
           {/* Content */}
           {menuValue === "About" && <About />}
           {menuValue === "Contact" && <Contact />}
-          {menuValue === "CV" && <CV />}
+          {menuValue === "CV" && <CV displayCV={screenSize.width >= 700} />}
           {menuValue === "Home" && (
             <Home handleChangeValue={handleChangeValue}></Home>
           )}
