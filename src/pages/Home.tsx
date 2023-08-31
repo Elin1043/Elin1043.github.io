@@ -1,7 +1,23 @@
-import { Box, Button, Container, Grid, Typography } from "@mui/material";
+import {
+  Box,
+  Button,
+  Container,
+  Grid,
+  Typography,
+  useMediaQuery,
+} from "@mui/material";
 import image from "../assets/headpic.jpg";
-import { useTheme } from "@mui/material/styles";
+import {
+  Theme,
+  createTheme,
+  responsiveFontSizes,
+  useTheme,
+} from "@mui/material/styles";
 import App from "../App";
+
+// Define your custom theme
+let responsiveTheme = createTheme();
+responsiveTheme = responsiveFontSizes(responsiveTheme);
 
 type HomeProps = {
   handleChangeValue: (newValue: string) => void;
@@ -9,6 +25,9 @@ type HomeProps = {
 
 function Home(props: HomeProps) {
   const theme = useTheme();
+  const isSmScreen = useMediaQuery((responsiveTheme: Theme) =>
+    responsiveTheme.breakpoints.down("sm")
+  );
   return (
     <Box sx={{ height: "90vh" }}>
       <Grid
@@ -19,9 +38,14 @@ function Home(props: HomeProps) {
           alignItems: "center",
         }}
       >
-        <Grid item lg={6}>
-          <Grid container>
-            <Grid item>
+        <Grid item xs={12} sm={6}>
+          <Grid
+            container
+            sx={{
+              textAlign: isSmScreen ? "center" : "start",
+            }}
+          >
+            <Grid item xs={12}>
               <Typography variant="h1">
                 Elin Forsberg is a{" "}
                 <span style={{ color: theme.palette.secondary.main }}>
@@ -33,13 +57,13 @@ function Home(props: HomeProps) {
                 </span>
               </Typography>
             </Grid>
-            <Grid item>
+            <Grid item xs={12}>
               <Typography variant="h3">
                 Has a bachelors degree in Software Engineering and is currently
                 working as a Game Developer
               </Typography>
             </Grid>
-            <Grid item>
+            <Grid item xs={12}>
               <Button
                 variant="outlined"
                 onClick={() => props.handleChangeValue("Contact")}
@@ -49,49 +73,47 @@ function Home(props: HomeProps) {
             </Grid>
           </Grid>
         </Grid>
-        <Grid item lg={6}>
-          <Container
-            sx={{ textAlign: "center", maxWidth: { xs: 150, md: 400 } }}
+        <Grid item xs={12} sm={6} sx={{ textAlign: "center" }}>
+          <Box
+            component="img"
+            sx={{
+              maxHeight: { xs: 250, md: 300 },
+            }}
+            alt="Image of Elin"
+            src={image}
+          />
+          <Box
+            sx={{
+              border: "solid 1px",
+              display: "flex",
+              alignItems: "center",
+              padding: "5px",
+              margin: "auto",
+              marginTop: "-7px",
+              width: { xs: 350, md: 400 },
+              maxHeight: { xs: 150, md: 100 },
+            }}
           >
             <Box
-              component="img"
               sx={{
-                maxHeight: { xs: 150, md: 400 },
+                width: "20px",
+                height: "20px",
+                backgroundColor: (theme) => theme.palette.secondary.main,
               }}
-              alt="Image of Elin"
-              src={image}
-            />
-            <Box
-              sx={{
-                border: "solid 1px",
-                display: "flex",
-                alignItems: "center",
-                padding: "5px",
-                marginTop: "-7px",
-                width: { xs: 150, md: 400 },
-              }}
-            >
-              <Box
-                sx={{
-                  width: "20px",
-                  height: "20px",
-                  backgroundColor: (theme) => theme.palette.secondary.main,
-                }}
-              ></Box>
-              <Typography variant="h6" sx={{ marginLeft: "10px" }}>
-                Currently working on{" "}
-                {
-                  <span
-                    style={{
-                      fontWeight: "700",
-                    }}
-                  >
-                    Portfolio
-                  </span>
-                }
-              </Typography>
-            </Box>
-          </Container>
+            ></Box>
+            <Typography variant="h6" sx={{ marginLeft: "10px" }}>
+              Currently working on{" "}
+              {
+                <span
+                  style={{
+                    fontWeight: "700",
+                  }}
+                >
+                  Portfolio
+                </span>
+              }
+            </Typography>
+          </Box>
         </Grid>
       </Grid>
     </Box>
