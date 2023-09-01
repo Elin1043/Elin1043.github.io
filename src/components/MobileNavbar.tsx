@@ -14,6 +14,7 @@ import ListItemButton from "@mui/material/ListItemButton";
 import ListItemText from "@mui/material/ListItemText";
 import MenuIcon from "@mui/icons-material/Menu";
 import CloseIcon from "@mui/icons-material/Close";
+import { HashTag } from "./HelperFunctions";
 
 type MobileNavBarProps = {
   handleChange: Function;
@@ -107,7 +108,7 @@ const MobileNavBar = (props: MobileNavBarProps) => {
                         alignItems: "center",
                         display: "flex",
                       }}
-                      primary={<HashTag label={item.Text}></HashTag>}
+                      primary={<HashTag label={item.Text} textSize={14}></HashTag>}
                     />
                   </ListItemButton>
                 </Box>
@@ -117,22 +118,6 @@ const MobileNavBar = (props: MobileNavBarProps) => {
         </Drawer>
       </Grid>
     </Grid>
-  );
-};
-
-type HashTagProps = {
-  label: string;
-};
-export const HashTag = (props: HashTagProps) => {
-  return (
-    <>
-      <Container sx={{ display: "flex" }}>
-        <Typography sx={{ color: (theme) => theme.palette.secondary.main }}>
-          #
-        </Typography>
-        <Typography>{props.label}</Typography>
-      </Container>
-    </>
   );
 };
 

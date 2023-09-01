@@ -1,6 +1,7 @@
 import { Container, Grid, Tab, Tabs, Typography } from "@mui/material";
 import SportsEsportsIcon from "@mui/icons-material/SportsEsports";
 import { MenuItem } from "./MenuItem";
+import { HashTag } from "./HelperFunctions";
 
 type DesktopNavBarProps = {
   menuValue: string;
@@ -44,7 +45,7 @@ const DesktopNavBar = (props: DesktopNavBarProps) => {
             <Tab
               value={item.Text.split(" ").join("")}
               key={item.Text}
-              label={<HashTag label={item.Text}></HashTag>}
+              label={<HashTag label={item.Text} textSize={14}></HashTag>}
               sx={{
                 minHeight: "48px",
                 pt: 0,
@@ -59,20 +60,6 @@ const DesktopNavBar = (props: DesktopNavBarProps) => {
         </Tabs>
       </Grid>
     </Grid>
-  );
-};
-
-type HashTagProps = {
-  label: string;
-};
-export const HashTag = (props: HashTagProps) => {
-  return (
-    <Container sx={{ display: "flex" }}>
-      <Typography sx={{ color: (theme) => theme.palette.secondary.main }}>
-        #
-      </Typography>
-      <Typography>{props.label}</Typography>
-    </Container>
   );
 };
 

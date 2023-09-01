@@ -67,8 +67,9 @@ function Home(props: HomeProps) {
               <Button
                 variant="outlined"
                 onClick={() => props.handleChangeValue("Contact")}
+                sx={{ borderColor: theme.palette.secondary.main }}
               >
-                C <span style={{ textTransform: "lowercase" }}>ontact me</span>
+                <span style={{ textTransform: "initial" }}>Contact me!</span>
               </Button>
             </Grid>
           </Grid>
