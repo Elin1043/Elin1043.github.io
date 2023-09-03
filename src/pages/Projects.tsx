@@ -30,7 +30,7 @@ const Projects = (props: ProjectsProps) => {
         withDivider={onHomePage}
       ></HashTag>
 
-      <Grid container spacing={2} sx={{ marginTop: "20px" }}>
+      <Grid container spacing={2} sx={{ padding: "50px 0" }}>
         {projects}
       </Grid>
     </>

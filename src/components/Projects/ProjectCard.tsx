@@ -1,4 +1,11 @@
-import { Box, Button, Card, Container, Typography } from "@mui/material";
+import {
+  Box,
+  Button,
+  Card,
+  Container,
+  Typography,
+  useTheme,
+} from "@mui/material";
 import { ProjectItem } from "../../Types/ProjectsItem";
 
 type ProjectCardProps = {
@@ -7,10 +14,14 @@ type ProjectCardProps = {
 
 const ProjectCard = (props: ProjectCardProps) => {
   const { project } = props;
+  const theme = useTheme();
   return (
     <Card
-      variant="outlined"
-      sx={{ minHeight: "300px", minWidth: "275px", borderColor: "#FFF" }}
+      sx={{
+        minHeight: "300px",
+        minWidth: "275px",
+        border: "1px solid",
+      }}
     >
       <Box
         component="img"
@@ -38,7 +49,7 @@ const ProjectCard = (props: ProjectCardProps) => {
             borderColor: (theme) => theme.palette.secondary.main,
           }}
         >
-          <Typography variant="body1" fontWeight={700} color={"#FFF"}>
+          <Typography variant="body1" fontWeight={700}>
             Demo
           </Typography>
         </Button>

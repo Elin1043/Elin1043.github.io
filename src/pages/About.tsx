@@ -6,6 +6,7 @@ import {
   List,
   ListItem,
   Typography,
+  useTheme,
 } from "@mui/material";
 import { HashTag } from "../components/HelperFunctions";
 import ReactLogo from "../assets/SkillsImages/reactIcon.png";
@@ -31,11 +32,10 @@ function About(props: AboutProps) {
   return (
     <Box sx={{ paddingTop: "20px" }}>
       <HashTag label={"about"} textSize={32} withDivider={onHomePage}></HashTag>
-      <Box>
+      <Box sx={{ padding: "50px 0" }}>
         <Grid
           container
           sx={{
-            height: "100%",
             display: "flex",
             alignItems: "center",
           }}
@@ -261,11 +261,19 @@ const SkillsList = [
 ];
 
 const AboutMe: React.FC = () => {
+  const theme = useTheme();
   return (
     <Container sx={{ padding: "16px" }}>
       <Typography variant="h6">
-        👋 Hi there, I’m Elin Forsberg, a young professional in game development
-        and software engineering from Sweden 🇸🇪🎮💻
+        👋 Hi there, I’m Elin Forsberg, a young{" "}
+        <span style={{ color: theme.palette.secondary.main }}>
+          Game Developer
+        </span>{" "}
+        and{" "}
+        <span style={{ color: theme.palette.secondary.main }}>
+          Software Engineer
+        </span>{" "}
+        from Sweden 🇸🇪🎮💻
       </Typography>
       <List>
         <Typography variant="body1" fontWeight={700}>
