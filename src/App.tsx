@@ -17,40 +17,79 @@ import { MenuItem } from "./components/MenuItem";
 import DesktopNavBar from "./components/DesktopNavBar";
 import MobileNavBar from "./components/MobileNavbar";
 
-export const theme = createTheme({
-  palette: {
-    mode: "dark",
-    primary: {
-      main: "#D5D8DD",
-    },
-    secondary: {
-      main: "#1AAEFF",
-    },
-    background: {
-      default: "#282C33",
-      paper: "#282C33",
-    },
-  },
-  typography: {
-    fontFamily: '"Fira Code"',
-    h1: {
-      padding: "1rem 0",
-      fontSize: "2rem",
-    },
-    h2: {
-      padding: "1rem 0",
-      fontSize: "1.5rem",
-    },
-    h3: {
-      padding: "1rem 0",
-      fontSize: "1.25rem",
-    },
-  },
-});
-
 function App() {
   const [menuValue, setMenuValue] = useState("Home");
   const [screenSize, setScreenSize] = useState(getCurrentDimension());
+
+  const [mode, setMode] = React.useState<"light" | "dark">("dark");
+
+  const theme = React.useMemo(
+    () =>
+      mode === "dark"
+        ? createTheme({
+            palette: {
+              mode: "dark",
+              primary: {
+                main: "#D5D8DD",
+              },
+              secondary: {
+                main: "#1AAEFF",
+              },
+              background: {
+                default: "#282C33",
+                paper: "#282C33",
+              },
+            },
+            typography: {
+              fontFamily: '"Fira Code"',
+              h1: {
+                padding: "1rem 0",
+                fontSize: "2rem",
+              },
+              h2: {
+                padding: "1rem 0",
+                fontSize: "1.5rem",
+              },
+              h3: {
+                padding: "1rem 0",
+                fontSize: "1.25rem",
+              },
+            },
+          })
+        : createTheme({
+            palette: {
+              mode: "light",
+              primary: {
+                main: "#000000",
+                dark: "#434343",
+                light: "#252525",
+              },
+              secondary: {
+                main: "#1AAEFF",
+              },
+              background: {
+                default: "#DCDCDC",
+                paper: "#DCDCDC",
+              },
+            },
+            typography: {
+              fontFamily: '"Fira Code"',
+              h1: {
+                padding: "1rem 0",
+                fontSize: "2rem",
+              },
+              h2: {
+                padding: "1rem 0",
+                fontSize: "1.5rem",
+              },
+              h3: {
+                padding: "1rem 0",
+                fontSize: "1.25rem",
+              },
+            },
+          }),
+    [mode]
+  );
 
   const handleChange = (event: React.SyntheticEvent, newValue: string) => {
     setMenuValue(newValue);
@@ -58,6 +97,10 @@ function App() {
 
   const handleChangeValue = (newValue: string) => {
     setMenuValue(newValue);
+  };
+
+  const handleModeUpdate = (event: React.SyntheticEvent, newValue: string) => {
+    setMode(mode === "light" ? "dark" : "light");
   };
 
   function getCurrentDimension() {
@@ -120,12 +163,14 @@ function App() {
             <MobileNavBar
               handleChange={handleChangeValue}
               menuItems={menuItems}
+              handleModeUpdate={handleModeUpdate}
             ></MobileNavBar>
           ) : (
             <DesktopNavBar
               menuValue={menuValue}
               handleChange={handleChange}
               menuItems={menuItems}
+              handleModeUpdate={handleModeUpdate}
             ></DesktopNavBar>
           )}
 

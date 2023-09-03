@@ -3,7 +3,6 @@ import cvPDF from "../assets/cv.pdf";
 import "react-pdf/dist/esm/Page/AnnotationLayer.css";
 import "react-pdf/dist/esm/Page/TextLayer.css";
 import { Button, Container, Typography } from "@mui/material";
-import { theme } from "../App";
 pdfjs.GlobalWorkerOptions.workerSrc = `https://cdnjs.cloudflare.com/ajax/libs/pdf.js/${pdfjs.version}/pdf.worker.js`;
 
 type CVProps = {
@@ -27,7 +26,7 @@ function CV(props: CVProps) {
         sx={{
           margin: "10px 0",
           color: "#FFF",
-          backgroundColor: theme.palette.secondary.main,
+          backgroundColor: (theme) => theme.palette.secondary.main,
         }}
       >
         <Typography variant="body1">Download CV</Typography>
