@@ -1,13 +1,25 @@
 import {
   Box,
   Container,
+  Divider,
   Grid,
   List,
   ListItem,
   Typography,
 } from "@mui/material";
 import { HashTag } from "../components/HelperFunctions";
-import SportsEsportsIcon from "@mui/icons-material/SportsEsports";
+import ReactLogo from "../assets/SkillsImages/reactIcon.png";
+import CSharpLogo from "../assets/SkillsImages/c#Logo.png";
+import CssLogo from "../assets/SkillsImages/cssIcon.png";
+import DevopsLogo from "../assets/SkillsImages/devopsLogo.png";
+import GitLogo from "../assets/SkillsImages/gitLogo.png";
+import HtmlLogo from "../assets/SkillsImages/htmlIcon.png";
+import JavaLogo from "../assets/SkillsImages/javaLogo.png";
+import JavaScriptLogo from "../assets/SkillsImages/javaScriptLogo.png";
+import MaterialDesignLogo from "../assets/SkillsImages/materialDesignLogo.png";
+import PythonLogo from "../assets/SkillsImages/pythonLogo.png";
+import TypeScriptLogo from "../assets/SkillsImages/typeScriptLogo.png";
+import UnityLogo from "../assets/SkillsImages/unityLogo.png";
 
 type AboutProps = {
   onHomePage: boolean;
@@ -47,13 +59,11 @@ const SkillDisplay = () => {
     <Grid
       item
       key={skill.text}
-      xs={12}
-      sm={6}
-      md={4}
+      xs={4}
       sx={{ display: "flex", justifyContent: "center" }}
     >
       <SkillItemDisplay
-        icon={skill.icon}
+        image={skill.image}
         text={skill.text}
         category={skill.category}
       />
@@ -68,13 +78,11 @@ const SkillDisplay = () => {
     <Grid
       item
       key={skill.text}
-      xs={12}
-      sm={6}
-      md={4}
+      xs={4}
       sx={{ display: "flex", justifyContent: "center" }}
     >
       <SkillItemDisplay
-        icon={skill.icon}
+        image={skill.image}
         text={skill.text}
         category={skill.category}
       />
@@ -87,13 +95,11 @@ const SkillDisplay = () => {
     <Grid
       item
       key={skill.text}
-      xs={12}
-      sm={6}
-      md={4}
+      xs={4}
       sx={{ display: "flex", justifyContent: "center" }}
     >
       <SkillItemDisplay
-        icon={skill.icon}
+        image={skill.image}
         text={skill.text}
         category={skill.category}
       />
@@ -102,18 +108,67 @@ const SkillDisplay = () => {
 
   return (
     <Container>
-      <Grid container textAlign={"center"} spacing={5}>
+      <Grid container textAlign={"center"} spacing={1}>
         <Grid item xs={12}>
-          <Typography variant="h6">Web development skills</Typography>
-          <Grid container>{webSkillItems}</Grid>
+          <Grid container>
+            <Grid item xs={4} sx={{ margin: "auto 0" }}>
+              <Divider
+                sx={{ borderColor: (theme) => theme.palette.secondary.main }}
+              ></Divider>
+            </Grid>
+            <Grid item xs={4}>
+              <Typography variant="h6">Web development</Typography>
+            </Grid>
+            <Grid item xs={4} sx={{ margin: "auto 0" }}>
+              <Divider
+                sx={{ borderColor: (theme) => theme.palette.secondary.main }}
+              ></Divider>
+            </Grid>
+          </Grid>
+
+          <Grid container sx={{ padding: "16px 0" }} spacing={2}>
+            {webSkillItems}
+          </Grid>
         </Grid>
         <Grid item xs={12}>
-          <Typography variant="h6">Programming Languages</Typography>
-          <Grid container>{programmingSkillsItems}</Grid>
+          <Grid container>
+            <Grid item xs={3} sx={{ margin: "auto 0" }}>
+              <Divider
+                sx={{ borderColor: (theme) => theme.palette.secondary.main }}
+              ></Divider>
+            </Grid>
+            <Grid item xs={6}>
+              <Typography variant="h6">Programming Languages</Typography>
+            </Grid>
+            <Grid item xs={3} sx={{ margin: "auto 0" }}>
+              <Divider
+                sx={{ borderColor: (theme) => theme.palette.secondary.main }}
+              ></Divider>
+            </Grid>
+          </Grid>
+          <Grid container sx={{ padding: "16px 0" }} spacing={2}>
+            {programmingSkillsItems}
+          </Grid>
         </Grid>
         <Grid item xs={12}>
-          <Typography variant="h6">Tools</Typography>
-          <Grid container>{toolItems}</Grid>
+          <Grid container>
+            <Grid item xs={5} sx={{ margin: "auto 0" }}>
+              <Divider
+                sx={{ borderColor: (theme) => theme.palette.secondary.main }}
+              ></Divider>
+            </Grid>
+            <Grid item xs={2}>
+              <Typography variant="h6">Tools</Typography>
+            </Grid>
+            <Grid item xs={5} sx={{ margin: "auto 0" }}>
+              <Divider
+                sx={{ borderColor: (theme) => theme.palette.secondary.main }}
+              ></Divider>
+            </Grid>
+          </Grid>
+          <Grid container sx={{ padding: "16px 0" }} spacing={2}>
+            {toolItems}
+          </Grid>
         </Grid>
       </Grid>
     </Container>
@@ -121,79 +176,85 @@ const SkillDisplay = () => {
 };
 
 const SkillItemDisplay = (props: SkillItem) => {
-  const { icon, text } = props;
+  const { image, text } = props;
   return (
     <Grid item>
-      {icon}
+      <Box
+        component="img"
+        sx={{
+          maxHeight: { xs: 30, md: 40 },
+        }}
+        src={image}
+      />
       <Typography>{text}</Typography>
     </Grid>
   );
 };
 
 type SkillItem = {
-  icon: JSX.Element;
+  image: string;
   text: string;
   category: string;
 };
 
 const SkillsList = [
   {
-    icon: <SportsEsportsIcon />,
+    image: ReactLogo,
     text: "React",
     category: "Web",
   },
   {
-    icon: <SportsEsportsIcon />,
+    image: HtmlLogo,
     text: "HTML",
     category: "Web",
   },
   {
-    icon: <SportsEsportsIcon />,
+    image: CssLogo,
     text: "CSS",
     category: "Web",
   },
   {
-    icon: <SportsEsportsIcon />,
+    image: MaterialDesignLogo,
     text: "Material Design",
     category: "Web",
   },
   {
-    icon: <SportsEsportsIcon />,
+    image: JavaScriptLogo,
     text: "JavaScript",
     category: "Web",
   },
   {
-    icon: <SportsEsportsIcon />,
+    image: TypeScriptLogo,
     text: "TypeScript",
     category: "Web",
   },
   {
-    icon: <SportsEsportsIcon />,
+    image: GitLogo,
     text: "Git",
     category: "Tool",
   },
   {
-    icon: <SportsEsportsIcon />,
+    image: UnityLogo,
     text: "Unity",
     category: "Tool",
   },
   {
-    icon: <SportsEsportsIcon />,
+    image: DevopsLogo,
     text: "Azure Devops",
     category: "Tool",
   },
   {
-    icon: <SportsEsportsIcon />,
+    image: CSharpLogo,
     text: "C#",
     category: "Language",
   },
   {
-    icon: <SportsEsportsIcon />,
+    image: JavaLogo,
     text: "Java",
     category: "Language",
   },
   {
-    icon: <SportsEsportsIcon />,
+    image: PythonLogo,
     text: "Python",
     category: "Language",
   },
