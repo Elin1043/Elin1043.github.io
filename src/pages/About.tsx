@@ -154,6 +154,11 @@ const SkillsList = [
   },
   {
     icon: <SportsEsportsIcon />,
+    text: "Material Design",
+    category: "Web",
+  },
+  {
+    icon: <SportsEsportsIcon />,
     text: "JavaScript",
     category: "Web",
   },
