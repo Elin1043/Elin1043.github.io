@@ -85,26 +85,21 @@ function App() {
 
   const menuItems: Array<MenuItem> = [
     {
-      Component: <Home handleChangeValue={handleChangeValue} />,
       Text: "Home",
       Path: "home",
     },
     {
-      Component: <Projects />,
       Text: "Projects",
       Path: "projects",
     },
     {
-      Component: <About />,
       Text: "About",
       Path: "about",
     },
     {
-      Component: <Contact />,
       Text: "Contact",
       Path: "contact",
     },
-    { Component: <CV displayCV={false} />, Text: "CV", Path: "cv" },
   ];
 
   useEffect(() => {
@@ -135,13 +130,15 @@ function App() {
           )}
 
           {/* Content */}
-          {menuValue === "About" && <About />}
-          {menuValue === "Contact" && <Contact />}
-          {menuValue === "CV" && <CV displayCV={screenSize.width >= 700} />}
+          {menuValue === "About" && <About onHomePage={false} />}
+          {menuValue === "Contact" && <Contact onHomePage={false} />}
+          {menuValue === "CV" && (
+            <CV onHomePage={false} displayCV={screenSize.width >= 700} />
+          )}
           {menuValue === "Home" && (
             <Home handleChangeValue={handleChangeValue}></Home>
           )}
-          {menuValue === "Projects" && <Projects />}
+          {menuValue === "Projects" && <Projects onHomePage={false} />}
         </Container>
       </Paper>
     </ThemeProvider>

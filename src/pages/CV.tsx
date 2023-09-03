@@ -2,16 +2,17 @@ import { Document, Page, pdfjs } from "react-pdf";
 import cvPDF from "../assets/cv.pdf";
 import "react-pdf/dist/esm/Page/AnnotationLayer.css";
 import "react-pdf/dist/esm/Page/TextLayer.css";
-import { Button, Container, Typography, useTheme } from "@mui/material";
+import { Button, Container, Typography } from "@mui/material";
+import { theme } from "../App";
 pdfjs.GlobalWorkerOptions.workerSrc = `https://cdnjs.cloudflare.com/ajax/libs/pdf.js/${pdfjs.version}/pdf.worker.js`;
 
 type CVProps = {
+  onHomePage: boolean;
   displayCV: boolean;
 };
 
 function CV(props: CVProps) {
-  const { displayCV } = props;
-  const theme = useTheme();
+  const { displayCV, onHomePage } = props;
   const onDownload = () => {
     const link = document.createElement("a");
     link.download = "Elin Forsberg CV";
@@ -26,7 +27,7 @@ function CV(props: CVProps) {
         sx={{
           margin: "10px 0",
           color: "#FFF",
-          backgroundColor: (theme) => theme.palette.secondary.main,
+          backgroundColor: theme.palette.secondary.main,
         }}
       >
         <Typography variant="body1">Download CV</Typography>

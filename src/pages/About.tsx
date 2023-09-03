@@ -1,24 +1,23 @@
 import {
-  Avatar,
   Box,
-  Button,
   Container,
   Grid,
   List,
   ListItem,
-  ListItemText,
   Typography,
 } from "@mui/material";
 import { HashTag } from "../components/HelperFunctions";
-import { theme } from "../App";
 
-type AboutProps = {};
+type AboutProps = {
+  onHomePage: boolean;
+};
 
 function About(props: AboutProps) {
+  const { onHomePage } = props;
   return (
-    <Box>
-      <HashTag label={"about"} textSize={32} withDivider={true}></HashTag>
-      <Box sx={{ height: "90vh" }}>
+    <Box sx={{ paddingTop: "20px" }}>
+      <HashTag label={"about"} textSize={32} withDivider={onHomePage}></HashTag>
+      <Box>
         <Grid
           container
           sx={{
@@ -28,9 +27,7 @@ function About(props: AboutProps) {
           }}
         >
           <Grid item xs={12} sm={6}>
-            <Grid container>
-              <AboutMe></AboutMe>
-            </Grid>
+            <AboutMe></AboutMe>
           </Grid>
         </Grid>
       </Box>
@@ -40,15 +37,18 @@ function About(props: AboutProps) {
 
 const AboutMe: React.FC = () => {
   return (
-    <Container>
-      <Typography variant="h5">
+    <Container sx={{ padding: "16px" }}>
+      <Typography variant="h6">
         👋 Hi there, I’m Elin Forsberg, a young professional in game development
         and software engineering from Sweden 🇸🇪🎮💻
       </Typography>
       <List>
-        <Typography variant="h6"> 👩‍💻As a professional:</Typography>
+        <Typography variant="body1" fontWeight={700}>
+          {" "}
+          👩‍💻As a professional:
+        </Typography>
         <ListItem>
-          <Typography>
+          <Typography variant="body1">
             I'm a driven go-getter who knows how to get things done. My passion
             for learning shines through in both game development and
             programming. My education in Software Engineering equips me with a
@@ -63,7 +63,9 @@ const AboutMe: React.FC = () => {
         </ListItem>
       </List>
       <List>
-        <Typography variant="h6">👩‍💼Who am I?</Typography>
+        <Typography variant="body1" fontWeight={700}>
+          👩‍💼Who am I?
+        </Typography>
         <Typography>
           <ul>
             <li>Always expresses my opinions and listens to others</li>

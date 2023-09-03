@@ -123,10 +123,10 @@ function Home(props: HomeProps) {
           </Grid>
         </Grid>
       </Box>
-      <Projects></Projects>
-      <About></About>
-      <Contact></Contact>
-      <CV displayCV={!isSmScreen}></CV>
+      <Projects onHomePage={true}></Projects>
+      <About onHomePage={true}></About>
+      <Contact onHomePage={true}></Contact>
+      <CV onHomePage={true} displayCV={!isSmScreen}></CV>
     </>
   );
 }
