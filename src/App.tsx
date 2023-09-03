@@ -63,7 +63,6 @@ function App() {
       Text: "Projects",
       Path: "projects",
     },
-    { Component: <CV displayCV={false} />, Text: "CV", Path: "cv" },
     {
       Component: <About />,
       Text: "About",
@@ -74,6 +73,7 @@ function App() {
       Text: "Contact",
       Path: "contact",
     },
+    { Component: <CV displayCV={false} />, Text: "CV", Path: "cv" },
   ];
 
   const theme = createTheme({
