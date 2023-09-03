@@ -17,6 +17,37 @@ import { MenuItem } from "./components/MenuItem";
 import DesktopNavBar from "./components/DesktopNavBar";
 import MobileNavBar from "./components/MobileNavbar";
 
+export const theme = createTheme({
+  palette: {
+    mode: "dark",
+    primary: {
+      main: "#D5D8DD",
+    },
+    secondary: {
+      main: "#1AAEFF",
+    },
+    background: {
+      default: "#282C33",
+      paper: "#282C33",
+    },
+  },
+  typography: {
+    fontFamily: '"Fira Code"',
+    h1: {
+      padding: "1rem 0",
+      fontSize: "2rem",
+    },
+    h2: {
+      padding: "1rem 0",
+      fontSize: "1.5rem",
+    },
+    h3: {
+      padding: "1rem 0",
+      fontSize: "1.25rem",
+    },
+  },
+});
+
 function App() {
   const [menuValue, setMenuValue] = useState("Home");
   const [screenSize, setScreenSize] = useState(getCurrentDimension());
@@ -75,37 +106,6 @@ function App() {
     },
     { Component: <CV displayCV={false} />, Text: "CV", Path: "cv" },
   ];
-
-  const theme = createTheme({
-    palette: {
-      mode: "dark",
-      primary: {
-        main: "#D5D8DD",
-      },
-      secondary: {
-        main: "#1AAEFF",
-      },
-      background: {
-        default: "#282C33",
-        paper: "#282C33",
-      },
-    },
-    typography: {
-      fontFamily: '"Fira Code"',
-      h1: {
-        padding: "1rem 0",
-        fontSize: "2rem",
-      },
-      h2: {
-        padding: "1rem 0",
-        fontSize: "1.5rem",
-      },
-      h3: {
-        padding: "1rem 0",
-        fontSize: "1.25rem",
-      },
-    },
-  });
 
   useEffect(() => {
     // set start path to /home
