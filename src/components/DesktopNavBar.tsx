@@ -66,7 +66,7 @@ const DesktopNavBar = (props: DesktopNavBarProps) => {
                 pt: 0,
                 pb: 0,
                 "&.Mui-selected": {
-                  color: "white",
+                  fontWeight: "700",
                 },
                 overflow: "visible",
               }}

@@ -118,9 +118,6 @@ const MobileNavBar = (props: MobileNavBarProps) => {
                         minHeight: "30px",
                         pt: 0,
                         pb: 0,
-                        "&.Mui-selected": {
-                          color: "white",
-                        },
                         alignItems: "center",
                         display: "flex",
                       }}

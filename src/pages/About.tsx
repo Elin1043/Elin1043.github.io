@@ -7,6 +7,7 @@ import {
   Typography,
 } from "@mui/material";
 import { HashTag } from "../components/HelperFunctions";
+import SportsEsportsIcon from "@mui/icons-material/SportsEsports";
 
 type AboutProps = {
   onHomePage: boolean;
@@ -14,6 +15,7 @@ type AboutProps = {
 
 function About(props: AboutProps) {
   const { onHomePage } = props;
+
   return (
     <Box sx={{ paddingTop: "20px" }}>
       <HashTag label={"about"} textSize={32} withDivider={onHomePage}></HashTag>
@@ -29,11 +31,138 @@ function About(props: AboutProps) {
           <Grid item xs={12} sm={6}>
             <AboutMe></AboutMe>
           </Grid>
+          <Grid item xs={12} sm={6}>
+            <SkillDisplay></SkillDisplay>
+          </Grid>
         </Grid>
       </Box>
     </Box>
   );
 }
+
+const SkillDisplay = () => {
+  const webSkills = SkillsList.filter((skill) => skill.category === "Web");
+
+  const webSkillItems = webSkills.map((skill) => (
+    <Grid
+      item
+      key={skill.text}
+      xs={12}
+      sm={6}
+      md={4}
+      sx={{ display: "flex", justifyContent: "center" }}
+    >
+      <SkillItemDisplay
+        icon={skill.icon}
+        text={skill.text}
+        category={skill.category}
+      />
+    </Grid>
+  ));
+
+  const programmingSkills = SkillsList.filter(
+    (skill) => skill.category === "Language"
+  );
+
+  const programmingSkillsItems = programmingSkills.map((skill) => (
+    <Grid
+      item
+      key={skill.text}
+      xs={12}
+      sm={6}
+      md={4}
+      sx={{ display: "flex", justifyContent: "center" }}
+    >
+      <SkillItemDisplay
+        icon={skill.icon}
+        text={skill.text}
+        category={skill.category}
+      />
+    </Grid>
+  ));
+
+  const tools = SkillsList.filter((skill) => skill.category === "Tool");
+
+  const toolItems = tools.map((skill) => (
+    <Grid
+      item
+      key={skill.text}
+      xs={12}
+      sm={6}
+      md={4}
+      sx={{ display: "flex", justifyContent: "center" }}
+    >
+      <SkillItemDisplay
+        icon={skill.icon}
+        text={skill.text}
+        category={skill.category}
+      />
+    </Grid>
+  ));
+
+  return (
+    <Container>
+      <Grid container textAlign={"center"} spacing={5}>
+        <Grid item xs={12}>
+          <Typography variant="h6">Web development skills</Typography>
+          <Grid container>{webSkillItems}</Grid>
+        </Grid>
+        <Grid item xs={12}>
+          <Typography variant="h6">Programming skills</Typography>
+          <Grid container>{programmingSkillsItems}</Grid>
+        </Grid>
+        <Grid item xs={12}>
+          <Typography variant="h6">Tools</Typography>
+          <Grid container>{toolItems}</Grid>
+        </Grid>
+      </Grid>
+    </Container>
+  );
+};
+
+const SkillItemDisplay = (props: SkillItem) => {
+  const { icon, text } = props;
+  return (
+    <Grid item>
+      {icon}
+      <Typography>{text}</Typography>
+    </Grid>
+  );
+};
+
+type SkillItem = {
+  icon: JSX.Element;
+  text: string;
+  category: string;
+};
+
+const SkillsList = [
+  {
+    icon: <SportsEsportsIcon />,
+    text: "React",
+    category: "Web",
+  },
+  {
+    icon: <SportsEsportsIcon />,
+    text: "React",
+    category: "Web",
+  },
+  {
+    icon: <SportsEsportsIcon />,
+    text: "React",
+    category: "Web",
+  },
+  {
+    icon: <SportsEsportsIcon />,
+    text: "React",
+    category: "Tool",
+  },
+  {
+    icon: <SportsEsportsIcon />,
+    text: "React",
+    category: "Language",
+  },
+];
 
 const AboutMe: React.FC = () => {
   return (
