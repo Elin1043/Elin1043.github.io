@@ -108,7 +108,13 @@ const MobileNavBar = (props: MobileNavBarProps) => {
                         alignItems: "center",
                         display: "flex",
                       }}
-                      primary={<HashTag label={item.Text} textSize={14}></HashTag>}
+                      primary={
+                        <HashTag
+                          label={item.Text}
+                          textSize={14}
+                          withDivider={false}
+                        ></HashTag>
+                      }
                     />
                   </ListItemButton>
                 </Box>

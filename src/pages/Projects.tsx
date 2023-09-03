@@ -15,16 +15,7 @@ const Projects = (props: ProjectsProps) => {
   ));
   return (
     <>
-      <Grid container>
-        <Grid item xs={2}>
-          <HashTag label={"projects"} textSize={32}></HashTag>
-        </Grid>
-        <Grid item xs={8} sx={{ margin: "auto 0" }}>
-          <Divider
-            sx={{ borderColor: (theme) => theme.palette.secondary.main }}
-          ></Divider>
-        </Grid>
-      </Grid>
+      <HashTag label={"projects"} textSize={32} withDivider={true}></HashTag>
 
       <Grid container spacing={2} sx={{ marginTop: "20px" }}>
         {projects}

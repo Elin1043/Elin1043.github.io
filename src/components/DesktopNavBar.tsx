@@ -45,7 +45,13 @@ const DesktopNavBar = (props: DesktopNavBarProps) => {
             <Tab
               value={item.Text.split(" ").join("")}
               key={item.Text}
-              label={<HashTag label={item.Text} textSize={14}></HashTag>}
+              label={
+                <HashTag
+                  label={item.Text}
+                  textSize={14}
+                  withDivider={false}
+                ></HashTag>
+              }
               sx={{
                 minHeight: "48px",
                 pt: 0,

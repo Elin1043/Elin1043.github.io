@@ -1,13 +1,34 @@
-import { Container, Typography } from "@mui/material";
-import { Variant } from "@testing-library/react";
+import { Container, Divider, Grid, Typography } from "@mui/material";
 
 type HashTagProps = {
   label: string;
   textSize: number;
+  withDivider: boolean;
 };
 export const HashTag = (props: HashTagProps) => {
-  const { label, textSize } = props;
-  return (
+  const { label, textSize, withDivider } = props;
+  return withDivider ? (
+    <Grid container>
+      <Grid item xs={2}>
+        <Container sx={{ display: "flex" }}>
+          <Typography
+            sx={{
+              color: (theme) => theme.palette.secondary.main,
+              fontSize: textSize,
+            }}
+          >
+            #
+          </Typography>
+          <Typography sx={{ fontSize: textSize }}>{label}</Typography>
+        </Container>
+      </Grid>
+      <Grid item xs={8} sx={{ margin: "auto 0" }}>
+        <Divider
+          sx={{ borderColor: (theme) => theme.palette.secondary.main }}
+        ></Divider>
+      </Grid>
+    </Grid>
+  ) : (
     <Container sx={{ display: "flex" }}>
       <Typography
         sx={{
@@ -17,7 +38,7 @@ export const HashTag = (props: HashTagProps) => {
       >
         #
       </Typography>
-      <Typography sx={{ fontSize: textSize }}>{props.label}</Typography>
+      <Typography sx={{ fontSize: textSize }}>{label}</Typography>
     </Container>
   );
 };
