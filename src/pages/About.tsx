@@ -42,33 +42,28 @@ const AboutMe: React.FC = () => {
   return (
     <Container>
       <Typography variant="h5">
-        👋Hi there, I'm Elin, a young game developer and game enthusiast 🎮
+        👋 Hi there, I’m Elin Forsberg, a young professional in game development
+        and software engineering from Sweden 🇸🇪🎮💻
       </Typography>
       <List>
-        <Typography variant="body1"> 👩‍💻As a professional:</Typography>
+        <Typography variant="h6"> 👩‍💻As a professional:</Typography>
         <ListItem>
           <Typography>
-            I have 5+ years of experience working with game development through
-            school and personal projects, and I have more than a year of
-            hands-on experience in my current role. I have experience working
-            with the Unity game engine, am proficient in C#, and have a strong
-            foundation in Java, Mobile Development, Python, HTML, and coding
-            principles like OOP and SOLID. I've hunted and fixed bugs,
-            refactored code, and optimized projects for both Android and iOS.
-          </Typography>
-        </ListItem>
-        <ListItem>
-          <Typography>
-            I'm a driven go-getter who knows how to get things done and
-            prioritize tasks. I always enjoy learning new skills and techniques,
-            and solving challenging problems with my team always gives me a
-            dopamine rush. Outside work hours, I like to test out various game
-            development techniques and watch tutorials to expand my knowledge.
+            I'm a driven go-getter who knows how to get things done. My passion
+            for learning shines through in both game development and
+            programming. My education in Software Engineering equips me with a
+            deep understanding of programming and coding principles, providing a
+            strong foundation to develop software and games of the highest
+            quality. Whether it's tackling complex challenges or working
+            collaboratively with my team, I thrive on the excitement of
+            problem-solving. Outside work hours, I actively explore various game
+            development and programming techniques and continually expand my
+            knowledge.
           </Typography>
         </ListItem>
       </List>
       <List>
-        <Typography variant="body1">👩‍💼Who am I?</Typography>
+        <Typography variant="h6">👩‍💼Who am I?</Typography>
         <Typography>
           <ul>
             <li>Always expresses my opinions and listens to others</li>
