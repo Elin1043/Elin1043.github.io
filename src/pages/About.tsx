@@ -108,7 +108,7 @@ const SkillDisplay = () => {
           <Grid container>{webSkillItems}</Grid>
         </Grid>
         <Grid item xs={12}>
-          <Typography variant="h6">Programming skills</Typography>
+          <Typography variant="h6">Programming Languages</Typography>
           <Grid container>{programmingSkillsItems}</Grid>
         </Grid>
         <Grid item xs={12}>
@@ -144,22 +144,52 @@ const SkillsList = [
   },
   {
     icon: <SportsEsportsIcon />,
-    text: "React",
+    text: "HTML",
     category: "Web",
   },
   {
     icon: <SportsEsportsIcon />,
-    text: "React",
+    text: "CSS",
     category: "Web",
   },
   {
     icon: <SportsEsportsIcon />,
-    text: "React",
+    text: "JavaScript",
+    category: "Web",
+  },
+  {
+    icon: <SportsEsportsIcon />,
+    text: "TypeScript",
+    category: "Web",
+  },
+  {
+    icon: <SportsEsportsIcon />,
+    text: "Git",
     category: "Tool",
   },
   {
     icon: <SportsEsportsIcon />,
-    text: "React",
+    text: "Unity",
+    category: "Tool",
+  },
+  {
+    icon: <SportsEsportsIcon />,
+    text: "Azure Devops",
+    category: "Tool",
+  },
+  {
+    icon: <SportsEsportsIcon />,
+    text: "C#",
+    category: "Language",
+  },
+  {
+    icon: <SportsEsportsIcon />,
+    text: "Java",
+    category: "Language",
+  },
+  {
+    icon: <SportsEsportsIcon />,
+    text: "Python",
     category: "Language",
   },
 ];
