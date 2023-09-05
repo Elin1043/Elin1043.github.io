@@ -1,4 +1,4 @@
-import { Box, Grid, SvgIcon, Typography } from "@mui/material";
+import { Box, Container, Grid, SvgIcon, Typography } from "@mui/material";
 import { HashTag } from "../components/HelperFunctions";
 import LinkedInIcon from "@mui/icons-material/LinkedIn";
 import EmailIcon from "@mui/icons-material/Email";
@@ -13,15 +13,15 @@ type ContactProps = {
 function Contact(props: ContactProps) {
   const { onHomePage } = props;
   return (
-    <>
+    <Container>
       <HashTag
         label={"contact"}
         textSize={32}
         withDivider={onHomePage}
       ></HashTag>
-      <Grid container>
+      <Grid container sx={{ padding: "50px 0" }}>
         <Grid item xs={6}>
-          <Typography>
+          <Typography variant="body1">
             Feel free to connect with me on LinkedIn! For any inquiries or
             collaboration opportunities, please don't hesitate to reach out to
             me via email or LinkedIn. I look forward to connecting with fellow
@@ -29,25 +29,40 @@ function Contact(props: ContactProps) {
             programming.
           </Typography>
         </Grid>
-        <Grid item xs={6} textAlign={"center"}>
+        <Grid item xs={4} display={"flex"} justifyContent={"end"}>
           <Box>
-            <Grid container>
+            <Grid container display={"flex"} justifyContent={"end"}>
               <Grid item xs={12} display={"flex"}>
                 <LinkedInIcon
                   sx={{ height: "32px", width: "32px" }}
                 ></LinkedInIcon>
-                <Typography>Linkedin</Typography>
+                <Typography>
+                  <a
+                    href="https://www.linkedin.com/in/elin-forsberg-sweden"
+                    target="_blank"
+                    style={{ color: "white" }}
+                  >
+                    LinkedIn
+                  </a>
+                </Typography>
               </Grid>
               <Grid item xs={12} display={"flex"}>
                 <EmailIcon sx={{ height: "32px", width: "32px" }}></EmailIcon>
-                <Typography>Email</Typography>
+                <Typography>
+                  <a
+                    href="mailto:elinforsbergdev@gmail.com"
+                    style={{ color: "white" }}
+                  >
+                    elinforsbergdev@gmail.com
+                  </a>
+                </Typography>
               </Grid>
             </Grid>
           </Box>
         </Grid>
         <Grid item xs={6}></Grid>
       </Grid>
-    </>
+    </Container>
   );
 }
 

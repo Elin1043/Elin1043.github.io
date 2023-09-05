@@ -126,7 +126,6 @@ function Home(props: HomeProps) {
       <Projects onHomePage={true}></Projects>
       <About onHomePage={true}></About>
       <Contact onHomePage={true}></Contact>
-      <CV onHomePage={true} displayCV={!isSmScreen}></CV>
     </>
   );
 }
