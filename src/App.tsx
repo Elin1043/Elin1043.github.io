@@ -174,16 +174,7 @@ function App() {
             ></DesktopNavBar>
           )}
 
-          {/* Content */}
-          {menuValue === "About" && <About onHomePage={false} />}
-          {menuValue === "Contact" && <Contact onHomePage={false} />}
-          {menuValue === "CV" && (
-            <CV onHomePage={false} displayCV={screenSize.width >= 700} />
-          )}
-          {menuValue === "Home" && (
-            <Home handleChangeValue={handleChangeValue}></Home>
-          )}
-          {menuValue === "Projects" && <Projects onHomePage={false} />}
+          <Home handleChangeValue={handleChangeValue}></Home>
         </Container>
       </Paper>
     </ThemeProvider>

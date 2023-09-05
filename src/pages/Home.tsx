@@ -34,7 +34,7 @@ function Home(props: HomeProps) {
   );
   return (
     <>
-      <Box sx={{ height: "90vh" }}>
+      <Box className="home" sx={{ height: "90vh" }}>
         <Grid
           container
           sx={{
@@ -123,9 +123,15 @@ function Home(props: HomeProps) {
           </Grid>
         </Grid>
       </Box>
-      <Projects onHomePage={true}></Projects>
-      <About onHomePage={true}></About>
-      <Contact onHomePage={true}></Contact>
+      <div className="projects">
+        <Projects onHomePage={true}></Projects>
+      </div>
+      <div className="about">
+        <About onHomePage={true}></About>
+      </div>
+      <div className="contact">
+        <Contact onHomePage={true}></Contact>
+      </div>
     </>
   );
 }

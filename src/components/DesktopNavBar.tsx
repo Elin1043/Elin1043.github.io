@@ -1,4 +1,6 @@
 import {
+  Box,
+  Button,
   FormControlLabel,
   Grid,
   Switch,
@@ -9,6 +11,7 @@ import {
 } from "@mui/material";
 import SportsEsportsIcon from "@mui/icons-material/SportsEsports";
 import { MenuItem } from "./MenuItem";
+import { Link } from "react-scroll";
 import { HashTag } from "./HelperFunctions";
 
 type DesktopNavBarProps = {
@@ -32,47 +35,43 @@ const DesktopNavBar = (props: DesktopNavBarProps) => {
         </Typography>
       </Grid>
       <Grid item xs={9}>
-        <Tabs
-          variant="standard"
-          defaultValue={"Home"}
-          value={menuValue}
-          onChange={(event, value) => handleChange(event, value)}
+        <Box
           sx={{
             height: "48px",
-            ".MuiTabs-indicator": {
-              height: "1px",
-            },
-            ".MuiTabs-flexContainer": {
-              justifyContent: "flex-end",
-            },
-            ".MuiTab-root": {
-              textTransform: "lowercase",
-            },
+            display: "flex",
+            justifyContent: "end",
           }}
         >
           {menuItems.map((item) => (
-            <Tab
-              value={item.Text.split(" ").join("")}
+            <Link
+              to={item.Path.split(" ").join("")}
+              spy={true}
+              smooth={true}
+              offset={-64}
+              duration={500}
               key={item.Text}
-              label={
+            >
+              <Button
+                sx={{
+                  minHeight: "48px",
+                  pt: 0,
+                  pb: 0,
+                  "&.Mui-selected": {
+                    fontWeight: "700",
+                  },
+                  overflow: "visible",
+                  textTransform: "initial",
+                }}
+              >
                 <HashTag
                   label={item.Text}
                   textSize={14}
                   withDivider={false}
                 ></HashTag>
-              }
-              sx={{
-                minHeight: "48px",
-                pt: 0,
-                pb: 0,
-                "&.Mui-selected": {
-                  fontWeight: "700",
-                },
-                overflow: "visible",
-              }}
-            />
+              </Button>
+            </Link>
           ))}
-        </Tabs>
+        </Box>
       </Grid>
       <Grid item xs={1} sx={{ display: "flex" }}>
         <FormControlLabel

@@ -18,6 +18,7 @@ import ListItemText from "@mui/material/ListItemText";
 import MenuIcon from "@mui/icons-material/Menu";
 import CloseIcon from "@mui/icons-material/Close";
 import { HashTag } from "./HelperFunctions";
+import { Link } from "react-scroll";
 
 type MobileNavBarProps = {
   handleChange: Function;
@@ -27,13 +28,11 @@ type MobileNavBarProps = {
 
 const MobileNavBar = (props: MobileNavBarProps) => {
   const { handleChange, handleModeUpdate, menuItems } = props;
-  //react useState hook to save the current open/close state of the drawer, normally variables dissapear afte the function was executed
+
   const [open, setState] = useState(false);
 
-  //function that is being called every time the drawer should open or close, the keys tab and shift are excluded so the user can focus between the elements with the keys
   const toggleDrawer =
     (open: boolean) => (event: React.SyntheticEvent<Element, Event>) => {
-      //changes the function state according to the value of open
       setState(open);
     };
 
@@ -76,16 +75,7 @@ const MobileNavBar = (props: MobileNavBarProps) => {
           <MenuIcon />
         </IconButton>
 
-        {/* The outside of the drawer */}
-        <Drawer
-          //from which side the drawer slides in
-          anchor="right"
-          //if open is true --> drawer is shown
-          open={open}
-          //function that is called when the drawer should close
-          onClose={toggleDrawer(false)}
-        >
-          {/* The inside of the drawer */}
+        <Drawer anchor="right" open={open} onClose={toggleDrawer(false)}>
           <Box
             sx={{
               p: 2,
@@ -93,44 +83,50 @@ const MobileNavBar = (props: MobileNavBarProps) => {
               backgroundColor: (theme) => theme.palette.background.paper,
             }}
           >
-            {/* when clicking the icon it calls the function toggleDrawer and closes the drawer by setting the variable open to false */}
             <IconButton sx={{ mb: 2 }} onClick={toggleDrawer(false)}>
               <CloseIcon />
             </IconButton>
 
             <Box sx={{ mb: 2 }}>
               {menuItems.map((item) => (
-                <Box
-                  sx={{
-                    borderBottom: "1px solid",
-                    borderColor: "rgba(255, 255, 255, 0.12)",
-                    alignItems: "center",
-                    display: "flex",
-                  }}
+                <Link
+                  to={item.Path.split(" ").join("")}
+                  spy={true}
+                  smooth={true}
+                  duration={500}
+                  key={item.Text}
                 >
-                  <ListItemButton
-                    key={item.Text}
-                    style={{ alignItems: "center", display: "flex" }}
-                    onClick={() => handleChange(item.Text)}
+                  <Box
+                    sx={{
+                      borderBottom: "1px solid",
+                      borderColor: "rgba(255, 255, 255, 0.12)",
+                      alignItems: "center",
+                      display: "flex",
+                    }}
                   >
-                    <ListItemText
-                      sx={{
-                        minHeight: "30px",
-                        pt: 0,
-                        pb: 0,
-                        alignItems: "center",
-                        display: "flex",
-                      }}
-                      primary={
-                        <HashTag
-                          label={item.Text}
-                          textSize={14}
-                          withDivider={false}
-                        ></HashTag>
-                      }
-                    />
-                  </ListItemButton>
-                </Box>
+                    <ListItemButton
+                      key={item.Text}
+                      style={{ alignItems: "center", display: "flex" }}
+                    >
+                      <ListItemText
+                        sx={{
+                          minHeight: "30px",
+                          pt: 0,
+                          pb: 0,
+                          alignItems: "center",
+                          display: "flex",
+                        }}
+                        primary={
+                          <HashTag
+                            label={item.Text}
+                            textSize={14}
+                            withDivider={false}
+                          ></HashTag>
+                        }
+                      />
+                    </ListItemButton>
+                  </Box>
+                </Link>
               ))}
             </Box>
           </Box>
