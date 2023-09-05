@@ -37,7 +37,16 @@ const MobileNavBar = (props: MobileNavBarProps) => {
     };
 
   return (
-    <Grid container alignItems={"center"}>
+    <Grid
+      container
+      alignItems={"center"}
+      sx={{
+        position: "sticky",
+        zIndex: "1000",
+        top: "0",
+        backgroundColor: (theme) => theme.palette.background.default,
+      }}
+    >
       <Grid item xs={6}>
         <Typography variant="body1" sx={{ display: "flex", fontWeight: "700" }}>
           <SportsEsportsIcon
@@ -59,7 +68,16 @@ const MobileNavBar = (props: MobileNavBarProps) => {
           label=""
         />
       </Grid>
-      <Grid item xs={2} sx={{ display: "flex", justifyContent: "flex-end" }}>
+      <Grid
+        item
+        xs={2}
+        sx={{
+          position: "fixed",
+          right: "0",
+          display: "flex",
+          justifyContent: "flex-end",
+        }}
+      >
         <IconButton
           edge="start"
           color="inherit"
@@ -68,7 +86,7 @@ const MobileNavBar = (props: MobileNavBarProps) => {
           sx={{
             mr: 2,
             display: {
-              xs: "block",
+              xs: "flex",
             },
           }}
         >

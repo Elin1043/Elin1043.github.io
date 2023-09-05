@@ -24,15 +24,38 @@ type DesktopNavBarProps = {
 const DesktopNavBar = (props: DesktopNavBarProps) => {
   const { menuValue, handleChange, handleModeUpdate, menuItems } = props;
   return (
-    <Grid container alignItems={"center"}>
+    <Grid
+      container
+      alignItems={"center"}
+      sx={{
+        position: "sticky",
+        zIndex: "1000",
+        top: "0",
+        backgroundColor: (theme) => theme.palette.background.default,
+      }}
+    >
       <Grid item xs={2}>
-        <Typography variant="body1" sx={{ display: "flex", fontWeight: "700" }}>
-          <SportsEsportsIcon
-            fontSize="medium"
-            sx={{ color: (theme) => theme.palette.secondary.main }}
-          ></SportsEsportsIcon>{" "}
-          Elin Forsberg
-        </Typography>
+        <Link
+          to={"home"}
+          spy={true}
+          smooth={true}
+          offset={-64}
+          duration={500}
+          key={"homeButton"}
+        >
+          <Button sx={{ textTransform: "initial" }}>
+            <Typography
+              variant="body1"
+              sx={{ display: "flex", fontWeight: "700" }}
+            >
+              <SportsEsportsIcon
+                fontSize="medium"
+                sx={{ color: (theme) => theme.palette.secondary.main }}
+              ></SportsEsportsIcon>{" "}
+              Elin Forsberg
+            </Typography>
+          </Button>
+        </Link>
       </Grid>
       <Grid item xs={9}>
         <Box
