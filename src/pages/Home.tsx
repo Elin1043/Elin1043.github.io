@@ -1,11 +1,4 @@
-import {
-  Box,
-  Button,
-  Container,
-  Grid,
-  Typography,
-  useMediaQuery,
-} from "@mui/material";
+import { Box, Button, Grid, Typography, useMediaQuery } from "@mui/material";
 import image from "../assets/headpic.jpg";
 import {
   Theme,
@@ -13,11 +6,10 @@ import {
   responsiveFontSizes,
   useTheme,
 } from "@mui/material/styles";
-import App from "../App";
 import Projects from "./Projects";
 import About from "./About";
 import Contact from "./Contact";
-import CV from "./CV";
+import { Link } from "react-scroll";
 
 // Define your custom theme
 let responsiveTheme = createTheme();
@@ -69,13 +61,23 @@ function Home(props: HomeProps) {
                 </Typography>
               </Grid>
               <Grid item xs={12}>
-                <Button
-                  variant="outlined"
-                  onClick={() => props.handleChangeValue("Contact")}
-                  sx={{ borderColor: theme.palette.secondary.main }}
+                <Link
+                  to={"contact"}
+                  spy={true}
+                  smooth={true}
+                  offset={-64}
+                  duration={500}
+                  key={"contactButton"}
                 >
-                  <span style={{ textTransform: "initial" }}>Contact me!</span>
-                </Button>
+                  <Button
+                    variant="outlined"
+                    sx={{ borderColor: theme.palette.secondary.main }}
+                  >
+                    <span style={{ textTransform: "initial" }}>
+                      Contact me!
+                    </span>
+                  </Button>
+                </Link>
               </Grid>
             </Grid>
           </Grid>
