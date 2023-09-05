@@ -1,17 +1,25 @@
 {
   "files": {
-    "main.css": "/static/css/main.cb0281c8.css",
-    "main.js": "/static/js/main.40e07dc7.js",
+    "main.css": "/static/css/main.f93d77bf.css",
+    "main.js": "/static/js/main.3e370c50.js",
     "static/js/787.69ce51e1.chunk.js": "/static/js/787.69ce51e1.chunk.js",
     "static/media/headpic.jpg": "/static/media/headpic.66e5d09cd18b24a74e87.jpg",
-    "static/media/cv.pdf": "/static/media/cv.a9dfea2ebbe9e293c461.pdf",
+    "static/media/kitty.jpg": "/static/media/kitty.bade641f62d9c47703b8.jpg",
+    "static/media/javaLogo.png": "/static/media/javaLogo.09f5a80c7f42f1c28839.png",
+    "static/media/javaScriptLogo.png": "/static/media/javaScriptLogo.ec1c0379d0e87cc38946.png",
+    "static/media/htmlIcon.png": "/static/media/htmlIcon.a92a549a591f4acb527a.png",
+    "static/media/cssIcon.png": "/static/media/cssIcon.02d225c7df0b28341d8d.png",
+    "static/media/gitLogo.png": "/static/media/gitLogo.82a2a3af04b3e67185a0.png",
+    "static/media/pythonLogo.png": "/static/media/pythonLogo.632369df831d16241b59.png",
+    "static/media/typeScriptLogo.png": "/static/media/typeScriptLogo.8e08c2165d60d7ca62a9.png",
+    "static/media/reactIcon.png": "/static/media/reactIcon.ccb97f287d4d51b10a6b.png",
     "index.html": "/index.html",
-    "main.cb0281c8.css.map": "/static/css/main.cb0281c8.css.map",
-    "main.40e07dc7.js.map": "/static/js/main.40e07dc7.js.map",
+    "main.f93d77bf.css.map": "/static/css/main.f93d77bf.css.map",
+    "main.3e370c50.js.map": "/static/js/main.3e370c50.js.map",
     "787.69ce51e1.chunk.js.map": "/static/js/787.69ce51e1.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.cb0281c8.css",
-    "static/js/main.40e07dc7.js"
+    "static/css/main.f93d77bf.css",
+    "static/js/main.3e370c50.js"
   ]
 }
