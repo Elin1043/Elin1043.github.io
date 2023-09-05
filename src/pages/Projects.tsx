@@ -17,6 +17,7 @@ const Projects = (props: ProjectsProps) => {
       xs={12}
       sm={6}
       md={4}
+      key={projectItem.id}
       sx={{ display: "flex", justifyContent: "center" }}
     >
       <ProjectCard project={projectItem}></ProjectCard>
