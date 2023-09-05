@@ -1,5 +1,5 @@
-import { Divider, Grid } from "@mui/material";
-import { HashTag } from "../components/HelperFunctions";
+import { Box, Divider, Grid } from "@mui/material";
+import { HashTag, SlashTag } from "../components/HelperFunctions";
 
 import ProjectCard from "../components/Projects/ProjectCard";
 import { ProjectList } from "../Data/ProjectsList";
@@ -21,13 +21,13 @@ const Projects = (props: ProjectsProps) => {
     </Grid>
   ));
   return (
-    <>
-      <HashTag label={"projects"} textSize={32} withDivider={true}></HashTag>
+    <Box>
+      <SlashTag label={"Projects"} textSize={32} withDivider={true}></SlashTag>
 
       <Grid container spacing={2} sx={{ padding: "50px 0" }}>
         {projects}
       </Grid>
-    </>
+    </Box>
   );
 };
 

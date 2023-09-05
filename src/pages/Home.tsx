@@ -125,11 +125,11 @@ function Home(props: HomeProps) {
           </Grid>
         </Grid>
       </Box>
-      <div className="projects">
-        <Projects></Projects>
-      </div>
       <div className="about">
         <About></About>
+      </div>
+      <div className="projects">
+        <Projects></Projects>
       </div>
       <div className="contact">
         <Contact isSmallScreen={isSmScreen}></Contact>

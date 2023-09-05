@@ -7,6 +7,42 @@ type HashTagProps = {
 };
 export const HashTag = (props: HashTagProps) => {
   const { label, textSize, withDivider } = props;
+  return (
+    <SymbolInFrontOfText
+      symbol={"#"}
+      label={label}
+      textSize={textSize}
+      withDivider={withDivider}
+    ></SymbolInFrontOfText>
+  );
+};
+
+type SlashTagProps = {
+  label: string;
+  textSize: number;
+  withDivider: boolean;
+};
+export const SlashTag = (props: SlashTagProps) => {
+  const { label, textSize, withDivider } = props;
+  return (
+    <SymbolInFrontOfText
+      symbol={"/"}
+      label={label}
+      textSize={textSize}
+      withDivider={withDivider}
+    ></SymbolInFrontOfText>
+  );
+};
+
+type SymbolInFrontOfTextProps = {
+  symbol: string;
+  label: string;
+  textSize: number;
+  withDivider: boolean;
+};
+
+const SymbolInFrontOfText = (props: SymbolInFrontOfTextProps) => {
+  const { symbol, label, textSize, withDivider } = props;
   return withDivider ? (
     <Grid container>
       <Grid item xs={5} sm={3} md={2}>
@@ -17,7 +53,7 @@ export const HashTag = (props: HashTagProps) => {
               fontSize: textSize,
             }}
           >
-            #
+            {symbol}
           </Typography>
           <Typography sx={{ fontSize: textSize }}>{label}</Typography>
         </Container>

@@ -132,13 +132,14 @@ function App() {
       Path: "home",
     },
     {
-      Text: "Projects",
-      Path: "projects",
-    },
-    {
       Text: "About",
       Path: "about",
     },
+    {
+      Text: "Projects",
+      Path: "projects",
+    },
+
     {
       Text: "Contact",
       Path: "contact",
