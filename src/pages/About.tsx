@@ -299,16 +299,14 @@ const AboutMe: React.FC = () => {
         <Typography variant="body1" fontWeight={700}>
           👩‍💼Who am I?
         </Typography>
-        <Typography>
-          <ul>
-            <li>Always expresses my opinions and listens to others</li>
-            <li>Driven & ambitious</li>
-            <li>Some call me stubborn, I don't like to give up</li>
-            <li>Anime fan</li>
-            <li>Game nerd</li>
-            <li>Non-Coffee-drinker (crazy, I know)</li>
-          </ul>
-        </Typography>
+        <ul>
+          <li>Always expresses my opinions and listens to others</li>
+          <li>Driven & ambitious</li>
+          <li>Some call me stubborn, I don't like to give up</li>
+          <li>Anime fan</li>
+          <li>Game nerd</li>
+          <li>Non-Coffee-drinker (crazy, I know)</li>
+        </ul>
       </List>
     </Container>
   );
