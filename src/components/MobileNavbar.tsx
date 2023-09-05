@@ -1,5 +1,6 @@
 import {
   Box,
+  Button,
   Container,
   Drawer,
   FormControlLabel,
@@ -48,13 +49,27 @@ const MobileNavBar = (props: MobileNavBarProps) => {
       }}
     >
       <Grid item xs={6}>
-        <Typography variant="body1" sx={{ display: "flex", fontWeight: "700" }}>
-          <SportsEsportsIcon
-            fontSize="medium"
-            sx={{ color: (theme) => theme.palette.secondary.main }}
-          ></SportsEsportsIcon>{" "}
-          Elin Forsberg
-        </Typography>
+        <Link
+          to={"home"}
+          spy={true}
+          smooth={true}
+          offset={-64}
+          duration={500}
+          key={"homeButton"}
+        >
+          <Button sx={{ textTransform: "initial" }}>
+            <Typography
+              variant="body1"
+              sx={{ display: "flex", fontWeight: "700" }}
+            >
+              <SportsEsportsIcon
+                fontSize="medium"
+                sx={{ color: (theme) => theme.palette.secondary.main }}
+              ></SportsEsportsIcon>{" "}
+              Elin Forsberg
+            </Typography>
+          </Button>
+        </Link>
       </Grid>
       <Grid item xs={4} sx={{ display: "flex", justifyContent: "end" }}>
         <FormControlLabel
@@ -111,6 +126,7 @@ const MobileNavBar = (props: MobileNavBarProps) => {
                   to={item.Path.split(" ").join("")}
                   spy={true}
                   smooth={true}
+                  offset={-70}
                   duration={500}
                   key={item.Text}
                 >
