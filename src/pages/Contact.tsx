@@ -7,20 +7,16 @@ import EmailIcon from "@mui/icons-material/Email";
 import { ReactComponent as DiscordIcon } from "../assets/discord.svg";
 
 type ContactProps = {
-  onHomePage: boolean;
+  isSmallScreen: boolean;
 };
 
 function Contact(props: ContactProps) {
-  const { onHomePage } = props;
+  const { isSmallScreen } = props;
   return (
     <Container>
-      <HashTag
-        label={"contact"}
-        textSize={32}
-        withDivider={onHomePage}
-      ></HashTag>
+      <HashTag label={"contact"} textSize={32} withDivider={true}></HashTag>
       <Grid container sx={{ padding: "50px 0" }}>
-        <Grid item xs={6}>
+        <Grid item xs={12} sm={6}>
           <Typography variant="body1">
             Feel free to connect with me on LinkedIn! For any inquiries or
             collaboration opportunities, please don't hesitate to reach out to
@@ -29,38 +25,40 @@ function Contact(props: ContactProps) {
             programming.
           </Typography>
         </Grid>
-        <Grid item xs={4} display={"flex"} justifyContent={"end"}>
-          <Box>
-            <Grid container display={"flex"} justifyContent={"end"}>
-              <Grid item xs={12} display={"flex"}>
-                <LinkedInIcon
-                  sx={{ height: "32px", width: "32px" }}
-                ></LinkedInIcon>
-                <Typography>
-                  <a
-                    href="https://www.linkedin.com/in/elin-forsberg-sweden"
-                    target="_blank"
-                    style={{ color: "white" }}
-                  >
-                    LinkedIn
-                  </a>
-                </Typography>
-              </Grid>
-              <Grid item xs={12} display={"flex"}>
-                <EmailIcon sx={{ height: "32px", width: "32px" }}></EmailIcon>
-                <Typography>
-                  <a
-                    href="mailto:elinforsbergdev@gmail.com"
-                    style={{ color: "white" }}
-                  >
-                    elinforsbergdev@gmail.com
-                  </a>
-                </Typography>
-              </Grid>
+        <Grid item xs={12} sm={6} display={"flex"} justifyContent={"end"}>
+          <Grid
+            container
+            display={"flex"}
+            justifyContent={"center"}
+            sx={{ paddingTop: isSmallScreen ? "50px" : "0" }}
+          >
+            <Grid item xs={4} sm={12} display={"flex"}>
+              <LinkedInIcon
+                sx={{ height: "32px", width: "32px" }}
+              ></LinkedInIcon>
+              <Typography>
+                <a
+                  href="https://www.linkedin.com/in/elin-forsberg-sweden"
+                  target="_blank"
+                  style={{ color: "white" }}
+                >
+                  LinkedIn
+                </a>
+              </Typography>
             </Grid>
-          </Box>
+            <Grid item xs={8} sm={12} display={"flex"}>
+              <EmailIcon sx={{ height: "32px", width: "32px" }}></EmailIcon>
+              <Typography>
+                <a
+                  href="mailto:elinforsbergdev@gmail.com"
+                  style={{ color: "white" }}
+                >
+                  elinforsbergdev@gmail.com
+                </a>
+              </Typography>
+            </Grid>
+          </Grid>
         </Grid>
-        <Grid item xs={6}></Grid>
       </Grid>
     </Container>
   );

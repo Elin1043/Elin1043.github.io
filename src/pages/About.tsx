@@ -22,16 +22,12 @@ import PythonLogo from "../assets/SkillsImages/pythonLogo.png";
 import TypeScriptLogo from "../assets/SkillsImages/typeScriptLogo.png";
 import UnityLogo from "../assets/SkillsImages/unityLogo.png";
 
-type AboutProps = {
-  onHomePage: boolean;
-};
+type AboutProps = {};
 
 function About(props: AboutProps) {
-  const { onHomePage } = props;
-
   return (
     <Box sx={{ paddingTop: "20px" }}>
-      <HashTag label={"about"} textSize={32} withDivider={onHomePage}></HashTag>
+      <HashTag label={"about"} textSize={32} withDivider={true}></HashTag>
       <Box sx={{ padding: "50px 0" }}>
         <Grid
           container

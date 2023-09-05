@@ -126,13 +126,13 @@ function Home(props: HomeProps) {
         </Grid>
       </Box>
       <div className="projects">
-        <Projects onHomePage={true}></Projects>
+        <Projects></Projects>
       </div>
       <div className="about">
-        <About onHomePage={true}></About>
+        <About></About>
       </div>
       <div className="contact">
-        <Contact onHomePage={true}></Contact>
+        <Contact isSmallScreen={isSmScreen}></Contact>
       </div>
     </>
   );
