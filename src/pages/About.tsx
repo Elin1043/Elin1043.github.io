@@ -21,6 +21,7 @@ import MaterialDesignLogo from "../assets/SkillsImages/materialDesignLogo.png";
 import PythonLogo from "../assets/SkillsImages/pythonLogo.png";
 import TypeScriptLogo from "../assets/SkillsImages/typeScriptLogo.png";
 import UnityLogo from "../assets/SkillsImages/unityLogo.png";
+import profileImage from "../assets/femaleProfile.png";
 
 type AboutProps = {
   isSmallScreen: boolean;
@@ -29,7 +30,7 @@ type AboutProps = {
 function About(props: AboutProps) {
   const { isSmallScreen } = props;
   return (
-    <Box sx={{ padding: "20px" }}>
+    <Box sx={{ padding: "50px 0" }}>
       <SlashTag label={"About"} textSize={32} withDivider={true}></SlashTag>
       <Box sx={{ height: "100%", alignItems: "center", display: "flex" }}>
         <Grid
@@ -39,11 +40,32 @@ function About(props: AboutProps) {
             alignItems: "center",
           }}
         >
-          <Grid item xs={12}>
-            <AboutMe></AboutMe>
+          <Grid container>
+            <Grid item xs={12} md={6}>
+              <AboutMe></AboutMe>
+            </Grid>
+            <Grid
+              item
+              xs={12}
+              md={6}
+              sx={{
+                display: "flex",
+                alignItems: "center",
+                justifyContent: "center",
+              }}
+            >
+              <Box
+                component="img"
+                sx={{
+                  height: { xs: 200, md: 400 },
+                }}
+                src={profileImage}
+              />
+            </Grid>
           </Grid>
-          <Grid item xs={12}>
-            <SkillDisplay isSmallScreen={isSmallScreen}></SkillDisplay>
+
+          <Grid item xs={12} sx={{ padding: "20px 0" }}>
+            <SkillDisplay></SkillDisplay>
           </Grid>
         </Grid>
       </Box>
@@ -51,12 +73,9 @@ function About(props: AboutProps) {
   );
 }
 
-type SkillDisplayProps = {
-  isSmallScreen: boolean;
-};
+type SkillDisplayProps = {};
 
 const SkillDisplay = (props: SkillDisplayProps) => {
-  const { isSmallScreen } = props;
   const skills = SkillsList.map((skill) => (
     <SkillItemDisplay
       image={skill.image}
@@ -66,19 +85,19 @@ const SkillDisplay = (props: SkillDisplayProps) => {
   ));
 
   return (
-    <Container>
+    <Container sx={{ padding: "0px" }}>
       <Grid container textAlign={"center"} spacing={1}>
         <Grid item xs={12}>
           <Grid container>
-            <Grid item xs={5} sx={{ margin: "auto 0" }}>
+            <Grid item xs={3} md={5} sx={{ margin: "auto 0" }}>
               <Divider
                 sx={{ borderColor: (theme) => theme.palette.secondary.main }}
               ></Divider>
             </Grid>
-            <Grid item xs={2}>
+            <Grid item xs={6} md={2}>
               <Typography variant="h2">Skilled in</Typography>
             </Grid>
-            <Grid item xs={5} sx={{ margin: "auto 0" }}>
+            <Grid item xs={3} md={5} sx={{ margin: "auto 0" }}>
               <Divider
                 sx={{ borderColor: (theme) => theme.palette.secondary.main }}
               ></Divider>

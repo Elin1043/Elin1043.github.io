@@ -1,5 +1,5 @@
 import { Box, Button, Grid, Typography, useMediaQuery } from "@mui/material";
-import image from "../assets/programmer.png";
+import programmerImage from "../assets/programmer.png";
 import {
   Theme,
   createTheme,
@@ -88,7 +88,7 @@ function Home(props: HomeProps) {
                 maxHeight: { xs: 250, md: 450 },
               }}
               alt="Image of Elin"
-              src={image}
+              src={programmerImage}
             />
             <Box
               sx={{
