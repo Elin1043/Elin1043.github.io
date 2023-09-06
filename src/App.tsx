@@ -159,7 +159,13 @@ function App() {
         }}
         elevation={0}
       >
-        <Container>
+        <Container
+          sx={{
+            "&.MuiContainer-root": {
+              maxWidth: "1600px",
+            },
+          }}
+        >
           {getIfPortraitMode() ? (
             <MobileNavBar
               handleChange={handleChangeValue}

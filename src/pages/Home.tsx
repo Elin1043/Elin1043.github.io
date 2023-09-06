@@ -1,5 +1,5 @@
 import { Box, Button, Grid, Typography, useMediaQuery } from "@mui/material";
-import image from "../assets/headpic.jpg";
+import image from "../assets/programmer.png";
 import {
   Theme,
   createTheme,
@@ -43,39 +43,39 @@ function Home(props: HomeProps) {
               }}
             >
               <Grid item xs={12}>
+                <Typography variant="h1" fontWeight={700}>
+                  Hello you!
+                </Typography>
                 <Typography variant="h1">
-                  Elin Forsberg is a{" "}
+                  My name is{" "}
+                  <span style={{ color: theme.palette.secondary.main }}>
+                    Elin Forsberg
+                  </span>{" "}
+                  and I am a passionate{" "}
                   <span style={{ color: theme.palette.secondary.main }}>
                     Game Developer
                   </span>{" "}
-                  and{" "}
+                  and
                   <span style={{ color: theme.palette.secondary.main }}>
+                    {" "}
                     Software Engineer
                   </span>
                 </Typography>
               </Grid>
               <Grid item xs={12}>
-                <Typography variant="h3">
-                  Has a bachelors degree in Software Engineering and is
-                  currently working as a Game Developer
-                </Typography>
-              </Grid>
-              <Grid item xs={12}>
                 <Link
-                  to={"contact"}
+                  to={"about"}
                   spy={true}
                   smooth={true}
                   offset={-64}
                   duration={500}
-                  key={"contactButton"}
+                  key={"aboutButton"}
                 >
                   <Button
                     variant="outlined"
                     sx={{ borderColor: theme.palette.secondary.main }}
                   >
-                    <span style={{ textTransform: "initial" }}>
-                      Contact me!
-                    </span>
+                    <span style={{ textTransform: "initial" }}>About me</span>
                   </Button>
                 </Link>
               </Grid>
@@ -85,7 +85,7 @@ function Home(props: HomeProps) {
             <Box
               component="img"
               sx={{
-                maxHeight: { xs: 250, md: 300 },
+                maxHeight: { xs: 250, md: 450 },
               }}
               alt="Image of Elin"
               src={image}
@@ -126,7 +126,7 @@ function Home(props: HomeProps) {
         </Grid>
       </Box>
       <div className="about">
-        <About></About>
+        <About isSmallScreen={isSmScreen}></About>
       </div>
       <div className="projects">
         <Projects></Projects>

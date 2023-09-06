@@ -43,13 +43,13 @@ const DesktopNavBar = (props: DesktopNavBarProps) => {
           duration={500}
           key={"homeButton"}
         >
-          <Button sx={{ textTransform: "initial" }}>
+          <Button sx={{ textTransform: "initial", padding: "0" }}>
             <Typography
-              variant="body1"
+              variant="h5"
               sx={{ display: "flex", fontWeight: "700" }}
             >
               <SportsEsportsIcon
-                fontSize="medium"
+                fontSize="large"
                 sx={{ color: (theme) => theme.palette.secondary.main }}
               ></SportsEsportsIcon>{" "}
               Elin Forsberg
@@ -60,7 +60,7 @@ const DesktopNavBar = (props: DesktopNavBarProps) => {
       <Grid item xs={9}>
         <Box
           sx={{
-            height: "48px",
+            height: "50px",
             display: "flex",
             justifyContent: "end",
           }}
@@ -88,7 +88,7 @@ const DesktopNavBar = (props: DesktopNavBarProps) => {
               >
                 <HashTag
                   label={item.Text}
-                  textSize={14}
+                  textSize={20}
                   withDivider={false}
                 ></HashTag>
               </Button>

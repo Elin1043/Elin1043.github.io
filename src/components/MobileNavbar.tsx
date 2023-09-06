@@ -57,7 +57,7 @@ const MobileNavBar = (props: MobileNavBarProps) => {
           duration={500}
           key={"homeButton"}
         >
-          <Button sx={{ textTransform: "initial" }}>
+          <Button sx={{ textTransform: "initial", padding: "0" }}>
             <Typography
               variant="body1"
               sx={{ display: "flex", fontWeight: "700" }}

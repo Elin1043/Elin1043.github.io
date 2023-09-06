@@ -22,11 +22,14 @@ import PythonLogo from "../assets/SkillsImages/pythonLogo.png";
 import TypeScriptLogo from "../assets/SkillsImages/typeScriptLogo.png";
 import UnityLogo from "../assets/SkillsImages/unityLogo.png";
 
-type AboutProps = {};
+type AboutProps = {
+  isSmallScreen: boolean;
+};
 
 function About(props: AboutProps) {
+  const { isSmallScreen } = props;
   return (
-    <Box sx={{ paddingTop: "20px"}}>
+    <Box sx={{ paddingTop: "20px" }}>
       <SlashTag label={"About"} textSize={32} withDivider={true}></SlashTag>
       <Box sx={{ height: "100%", alignItems: "center", display: "flex" }}>
         <Grid
@@ -36,11 +39,11 @@ function About(props: AboutProps) {
             alignItems: "center",
           }}
         >
-          <Grid item xs={12} sm={6}>
+          <Grid item xs={12}>
             <AboutMe></AboutMe>
           </Grid>
-          <Grid item xs={12} sm={6}>
-            <SkillDisplay></SkillDisplay>
+          <Grid item xs={12}>
+            <SkillDisplay isSmallScreen={isSmallScreen}></SkillDisplay>
           </Grid>
         </Grid>
       </Box>
@@ -48,58 +51,18 @@ function About(props: AboutProps) {
   );
 }
 
-const SkillDisplay = () => {
-  const webSkills = SkillsList.filter((skill) => skill.category === "Web");
+type SkillDisplayProps = {
+  isSmallScreen: boolean;
+};
 
-  const webSkillItems = webSkills.map((skill) => (
-    <Grid
-      item
-      key={skill.text}
-      xs={4}
-      sx={{ display: "flex", justifyContent: "center" }}
-    >
-      <SkillItemDisplay
-        image={skill.image}
-        text={skill.text}
-        category={skill.category}
-      />
-    </Grid>
-  ));
-
-  const programmingSkills = SkillsList.filter(
-    (skill) => skill.category === "Language"
-  );
-
-  const programmingSkillsItems = programmingSkills.map((skill) => (
-    <Grid
-      item
-      key={skill.text}
-      xs={4}
-      sx={{ display: "flex", justifyContent: "center" }}
-    >
-      <SkillItemDisplay
-        image={skill.image}
-        text={skill.text}
-        category={skill.category}
-      />
-    </Grid>
-  ));
-
-  const tools = SkillsList.filter((skill) => skill.category === "Tool");
-
-  const toolItems = tools.map((skill) => (
-    <Grid
-      item
-      key={skill.text}
-      xs={4}
-      sx={{ display: "flex", justifyContent: "center" }}
-    >
-      <SkillItemDisplay
-        image={skill.image}
-        text={skill.text}
-        category={skill.category}
-      />
-    </Grid>
+const SkillDisplay = (props: SkillDisplayProps) => {
+  const { isSmallScreen } = props;
+  const skills = SkillsList.map((skill) => (
+    <SkillItemDisplay
+      image={skill.image}
+      text={skill.text}
+      category={skill.category}
+    />
   ));
 
   return (
@@ -107,63 +70,21 @@ const SkillDisplay = () => {
       <Grid container textAlign={"center"} spacing={1}>
         <Grid item xs={12}>
           <Grid container>
-            <Grid item xs={4} sx={{ margin: "auto 0" }}>
-              <Divider
-                sx={{ borderColor: (theme) => theme.palette.secondary.main }}
-              ></Divider>
-            </Grid>
-            <Grid item xs={4}>
-              <Typography variant="h6">Web development</Typography>
-            </Grid>
-            <Grid item xs={4} sx={{ margin: "auto 0" }}>
-              <Divider
-                sx={{ borderColor: (theme) => theme.palette.secondary.main }}
-              ></Divider>
+            <Grid item xs={12}>
+              <Typography variant="h1">Skilled in</Typography>
             </Grid>
           </Grid>
 
-          <Grid container sx={{ padding: "16px 0" }} spacing={2}>
-            {webSkillItems}
-          </Grid>
-        </Grid>
-        <Grid item xs={12}>
-          <Grid container>
-            <Grid item xs={3} sx={{ margin: "auto 0" }}>
-              <Divider
-                sx={{ borderColor: (theme) => theme.palette.secondary.main }}
-              ></Divider>
-            </Grid>
-            <Grid item xs={6}>
-              <Typography variant="h6">Programming Languages</Typography>
-            </Grid>
-            <Grid item xs={3} sx={{ margin: "auto 0" }}>
-              <Divider
-                sx={{ borderColor: (theme) => theme.palette.secondary.main }}
-              ></Divider>
-            </Grid>
-          </Grid>
-          <Grid container sx={{ padding: "16px 0" }} spacing={2}>
-            {programmingSkillsItems}
-          </Grid>
-        </Grid>
-        <Grid item xs={12}>
-          <Grid container>
-            <Grid item xs={5} sx={{ margin: "auto 0" }}>
-              <Divider
-                sx={{ borderColor: (theme) => theme.palette.secondary.main }}
-              ></Divider>
-            </Grid>
-            <Grid item xs={2}>
-              <Typography variant="h6">Tools</Typography>
-            </Grid>
-            <Grid item xs={5} sx={{ margin: "auto 0" }}>
-              <Divider
-                sx={{ borderColor: (theme) => theme.palette.secondary.main }}
-              ></Divider>
-            </Grid>
-          </Grid>
-          <Grid container sx={{ padding: "16px 0" }} spacing={2}>
-            {toolItems}
+          <Grid
+            container
+            sx={{
+              padding: "16px 0",
+              display: "flex",
+              justifyContent: "center",
+            }}
+            spacing={5}
+          >
+            {skills}
           </Grid>
         </Grid>
       </Grid>
@@ -174,15 +95,15 @@ const SkillDisplay = () => {
 const SkillItemDisplay = (props: SkillItem) => {
   const { image, text } = props;
   return (
-    <Grid item>
+    <Grid item xs={4} md={3}>
       <Box
         component="img"
         sx={{
-          maxHeight: { xs: 30, md: 40 },
+          height: { xs: 40, md: 50 },
         }}
         src={image}
       />
-      <Typography>{text}</Typography>
+      <Typography variant="h6">{text}</Typography>
     </Grid>
   );
 };
@@ -260,7 +181,7 @@ const AboutMe: React.FC = () => {
   const theme = useTheme();
   return (
     <Container sx={{ padding: "16px" }}>
-      <Typography variant="h6">
+      <Typography variant="h5">
         👋 Hi there, I’m Elin Forsberg, a young{" "}
         <span style={{ color: theme.palette.secondary.main }}>
           Game Developer
@@ -272,12 +193,12 @@ const AboutMe: React.FC = () => {
         from Sweden 🇸🇪🎮💻
       </Typography>
       <List>
-        <Typography variant="body1" fontWeight={700}>
+        <Typography variant="h6" fontWeight={700}>
           {" "}
           👩‍💻As a professional:
         </Typography>
         <ListItem>
-          <Typography variant="body1">
+          <Typography variant="h6">
             I'm a driven go-getter who knows how to get things done. My passion
             for learning shines through in both game development and
             programming. My education in Software Engineering equips me with a
@@ -292,16 +213,22 @@ const AboutMe: React.FC = () => {
         </ListItem>
       </List>
       <List>
-        <Typography variant="body1" fontWeight={700}>
+        <Typography variant="h6" fontWeight={700}>
           👩‍💼Who am I?
         </Typography>
         <ul>
-          <li>Always expresses my opinions and listens to others</li>
-          <li>Driven & ambitious</li>
-          <li>Some call me stubborn, I don't like to give up</li>
-          <li>Anime fan</li>
-          <li>Game nerd</li>
-          <li>Non-Coffee-drinker (crazy, I know)</li>
+          <li style={{ fontSize: "20px" }}>
+            Always expresses my opinions and listens to others
+          </li>
+          <li style={{ fontSize: "20px" }}>Driven & ambitious</li>
+          <li style={{ fontSize: "20px" }}>
+            Some call me stubborn, I don't like to give up
+          </li>
+          <li style={{ fontSize: "20px" }}>Anime fan</li>
+          <li style={{ fontSize: "20px" }}>Game nerd</li>
+          <li style={{ fontSize: "20px" }}>
+            Non-Coffee-drinker (crazy, I know)
+          </li>
         </ul>
       </List>
     </Container>
