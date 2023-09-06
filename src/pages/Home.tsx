@@ -129,7 +129,7 @@ function Home(props: HomeProps) {
         <About isSmallScreen={isSmScreen}></About>
       </div>
       <div className="projects">
-        <Projects></Projects>
+        <Projects isSmallScreen={isSmScreen}></Projects>
       </div>
       <div className="contact">
         <Contact isSmallScreen={isSmScreen}></Contact>

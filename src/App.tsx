@@ -31,6 +31,7 @@ function App() {
               mode: "dark",
               primary: {
                 main: "#D5D8DD",
+                dark: "#121417",
               },
               secondary: {
                 main: "#1AAEFF",

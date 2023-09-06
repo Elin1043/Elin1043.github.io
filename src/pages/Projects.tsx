@@ -4,7 +4,9 @@ import { HashTag, SlashTag } from "../components/HelperFunctions";
 import ProjectCard from "../components/Projects/ProjectCard";
 import { ProjectList } from "../Data/ProjectsList";
 
-type ProjectsProps = {};
+type ProjectsProps = {
+  isSmallScreen: boolean;
+};
 
 const Projects = (props: ProjectsProps) => {
   const projectList = ProjectList();
@@ -13,18 +15,21 @@ const Projects = (props: ProjectsProps) => {
       item
       xs={12}
       sm={6}
-      md={4}
+      md={6}
       key={projectItem.id}
       sx={{ display: "flex", justifyContent: "center" }}
     >
-      <ProjectCard project={projectItem}></ProjectCard>
+      <ProjectCard
+        project={projectItem}
+        isSmallScreen={props.isSmallScreen}
+      ></ProjectCard>
     </Grid>
   ));
   return (
     <Box>
       <SlashTag label={"Projects"} textSize={32} withDivider={true}></SlashTag>
 
-      <Grid container spacing={2} sx={{ padding: "50px 0" }}>
+      <Grid container spacing={5} sx={{ padding: "50px 0" }}>
         {projects}
       </Grid>
     </Box>

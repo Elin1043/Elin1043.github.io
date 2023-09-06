@@ -34,7 +34,7 @@ function Contact(props: ContactProps) {
                 <LinkedInIcon
                   sx={{ height: "32px", width: "32px" }}
                 ></LinkedInIcon>
-                <Typography variant="h5">
+                <Typography variant={isSmallScreen ? "body1" : "h5"}>
                   <a
                     href="https://www.linkedin.com/in/elin-forsberg-sweden"
                     target="_blank"
@@ -46,7 +46,7 @@ function Contact(props: ContactProps) {
               </Grid>
               <Grid item xs={8} sm={8} display={"flex"}>
                 <EmailIcon sx={{ height: "32px", width: "32px" }}></EmailIcon>
-                <Typography variant="h5">
+                <Typography variant={isSmallScreen ? "body1" : "h5"} >
                   <a
                     href="mailto:elinforsbergdev@gmail.com"
                     style={{ color: "white" }}
