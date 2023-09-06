@@ -95,7 +95,7 @@ const SkillDisplay = (props: SkillDisplayProps) => {
               ></Divider>
             </Grid>
             <Grid item xs={6} md={2}>
-              <Typography variant="h2">Skilled in</Typography>
+              <Typography variant="h1">Skilled in</Typography>
             </Grid>
             <Grid item xs={3} md={5} sx={{ margin: "auto 0" }}>
               <Divider

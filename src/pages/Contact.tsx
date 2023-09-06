@@ -15,7 +15,7 @@ function Contact(props: ContactProps) {
       <Container>
         <Grid container sx={{ padding: "50px 0" }}>
           <Grid item xs={12} sm={8}>
-            <Typography variant="body1">
+            <Typography variant="h5">
               Feel free to connect with me on LinkedIn! For any inquiries or
               collaboration opportunities, please don't hesitate to reach out to
               me via email or LinkedIn. I look forward to connecting with fellow
@@ -34,7 +34,7 @@ function Contact(props: ContactProps) {
                 <LinkedInIcon
                   sx={{ height: "32px", width: "32px" }}
                 ></LinkedInIcon>
-                <Typography>
+                <Typography variant="h5">
                   <a
                     href="https://www.linkedin.com/in/elin-forsberg-sweden"
                     target="_blank"
@@ -46,7 +46,7 @@ function Contact(props: ContactProps) {
               </Grid>
               <Grid item xs={8} sm={8} display={"flex"}>
                 <EmailIcon sx={{ height: "32px", width: "32px" }}></EmailIcon>
-                <Typography>
+                <Typography variant="h5">
                   <a
                     href="mailto:elinforsbergdev@gmail.com"
                     style={{ color: "white" }}
