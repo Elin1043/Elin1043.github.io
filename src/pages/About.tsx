@@ -29,7 +29,7 @@ type AboutProps = {
 function About(props: AboutProps) {
   const { isSmallScreen } = props;
   return (
-    <Box sx={{ paddingTop: "20px" }}>
+    <Box sx={{ padding: "20px" }}>
       <SlashTag label={"About"} textSize={32} withDivider={true}></SlashTag>
       <Box sx={{ height: "100%", alignItems: "center", display: "flex" }}>
         <Grid
@@ -70,21 +70,31 @@ const SkillDisplay = (props: SkillDisplayProps) => {
       <Grid container textAlign={"center"} spacing={1}>
         <Grid item xs={12}>
           <Grid container>
-            <Grid item xs={12}>
-              <Typography variant="h1">Skilled in</Typography>
+            <Grid item xs={5} sx={{ margin: "auto 0" }}>
+              <Divider
+                sx={{ borderColor: (theme) => theme.palette.secondary.main }}
+              ></Divider>
             </Grid>
-          </Grid>
+            <Grid item xs={2}>
+              <Typography variant="h2">Skilled in</Typography>
+            </Grid>
+            <Grid item xs={5} sx={{ margin: "auto 0" }}>
+              <Divider
+                sx={{ borderColor: (theme) => theme.palette.secondary.main }}
+              ></Divider>
+            </Grid>
 
-          <Grid
-            container
-            sx={{
-              padding: "16px 0",
-              display: "flex",
-              justifyContent: "center",
-            }}
-            spacing={5}
-          >
-            {skills}
+            <Grid
+              container
+              sx={{
+                padding: "16px 0",
+                display: "flex",
+                justifyContent: "center",
+              }}
+              spacing={5}
+            >
+              {skills}
+            </Grid>
           </Grid>
         </Grid>
       </Grid>
