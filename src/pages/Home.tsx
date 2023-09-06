@@ -44,7 +44,7 @@ function Home(props: HomeProps) {
             >
               <Grid item xs={12}>
                 <Typography variant="h1" fontWeight={700}>
-                  Hello you!
+                  Hello!
                 </Typography>
                 <Typography variant="h1">
                   My name is{" "}

@@ -10,9 +10,14 @@ type ContactProps = {
 function Contact(props: ContactProps) {
   const { isSmallScreen } = props;
   return (
-    <Box sx={{ paddingTop: "50px" }}>
+    <Box
+      sx={{
+        paddingTop: "50px",
+        height: "500px",
+      }}
+    >
       <SlashTag label={"Contact"} textSize={32} withDivider={true}></SlashTag>
-      <Container>
+      <Container sx={{ height: "100%", display: "flex", alignItems: "center" }}>
         <Grid container sx={{ padding: "50px 0" }}>
           <Grid item xs={12} sm={8}>
             <Typography variant="h5">
@@ -46,7 +51,7 @@ function Contact(props: ContactProps) {
               </Grid>
               <Grid item xs={8} sm={8} display={"flex"}>
                 <EmailIcon sx={{ height: "32px", width: "32px" }}></EmailIcon>
-                <Typography variant={isSmallScreen ? "body1" : "h5"} >
+                <Typography variant={isSmallScreen ? "body1" : "h5"}>
                   <a
                     href="mailto:elinforsbergdev@gmail.com"
                     style={{ color: "white" }}

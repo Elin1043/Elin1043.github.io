@@ -176,7 +176,7 @@ const SkillsList = [
   },
   {
     image: GitLogo,
-    text: "Git",
+    text: "GitHub",
     category: "Tool",
   },
   {
@@ -223,7 +223,6 @@ const AboutMe: React.FC = () => {
       </Typography>
       <List>
         <Typography variant="h6" fontWeight={700}>
-          {" "}
           👩‍💻As a professional:
         </Typography>
         <ListItem>
@@ -233,11 +232,15 @@ const AboutMe: React.FC = () => {
             programming. My education in Software Engineering equips me with a
             deep understanding of programming and coding principles, providing a
             strong foundation to develop software and games of the highest
-            quality. Whether it's tackling complex challenges or working
-            collaboratively with my team, I thrive on the excitement of
-            problem-solving. Outside work hours, I actively explore various game
-            development and programming techniques and continually expand my
-            knowledge.
+            quality.
+          </Typography>
+        </ListItem>
+        <ListItem>
+          <Typography variant="h6">
+            Whether it's tackling complex challenges or working collaboratively
+            with my team, I thrive on the excitement of problem-solving. Outside
+            work hours, I actively explore various game development and
+            programming techniques and continually expand my knowledge.
           </Typography>
         </ListItem>
       </List>
@@ -245,18 +248,19 @@ const AboutMe: React.FC = () => {
         <Typography variant="h6" fontWeight={700}>
           👩‍💼Who am I?
         </Typography>
+
         <ul>
           <li style={{ fontSize: "20px" }}>
-            Always expresses my opinions and listens to others
+            I always expresses my opinions and listens to others
           </li>
-          <li style={{ fontSize: "20px" }}>Driven & ambitious</li>
+          <li style={{ fontSize: "20px" }}>I am driven & ambitious</li>
           <li style={{ fontSize: "20px" }}>
             Some call me stubborn, I don't like to give up
           </li>
-          <li style={{ fontSize: "20px" }}>Anime fan</li>
-          <li style={{ fontSize: "20px" }}>Game nerd</li>
+          <li style={{ fontSize: "20px" }}>I am an anime fan</li>
+          <li style={{ fontSize: "20px" }}>I am a gamer</li>
           <li style={{ fontSize: "20px" }}>
-            Non-Coffee-drinker (crazy, I know)
+            I am a non-coffee-drinker (crazy, I know)
           </li>
         </ul>
       </List>

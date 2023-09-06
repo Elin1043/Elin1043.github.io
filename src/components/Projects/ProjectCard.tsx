@@ -24,6 +24,7 @@ const ProjectCard = (props: ProjectCardProps) => {
         width: isSmallScreen ? "350px" : "500px",
         textAlign: "center",
         backgroundColor: (theme) => theme.palette.primary.dark,
+        boxShadow: "5px 5px 10px 0px rgba(0,0,0,0.75)",
       }}
     >
       <Box
