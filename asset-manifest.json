@@ -1,14 +1,18 @@
 {
   "files": {
     "main.css": "/static/css/main.f93d77bf.css",
-    "main.js": "/static/js/main.52c1c2ec.js",
+    "main.js": "/static/js/main.02f341e0.js",
     "static/js/787.69ce51e1.chunk.js": "/static/js/787.69ce51e1.chunk.js",
+    "static/media/ChalmersDefense.png": "/static/media/ChalmersDefense.d0180780540b165ba71b.png",
+    "static/media/CleverFox.jpg": "/static/media/CleverFox.b261f05e58605060b8f8.jpg",
     "static/media/gitLogo.png": "/static/media/gitLogo.0d00baba6164055dbb22.png",
+    "static/media/ExoExplorer.jpg": "/static/media/ExoExplorer.0d722bcd3b339d9b0ab7.jpg",
+    "static/media/WeAreAlive.jpg": "/static/media/WeAreAlive.bcc8821fee40338a520c.jpg",
+    "static/media/Portfolio.jpg": "/static/media/Portfolio.6cc8b714a9f05eafc044.jpg",
     "static/media/femaleProfile.png": "/static/media/femaleProfile.420361b7aa838ba13283.png",
     "static/media/programmer.png": "/static/media/programmer.a620ce6146f84860ab0b.png",
     "static/media/javaLogo.png": "/static/media/javaLogo.09f5a80c7f42f1c28839.png",
     "static/media/javaScriptLogo.png": "/static/media/javaScriptLogo.ec1c0379d0e87cc38946.png",
-    "static/media/noImage.png": "/static/media/noImage.8474e1becdfcbe0df2c8.png",
     "static/media/htmlIcon.png": "/static/media/htmlIcon.a92a549a591f4acb527a.png",
     "static/media/cssIcon.png": "/static/media/cssIcon.02d225c7df0b28341d8d.png",
     "static/media/pythonLogo.png": "/static/media/pythonLogo.632369df831d16241b59.png",
@@ -16,11 +20,11 @@
     "static/media/reactIcon.png": "/static/media/reactIcon.ccb97f287d4d51b10a6b.png",
     "index.html": "/index.html",
     "main.f93d77bf.css.map": "/static/css/main.f93d77bf.css.map",
-    "main.52c1c2ec.js.map": "/static/js/main.52c1c2ec.js.map",
+    "main.02f341e0.js.map": "/static/js/main.02f341e0.js.map",
     "787.69ce51e1.chunk.js.map": "/static/js/787.69ce51e1.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.f93d77bf.css",
-    "static/js/main.52c1c2ec.js"
+    "static/js/main.02f341e0.js"
   ]
 }
