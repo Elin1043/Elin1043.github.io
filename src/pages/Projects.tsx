@@ -1,5 +1,5 @@
-import { Box, Divider, Grid } from "@mui/material";
-import { HashTag, SlashTag } from "../components/HelperFunctions";
+import { Box, Grid } from "@mui/material";
+import { SlashTag } from "../components/HelperFunctions";
 
 import ProjectCard from "../components/Projects/ProjectCard";
 import { ProjectList } from "../Data/ProjectsList";

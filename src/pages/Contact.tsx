@@ -1,5 +1,5 @@
 import { Box, Container, Grid, Typography } from "@mui/material";
-import { HashTag, SlashTag } from "../components/HelperFunctions";
+import { SlashTag } from "../components/HelperFunctions";
 import LinkedInIcon from "@mui/icons-material/LinkedIn";
 import EmailIcon from "@mui/icons-material/Email";
 

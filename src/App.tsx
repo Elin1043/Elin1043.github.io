@@ -7,11 +7,7 @@ import {
   createTheme,
 } from "@mui/material";
 import { useEffect, useState } from "react";
-import About from "./pages/About";
-import Contact from "./pages/Contact";
-import CV from "./pages/CV";
 import Home from "./pages/Home";
-import Projects from "./pages/Projects";
 import React from "react";
 import { MenuItem } from "./components/MenuItem";
 import DesktopNavBar from "./components/DesktopNavBar";

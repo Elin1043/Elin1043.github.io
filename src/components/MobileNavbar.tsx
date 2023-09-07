@@ -1,7 +1,6 @@
 import {
   Box,
   Button,
-  Container,
   Drawer,
   FormControlLabel,
   Grid,
@@ -13,7 +12,6 @@ import {
 import SportsEsportsIcon from "@mui/icons-material/SportsEsports";
 import { MenuItem } from "./MenuItem";
 import { useState } from "react";
-import Divider from "@mui/material/Divider";
 import ListItemButton from "@mui/material/ListItemButton";
 import ListItemText from "@mui/material/ListItemText";
 import MenuIcon from "@mui/icons-material/Menu";

@@ -71,19 +71,25 @@ const ProjectCard = (props: ProjectCardProps) => {
             </Button>
           </Grid>
           <Grid item>
-            <Button
-              variant="outlined"
-              sx={{
-                margin: "10px 0",
-                textTransform: "initial",
-                borderRadius: "50px",
-                borderColor: (theme) => theme.palette.secondary.main,
-              }}
+            <a
+              href={project.githubLink}
+              target="_blank"
+              style={{ color: "white" }}
             >
-              <Typography variant="body1" fontWeight={700}>
-                Github
-              </Typography>
-            </Button>
+              <Button
+                variant="outlined"
+                sx={{
+                  margin: "10px 0",
+                  textTransform: "initial",
+                  borderRadius: "50px",
+                  borderColor: (theme) => theme.palette.secondary.main,
+                }}
+              >
+                <Typography variant="body1" fontWeight={700}>
+                  Github
+                </Typography>
+              </Button>
+            </a>
           </Grid>
         </Grid>
       </Container>

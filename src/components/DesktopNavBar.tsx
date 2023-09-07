@@ -4,8 +4,6 @@ import {
   FormControlLabel,
   Grid,
   Switch,
-  Tab,
-  Tabs,
   Typography,
   styled,
 } from "@mui/material";

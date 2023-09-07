@@ -3,5 +3,6 @@ export type ProjectItem = {
   projectName: string;
   projectDescription: string;
   projectLink: string;
+  githubLink: string;
   skillsAndTools: string;
 };

@@ -8,7 +8,7 @@ import {
   Typography,
   useTheme,
 } from "@mui/material";
-import { HashTag, SlashTag } from "../components/HelperFunctions";
+import { SlashTag } from "../components/HelperFunctions";
 import ReactLogo from "../assets/SkillsImages/reactIcon.png";
 import CSharpLogo from "../assets/SkillsImages/c#Logo.png";
 import CssLogo from "../assets/SkillsImages/cssIcon.png";
