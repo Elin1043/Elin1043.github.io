@@ -21,7 +21,7 @@ const ProjectCard = (props: ProjectCardProps) => {
     <Card
       sx={{
         minHeight: "500px",
-        width: isSmallScreen ? "350px" : "500px",
+        width: isSmallScreen ? "350px" : "600px",
         textAlign: "center",
         backgroundColor: (theme) => theme.palette.primary.dark,
         boxShadow: "5px 5px 10px 0px rgba(0,0,0,0.75)",
@@ -31,9 +31,12 @@ const ProjectCard = (props: ProjectCardProps) => {
         component="img"
         sx={{
           maxHeight: { xs: 300, md: 300 },
-          paddingTop: "10px",
+          maxWidth: "100%",
+          alignContent: "center",
+          display: "block", // Remove any extra whitespace around the image
+          margin: "auto", // Center the image horizontally (optional)
         }}
-        alt="Image of kitty"
+        alt="Image of project"
         src={project.image}
       />
 
