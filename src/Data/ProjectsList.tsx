@@ -36,7 +36,7 @@ export const ProjectList = () => [
     image: image,
     projectName: "Listiga Räven! / Clever Fox!",
     projectDescription:
-      "A 2D learning game for kids. Consists of different minigames teaching kids about math, words and creating music. Also consists of a memory game and a weather game where the kids have to dress a fox depending on real time weather. We used a weather API here to show the realtime weather for the player in their location.projectLink:",
+      "A 2D learning game for kids. Consists of different minigames teaching kids about math, words and creating music. Also consists of a memory game and a weather game where the kids have to dress a fox depending on real time weather. We used a weather API here to show the realtime weather for the player in their location",
     projectLink: "",
     githubLink: "https://github.com/Danilll01/DAT257-Group-Orup",
     skillsAndTools: "Unity, C#",

@@ -48,7 +48,7 @@ const ProjectCard = (props: ProjectCardProps) => {
             </Grid>
           ))}
         </Grid>
-        <Typography variant="h6">{project.projectDescription}</Typography>
+        <Typography variant="body1">{project.projectDescription}</Typography>
 
         <Grid
           container
