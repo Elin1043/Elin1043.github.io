@@ -13,8 +13,8 @@ export const ProjectList = () => [
     projectName: "Exo Explorer",
     projectDescription:
       "A procedurally generated space exploration simulation. This application has been designed to provide an immersive and dynamic space exploration experience, with a multitude of celestial bodies and ecosystems to explore.",
-    projectLink: "",
-    projectComponent: <></>,
+    projectLink: "/ExoExplorer",
+    projectComponent: <ExoExplorer />,
     githubLink: "https://github.com/Danilll01/Kandidatarbete2023",
     skillsAndTools: "Unity, C#",
   },
