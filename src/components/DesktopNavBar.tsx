@@ -11,6 +11,7 @@ import SportsEsportsIcon from "@mui/icons-material/SportsEsports";
 import { MenuItem } from "./MenuItem";
 import { Link } from "react-scroll";
 import { HashTag } from "./HelperFunctions";
+import { useNavigate } from "react-router-dom";
 
 type DesktopNavBarProps = {
   menuValue: string;
@@ -21,6 +22,7 @@ type DesktopNavBarProps = {
 
 const DesktopNavBar = (props: DesktopNavBarProps) => {
   const { menuValue, handleChange, handleModeUpdate, menuItems } = props;
+  const navigate = useNavigate();
   return (
     <Grid
       container
@@ -73,6 +75,9 @@ const DesktopNavBar = (props: DesktopNavBarProps) => {
               key={item.Text}
             >
               <Button
+                onClick={() =>
+                  navigate("/", { state: { targetId: item.Path } })
+                }
                 sx={{
                   minHeight: "48px",
                   pt: 0,

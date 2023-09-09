@@ -10,6 +10,8 @@ import Projects from "./Projects";
 import About from "./About";
 import Contact from "./Contact";
 import { Link } from "react-scroll";
+import { useLocation } from "react-router-dom";
+import { useEffect } from "react";
 
 // Define your custom theme
 let responsiveTheme = createTheme();
@@ -24,9 +26,19 @@ function Home(props: HomeProps) {
   const isSmScreen = useMediaQuery((responsiveTheme: Theme) =>
     responsiveTheme.breakpoints.down("sm")
   );
+  const { state } = useLocation();
+  const { targetId } = state || {};
+  useEffect(() => {
+    const el = document.getElementById(targetId);
+    if (el) {
+      el.scrollIntoView({
+        behavior: "smooth",
+      });
+    }
+  }, [targetId]);
   return (
     <>
-      <Box className="home" sx={{ height: "90vh" }}>
+      <Box id="home" sx={{ height: "90vh" }}>
         <Grid
           container
           sx={{
@@ -125,13 +137,13 @@ function Home(props: HomeProps) {
           </Grid>
         </Grid>
       </Box>
-      <div className="about">
+      <div id="about">
         <About isSmallScreen={isSmScreen}></About>
       </div>
-      <div className="projects">
+      <div id="projects">
         <Projects isSmallScreen={isSmScreen}></Projects>
       </div>
-      <div className="contact">
+      <div id="contact">
         <Contact isSmallScreen={isSmScreen}></Contact>
       </div>
     </>
