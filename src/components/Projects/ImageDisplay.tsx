@@ -67,9 +67,13 @@ const ImageListDisplay = (props: ImageListDisplayProps) => {
         open={open}
         onClose={handleClose}
         TransitionComponent={Slide}
-        maxWidth="md"
+        maxWidth="lg"
       >
-        <DialogContent>
+        <DialogContent
+          sx={{
+            backgroundColor: (theme) => theme.palette.background.default,
+          }}
+        >
           <Grid container>
             <Grid item xs={12} sx={{ textAlign: "end" }}>
               <IconButton
@@ -94,7 +98,7 @@ const ImageListDisplay = (props: ImageListDisplayProps) => {
                 <img
                   src={imageList[selectedImageIndex || 0]}
                   alt="Selected image"
-                  style={{ width: "100%", height: "100%" }}
+                  style={{ width: "800px", height: "450px" }}
                 />
               </Grid>
               <Grid item xs={1}>

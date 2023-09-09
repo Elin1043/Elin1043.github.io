@@ -4,14 +4,12 @@ import VideoPlayer from "./VideoPlayer";
 import ExoExplorerImage from "../../assets/ProjectImages/ExoExplorer.jpg";
 
 const images: string[] = [ExoExplorerImage];
-
-for (let i = 1; i <= 3; i++) {
+for (let i = 1; i <= 12; i++) {
   images.push(
     require(`../../assets/ProjectImages/ExoExplorer/ExoExplorer${i}.png`)
   );
 }
 type ExoExplorerProps = {};
-
 const ExoExplorer = (props: ExoExplorerProps) => {
   return (
     <Box
@@ -47,12 +45,11 @@ const ExoExplorer = (props: ExoExplorerProps) => {
         </Grid>
       </Grid>
 
-      <Grid
-        container
-        sx={{ display: "flex", alignItems: "center", paddingBottom: "20px" }}
-      >
+      <Grid container sx={{ padding: "20px" }}>
         <Grid item xs={2.5}>
-          <Typography variant="h2">Used skills:</Typography>
+          <Typography variant="h2" sx={{ paddingBottom: "0" }}>
+            Used skills:
+          </Typography>
           <Box sx={{ display: "flex", textAlign: "start" }}>
             <ul>
               <li style={{ fontSize: "20px" }}>Unity</li>
@@ -67,17 +64,18 @@ const ExoExplorer = (props: ExoExplorerProps) => {
           <VideoPlayer embedId={"dVtItZSd-88?si=c1yXwt692l43pUm_"} />
         </Grid>
         <Grid item xs={2.5}>
-          <Typography variant="h2">Key features:</Typography>
+          <Typography variant="h2" sx={{ paddingBottom: "0" }}>
+            Some techniques used:
+          </Typography>
           <Box sx={{ display: "flex", textAlign: "start" }}>
             <ul>
               <li style={{ fontSize: "20px" }}>
-                Procedural Solar System Generation
+                Procedural Content Generation
               </li>
-              <li style={{ fontSize: "20px" }}>Dynamic Ecosystems</li>
+              <li style={{ fontSize: "20px" }}>Procedural Noise Generation</li>
               <li style={{ fontSize: "20px" }}>Deterministic Generation</li>
-              <li style={{ fontSize: "20px" }}>
-                User Interface and Sound Design
-              </li>
+              <li style={{ fontSize: "20px" }}>Marching Cubes</li>
+              <li style={{ fontSize: "20px" }}>Chunk Culling</li>
             </ul>
           </Box>
         </Grid>
