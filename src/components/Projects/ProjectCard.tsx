@@ -8,6 +8,7 @@ import {
   useTheme,
 } from "@mui/material";
 import { ProjectItem } from "../../Types/ProjectsItem";
+import { useNavigate } from "react-router-dom";
 
 type ProjectCardProps = {
   project: ProjectItem;
@@ -17,6 +18,7 @@ type ProjectCardProps = {
 const ProjectCard = (props: ProjectCardProps) => {
   const { project, isSmallScreen } = props;
   const theme = useTheme();
+  const navigate = useNavigate();
   return (
     <Card
       sx={{
@@ -61,6 +63,7 @@ const ProjectCard = (props: ProjectCardProps) => {
           <Grid item>
             <Button
               variant="outlined"
+              onClick={() => navigate(project.projectLink)}
               sx={{
                 margin: "10px 0",
                 textTransform: "initial",

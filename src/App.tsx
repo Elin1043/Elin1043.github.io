@@ -3,6 +3,7 @@ import {
   Container,
   CssBaseline,
   Paper,
+  Switch,
   ThemeProvider,
   createTheme,
 } from "@mui/material";
@@ -12,6 +13,8 @@ import React from "react";
 import { MenuItem } from "./components/MenuItem";
 import DesktopNavBar from "./components/DesktopNavBar";
 import MobileNavBar from "./components/MobileNavbar";
+import { Route, Router, Routes, useNavigate } from "react-router-dom";
+import { ProjectList } from "./Data/ProjectsList";
 
 function App() {
   const [menuValue, setMenuValue] = useState("Home");
@@ -147,6 +150,8 @@ function App() {
     // set start path to /home
   }, []);
 
+  const navigate = useNavigate();
+
   return (
     <ThemeProvider theme={theme}>
       <CssBaseline />
@@ -178,7 +183,19 @@ function App() {
             ></DesktopNavBar>
           )}
 
-          <Home handleChangeValue={handleChangeValue}></Home>
+          <Routes>
+            <Route
+              path="/"
+              element={<Home handleChangeValue={handleChangeValue}></Home>}
+            />
+            {ProjectList().map((project) => (
+              <Route
+                path={project.projectLink}
+                element={project.projectComponent}
+              />
+            ))}
+            ;
+          </Routes>
         </Container>
       </Paper>
     </ThemeProvider>
