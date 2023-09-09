@@ -3,7 +3,6 @@ import {
   Container,
   CssBaseline,
   Paper,
-  Switch,
   ThemeProvider,
   createTheme,
 } from "@mui/material";
@@ -13,7 +12,7 @@ import React from "react";
 import { MenuItem } from "./components/MenuItem";
 import DesktopNavBar from "./components/DesktopNavBar";
 import MobileNavBar from "./components/MobileNavbar";
-import { Route, Router, Routes, useNavigate } from "react-router-dom";
+import { Route, Routes } from "react-router-dom";
 import { ProjectList } from "./Data/ProjectsList";
 
 function App() {
@@ -145,12 +144,6 @@ function App() {
       Path: "contact",
     },
   ];
-
-  useEffect(() => {
-    // set start path to /home
-  }, []);
-
-  const navigate = useNavigate();
 
   return (
     <ThemeProvider theme={theme}>

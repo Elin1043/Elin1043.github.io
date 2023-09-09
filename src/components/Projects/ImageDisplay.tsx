@@ -1,7 +1,6 @@
-import React, { useState } from "react";
+import { useState } from "react";
 import {
   Box,
-  Typography,
   ImageList,
   ImageListItem,
   Dialog,
@@ -60,8 +59,8 @@ const ImageListDisplay = (props: ImageListDisplayProps) => {
             loading="lazy"
             style={{
               cursor: "pointer",
-              width: "385px", 
-              height: "217px", 
+              width: "385px",
+              height: "217px",
               objectFit: "fill",
             }}
           />

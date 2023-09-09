@@ -19,6 +19,12 @@ const ProjectCard = (props: ProjectCardProps) => {
   const { project, isSmallScreen } = props;
   const theme = useTheme();
   const navigate = useNavigate();
+  const scrollToTop = () => {
+    window.scrollTo({
+      top: 0,
+      behavior: "smooth",
+    });
+  };
   return (
     <Card
       sx={{
@@ -63,7 +69,10 @@ const ProjectCard = (props: ProjectCardProps) => {
           <Grid item>
             <Button
               variant="outlined"
-              onClick={() => navigate(project.projectLink)}
+              onClick={() => {
+                navigate(project.projectLink);
+                scrollToTop();
+              }}
               sx={{
                 margin: "10px 0",
                 textTransform: "initial",

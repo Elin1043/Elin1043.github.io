@@ -4,7 +4,7 @@ import VideoPlayer from "./VideoPlayer";
 import ExoExplorerImage from "../../assets/ProjectImages/ExoExplorer.jpg";
 
 const images: string[] = [ExoExplorerImage];
-for (let i = 1; i <= 12; i++) {
+for (let i = 1; i <= 11; i++) {
   images.push(
     require(`../../assets/ProjectImages/ExoExplorer/ExoExplorer${i}.png`)
   );
