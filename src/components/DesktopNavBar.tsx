@@ -43,7 +43,10 @@ const DesktopNavBar = (props: DesktopNavBarProps) => {
           duration={500}
           key={"homeButton"}
         >
-          <Button sx={{ textTransform: "initial", padding: "0" }}>
+          <Button
+            onClick={() => navigate("/")}
+            sx={{ textTransform: "initial", padding: "0" }}
+          >
             <Typography
               variant="h5"
               sx={{ display: "flex", fontWeight: "700" }}

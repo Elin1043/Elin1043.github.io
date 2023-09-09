@@ -18,6 +18,7 @@ import MenuIcon from "@mui/icons-material/Menu";
 import CloseIcon from "@mui/icons-material/Close";
 import { HashTag } from "./HelperFunctions";
 import { Link } from "react-scroll";
+import { useNavigate } from "react-router-dom";
 
 type MobileNavBarProps = {
   handleChange: Function;
@@ -29,6 +30,7 @@ const MobileNavBar = (props: MobileNavBarProps) => {
   const { handleChange, handleModeUpdate, menuItems } = props;
 
   const [open, setState] = useState(false);
+  const navigate = useNavigate();
 
   const toggleDrawer =
     (open: boolean) => (event: React.SyntheticEvent<Element, Event>) => {
@@ -55,7 +57,10 @@ const MobileNavBar = (props: MobileNavBarProps) => {
           duration={500}
           key={"homeButton"}
         >
-          <Button sx={{ textTransform: "initial", padding: "0" }}>
+          <Button
+            onClick={() => navigate("/")}
+            sx={{ textTransform: "initial", padding: "0" }}
+          >
             <Typography
               variant="body1"
               sx={{ display: "flex", fontWeight: "700" }}
@@ -138,6 +143,9 @@ const MobileNavBar = (props: MobileNavBarProps) => {
                   >
                     <ListItemButton
                       key={item.Text}
+                      onClick={() =>
+                        navigate("/", { state: { targetId: item.Path } })
+                      }
                       style={{ alignItems: "center", display: "flex" }}
                     >
                       <ListItemText
