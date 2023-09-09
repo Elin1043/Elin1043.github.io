@@ -23,6 +23,12 @@ type DesktopNavBarProps = {
 const DesktopNavBar = (props: DesktopNavBarProps) => {
   const { menuValue, handleChange, handleModeUpdate, menuItems } = props;
   const navigate = useNavigate();
+  const scrollToTop = () => {
+    window.scrollTo({
+      top: 0,
+      behavior: "smooth",
+    });
+  };
   return (
     <Grid
       container
@@ -44,7 +50,10 @@ const DesktopNavBar = (props: DesktopNavBarProps) => {
           key={"homeButton"}
         >
           <Button
-            onClick={() => navigate("/")}
+            onClick={() => {
+              navigate("/");
+              scrollToTop();
+            }}
             sx={{ textTransform: "initial", padding: "0" }}
           >
             <Typography

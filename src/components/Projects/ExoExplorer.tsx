@@ -1,4 +1,4 @@
-import { Box, Grid, Typography } from "@mui/material";
+import { Box, Button, Grid, Typography } from "@mui/material";
 import ImageListDisplay from "./ImageDisplay";
 import VideoPlayer from "./VideoPlayer";
 import ExoExplorerImage from "../../assets/ProjectImages/ExoExplorer.jpg";
@@ -19,6 +19,25 @@ const ExoExplorer = (props: ExoExplorerProps) => {
       }}
     >
       <Typography variant="h1">Exo Explorer</Typography>
+      <a
+        href={"https://github.com/Danilll01/Kandidatarbete2023"}
+        target="_blank"
+        style={{ color: "white" }}
+      >
+        <Button
+          variant="outlined"
+          sx={{
+            margin: "10px 0",
+            textTransform: "initial",
+            borderRadius: "50px",
+            borderColor: (theme) => theme.palette.secondary.main,
+          }}
+        >
+          <Typography variant="body1" fontWeight={700}>
+            Github
+          </Typography>
+        </Button>
+      </a>
       <Grid container>
         <Grid item xs={6}>
           <Typography variant="h6" sx={{ margin: "20px" }}>
