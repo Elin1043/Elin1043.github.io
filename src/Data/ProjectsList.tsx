@@ -4,6 +4,7 @@ import exoExplorerImage from "../assets/ProjectImages/ExoExplorer.jpg";
 import chalmersDefenseImage from "../assets/ProjectImages/ChalmersDefense.png";
 import cleverFoxImage from "../assets/ProjectImages/CleverFox.jpg";
 import weAreAliveImage from "../assets/ProjectImages/WeAreAlive.jpg";
+import ExoExplorer from "../components/Projects/ExoExplorer";
 
 export const ProjectList = () => [
   {
@@ -13,7 +14,7 @@ export const ProjectList = () => [
     projectDescription:
       "A procedurally generated space exploration simulation. This application has been designed to provide an immersive and dynamic space exploration experience, with a multitude of celestial bodies and ecosystems to explore.",
     projectLink: "/ExoExplorer",
-    projectComponent: <></>,
+    projectComponent: <ExoExplorer />,
     githubLink: "https://github.com/Danilll01/Kandidatarbete2023",
     skillsAndTools: "Unity, C#",
   },
