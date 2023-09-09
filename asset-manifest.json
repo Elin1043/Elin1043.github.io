@@ -1,14 +1,25 @@
 {
   "files": {
     "main.css": "/static/css/main.f93d77bf.css",
-    "main.js": "/static/js/main.50443f77.js",
+    "main.js": "/static/js/main.d4ad8c62.js",
     "static/js/787.69ce51e1.chunk.js": "/static/js/787.69ce51e1.chunk.js",
+    "static/media/ExoExplorer8.png": "/static/media/ExoExplorer8.2a58f82c41013a7539d7.png",
+    "static/media/ExoExplorer9.png": "/static/media/ExoExplorer9.03ac6e53385f3535cc8b.png",
+    "static/media/ExoExplorer3.png": "/static/media/ExoExplorer3.d2b6b061d1290f205c2b.png",
+    "static/media/ExoExplorer1.png": "/static/media/ExoExplorer1.80937f7d406e76f1237d.png",
     "static/media/ChalmersDefense.png": "/static/media/ChalmersDefense.d0180780540b165ba71b.png",
+    "static/media/ExoExplorer10.png": "/static/media/ExoExplorer10.74c1122ce26201958df4.png",
+    "static/media/ExoExplorer6.png": "/static/media/ExoExplorer6.5c15384c9af497aec4f6.png",
+    "static/media/ExoExplorer4.png": "/static/media/ExoExplorer4.da5205ae1f03bb28f719.png",
+    "static/media/ExoExplorer5.png": "/static/media/ExoExplorer5.ff5ddadf8016083cec79.png",
+    "static/media/ExoExplorer7.png": "/static/media/ExoExplorer7.6d37ab18faf0bdbfaee5.png",
+    "static/media/ExoExplorer2.png": "/static/media/ExoExplorer2.f8097a95cd1569dcd817.png",
     "static/media/CleverFox.jpg": "/static/media/CleverFox.b261f05e58605060b8f8.jpg",
     "static/media/gitLogo.png": "/static/media/gitLogo.0d00baba6164055dbb22.png",
     "static/media/ExoExplorer.jpg": "/static/media/ExoExplorer.0d722bcd3b339d9b0ab7.jpg",
     "static/media/WeAreAlive.jpg": "/static/media/WeAreAlive.bcc8821fee40338a520c.jpg",
     "static/media/Portfolio.jpg": "/static/media/Portfolio.6cc8b714a9f05eafc044.jpg",
+    "static/media/ExoExplorer11.png": "/static/media/ExoExplorer11.f1c7aedf79792c79acdd.png",
     "static/media/femaleProfile.png": "/static/media/femaleProfile.420361b7aa838ba13283.png",
     "static/media/programmer.png": "/static/media/programmer.a620ce6146f84860ab0b.png",
     "static/media/javaLogo.png": "/static/media/javaLogo.09f5a80c7f42f1c28839.png",
@@ -20,11 +31,11 @@
     "static/media/reactIcon.png": "/static/media/reactIcon.ccb97f287d4d51b10a6b.png",
     "index.html": "/index.html",
     "main.f93d77bf.css.map": "/static/css/main.f93d77bf.css.map",
-    "main.50443f77.js.map": "/static/js/main.50443f77.js.map",
+    "main.d4ad8c62.js.map": "/static/js/main.d4ad8c62.js.map",
     "787.69ce51e1.chunk.js.map": "/static/js/787.69ce51e1.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.f93d77bf.css",
-    "static/js/main.50443f77.js"
+    "static/js/main.d4ad8c62.js"
   ]
 }
