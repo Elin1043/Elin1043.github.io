@@ -58,7 +58,12 @@ const ImageListDisplay = (props: ImageListDisplayProps) => {
             srcSet={`${item}?w=164&h=164&fit=crop&auto=format&dpr=2 2x`}
             alt={"Project image"}
             loading="lazy"
-            style={{ cursor: "pointer" }}
+            style={{
+              cursor: "pointer",
+              width: "385px", 
+              height: "217px", 
+              objectFit: "fill",
+            }}
           />
         </ImageListItem>
       ))}
