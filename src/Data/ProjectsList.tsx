@@ -35,7 +35,7 @@ export const ProjectList = () => [
     projectName: "Chalmers Defense!",
     projectDescription:
       "A 2D tower defense game with the theme of Chalmers vs Corona virus. Each tower represents a different program at Chalmers and they are fighting against the different variants of the corona virus. The player also has different tower upgrades available and some powerups that are essential for beating the corona bosses on higher rounds.",
-    projectLink: "string",
+    projectLink: "",
     projectComponent: <></>,
     githubLink: "https://github.com/ElinForsbergDev/Chalmers-Defense",
     skillsAndTools: "Java",
@@ -57,7 +57,7 @@ export const ProjectList = () => [
     image: portfolioImage,
     projectName: "Portfolio",
     projectDescription: "Created the portfolio website you are currently on!",
-    projectLink: "/Portfolio",
+    projectLink: "/",
     projectComponent: <></>,
     githubLink:
       "https://github.com/ElinForsbergDev/ElinForsbergDev.github.io/tree/master",
