@@ -100,6 +100,23 @@ const DesktopNavBar = (props: DesktopNavBarProps) => {
               </Button>
             </Link>
           ))}
+
+          <a href={"/Elin_Forsberg_CV.pdf"} target="_blank" rel="noreferrer">
+            <Button
+              sx={{
+                minHeight: "48px",
+                pt: 0,
+                pb: 0,
+                "&.Mui-selected": {
+                  fontWeight: "700",
+                },
+                overflow: "visible",
+                textTransform: "initial",
+              }}
+            >
+              <HashTag label={"CV"} textSize={20} withDivider={false}></HashTag>
+            </Button>
+          </a>
         </Box>
       </Grid>
       <Grid item xs={1} sx={{ display: "flex" }}>

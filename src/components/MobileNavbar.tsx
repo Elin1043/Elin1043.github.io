@@ -168,6 +168,43 @@ const MobileNavBar = (props: MobileNavBarProps) => {
                   </Box>
                 </Link>
               ))}
+              <Box
+                sx={{
+                  borderBottom: "1px solid",
+                  borderColor: "rgba(255, 255, 255, 0.12)",
+                  alignItems: "center",
+                  display: "flex",
+                }}
+              >
+                <a
+                  href={"/Elin_Forsberg_CV.pdf"}
+                  target="_blank"
+                  rel="noreferrer"
+                  style={{ color: "white", textDecoration: "none" }}
+                >
+                  <ListItemButton
+                    key={"CV"}
+                    style={{ alignItems: "center", display: "flex" }}
+                  >
+                    <ListItemText
+                      sx={{
+                        minHeight: "30px",
+                        pt: 0,
+                        pb: 0,
+                        alignItems: "center",
+                        display: "flex",
+                      }}
+                      primary={
+                        <HashTag
+                          label={"CV"}
+                          textSize={14}
+                          withDivider={false}
+                        ></HashTag>
+                      }
+                    />
+                  </ListItemButton>
+                </a>
+              </Box>
             </Box>
           </Box>
         </Drawer>
