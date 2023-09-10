@@ -41,7 +41,7 @@ function About(props: AboutProps) {
           }}
         >
           <Grid container>
-            <Grid item xs={12} md={6}>
+            <Grid className="observer-target" item xs={12} md={6}>
               <AboutMe></AboutMe>
             </Grid>
             <Grid
@@ -56,6 +56,7 @@ function About(props: AboutProps) {
             >
               <Box
                 component="img"
+                className="observer-target"
                 sx={{
                   height: { xs: 200, md: 400 },
                 }}
@@ -124,7 +125,7 @@ const SkillDisplay = (props: SkillDisplayProps) => {
 const SkillItemDisplay = (props: SkillItem) => {
   const { image, text } = props;
   return (
-    <Grid item xs={4} md={3}>
+    <Grid className="observer-target" item xs={4} md={3}>
       <Box
         component="img"
         sx={{

@@ -37,6 +37,7 @@ const ProjectCard = (props: ProjectCardProps) => {
     >
       <Box
         component="img"
+        className="observer-target"
         sx={{
           maxHeight: { xs: 300, md: 300 },
           maxWidth: "100%",
@@ -48,7 +49,7 @@ const ProjectCard = (props: ProjectCardProps) => {
         src={project.image}
       />
 
-      <Container>
+      <Container className="observer-target">
         <Typography variant="h2" fontWeight={700} sx={{ paddingBottom: "0" }}>
           {project.projectName}
         </Typography>

@@ -113,6 +113,30 @@ function App() {
     return screenSize.height > screenSize.width;
   }
 
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach((entry) => {
+      console.log(entry);
+      if (entry.isIntersecting) {
+        entry.target.classList.add("inview");
+      } else {
+        entry.target.classList.remove("inview");
+      }
+    });
+  });
+
+  useEffect(() => {
+    const targets = document.querySelectorAll(".observer-target");
+    targets.forEach((target) => {
+      observer.observe(target);
+    });
+
+    return () => {
+      targets.forEach((target) => {
+        observer.unobserve(target);
+      });
+    };
+  }, []);
+
   useEffect(() => {
     const updateDimension = () => {
       setScreenSize(getCurrentDimension());
