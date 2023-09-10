@@ -76,106 +76,111 @@ const ImageListDisplay = (props: ImageListDisplayProps) => {
         </ImageListItem>
       ))}
 
-      <Dialog
-        open={open}
-        onClose={handleClose}
-        TransitionComponent={Slide}
-        maxWidth="lg"
-      >
-        <DialogContent
-          sx={{
-            backgroundColor: (theme) => theme.palette.background.default,
-          }}
+      {!isSmScreen && (
+        <Dialog
+          open={open}
+          onClose={handleClose}
+          TransitionComponent={Slide}
+          maxWidth={"lg"}
         >
-          <Grid container>
-            <Grid item xs={12} sx={{ textAlign: "end" }}>
-              <IconButton
-                edge="end"
-                color="inherit"
-                onClick={handleClose}
-                aria-label="close"
-              >
-                <CloseIcon />
-              </IconButton>
-            </Grid>
-            <Grid container>
-              <Grid item xs={1}>
-                <Button
-                  onClick={handlePrevImage}
-                  sx={{ height: "100%", width: "100%" }}
-                >
-                  <NavigateBeforeIcon />
-                </Button>
-              </Grid>
-              <Grid item xs={10}>
-                <img
-                  src={imageList[selectedImageIndex || 0]}
-                  alt="Selected image"
-                  style={{ width: "800px", height: "450px" }}
-                />
-              </Grid>
-              <Grid item xs={1}>
-                <Button
-                  onClick={handleNextImage}
-                  sx={{ height: "100%", width: "100%" }}
-                >
-                  <NavigateNextIcon />
-                </Button>
-              </Grid>
-            </Grid>
-          </Grid>
-
-          <Box
+          <DialogContent
             sx={{
-              display: "flex",
-              justifyContent: "center",
-              alignItems: "center",
-              gap: "10px",
-              marginTop: "20px",
+              backgroundColor: (theme) => theme.palette.background.default,
             }}
           >
-            <img
-              src={
-                imageList[
-                  selectedImageIndex === 0
-                    ? imageList.length - 1
-                    : (selectedImageIndex || imageList.length) - 1
-                ]
-              }
-              alt="Previous image"
-              style={{
-                width: "200px",
-                height: "113px",
-                cursor: "pointer",
-                opacity: "0.3",
+            <Grid container>
+              <Grid item xs={12} sx={{ textAlign: "end" }}>
+                <IconButton
+                  edge="end"
+                  color="inherit"
+                  onClick={handleClose}
+                  aria-label="close"
+                >
+                  <CloseIcon />
+                </IconButton>
+              </Grid>
+              <Grid container>
+                <Grid item xs={1}>
+                  <Button
+                    onClick={handlePrevImage}
+                    sx={{ height: "100%", width: "100%" }}
+                  >
+                    <NavigateBeforeIcon />
+                  </Button>
+                </Grid>
+                <Grid item xs={10}>
+                  <img
+                    src={imageList[selectedImageIndex || 0]}
+                    alt="Selected image"
+                    style={{
+                      width: "800px",
+                      height: "450px",
+                    }}
+                  />
+                </Grid>
+                <Grid item xs={1}>
+                  <Button
+                    onClick={handleNextImage}
+                    sx={{ height: "100%", width: "100%" }}
+                  >
+                    <NavigateNextIcon />
+                  </Button>
+                </Grid>
+              </Grid>
+            </Grid>
+
+            <Box
+              sx={{
+                display: "flex",
+                justifyContent: "center",
+                alignItems: "center",
+                gap: "10px",
+                marginTop: "20px",
               }}
-              onClick={handlePrevImage}
-            />
-            <img
-              src={imageList[selectedImageIndex ? selectedImageIndex : 0]}
-              alt="Selected image"
-              style={{ width: "250px", height: "141px" }}
-            />
-            <img
-              src={
-                imageList[
-                  selectedImageIndex === imageList.length - 1
-                    ? 0
-                    : (selectedImageIndex || 0) + 1
-                ]
-              }
-              alt="Next image"
-              style={{
-                width: "200px",
-                height: "113px",
-                cursor: "pointer",
-                opacity: "0.3",
-              }}
-              onClick={handleNextImage}
-            />
-          </Box>
-        </DialogContent>
-      </Dialog>
+            >
+              <img
+                src={
+                  imageList[
+                    selectedImageIndex === 0
+                      ? imageList.length - 1
+                      : (selectedImageIndex || imageList.length) - 1
+                  ]
+                }
+                alt="Previous image"
+                style={{
+                  width: "200px",
+                  height: "113px",
+                  cursor: "pointer",
+                  opacity: "0.3",
+                }}
+                onClick={handlePrevImage}
+              />
+              <img
+                src={imageList[selectedImageIndex ? selectedImageIndex : 0]}
+                alt="Selected image"
+                style={{ width: "250px", height: "141px" }}
+              />
+              <img
+                src={
+                  imageList[
+                    selectedImageIndex === imageList.length - 1
+                      ? 0
+                      : (selectedImageIndex || 0) + 1
+                  ]
+                }
+                alt="Next image"
+                style={{
+                  width: "200px",
+                  height: "113px",
+                  cursor: "pointer",
+                  opacity: "0.3",
+                }}
+                onClick={handleNextImage}
+              />
+            </Box>
+          </DialogContent>
+        </Dialog>
+      )}
     </ImageList>
   );
 };
