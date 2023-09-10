@@ -1,4 +1,4 @@
-import { Box } from "@mui/material";
+import { Box, Theme, useMediaQuery } from "@mui/material";
 
 type VideoPlayerProps = {
   embedId: string;
@@ -6,11 +6,14 @@ type VideoPlayerProps = {
 
 const VideoPlayer = (props: VideoPlayerProps) => {
   const { embedId } = props;
+  const isSmScreen = useMediaQuery((responsiveTheme: Theme) =>
+    responsiveTheme.breakpoints.down("sm")
+  );
   return (
     <Box>
       <iframe
-        width="700"
-        height="394"
+        width={isSmScreen ? "300px" : "700px"}
+        height={isSmScreen ? "169px" : "394px"}
         src={`https://www.youtube.com/embed/${embedId}`}
         frameBorder="0"
         allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"

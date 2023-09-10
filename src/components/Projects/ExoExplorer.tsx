@@ -39,7 +39,7 @@ const ExoExplorer = (props: ExoExplorerProps) => {
         </Button>
       </a>
       <Grid container>
-        <Grid item xs={6}>
+        <Grid item xs={12} md={6}>
           <Typography variant="h6" sx={{ margin: "20px" }}>
             Welcome to Exo Explorer, a procedurally generated space exploration
             simulation. This application has been designed to provide an
@@ -50,7 +50,7 @@ const ExoExplorer = (props: ExoExplorerProps) => {
             of creatures, each with their own behavioral patterns.
           </Typography>
         </Grid>
-        <Grid item xs={6}>
+        <Grid item xs={12} md={6}>
           <Typography variant="h6" sx={{ margin: "20px" }}>
             They seek food and water, and when the conditions are right, they
             reproduce, offering a truly dynamic and immersive exploration
@@ -65,7 +65,7 @@ const ExoExplorer = (props: ExoExplorerProps) => {
       </Grid>
 
       <Grid container sx={{ padding: "20px" }}>
-        <Grid item xs={2.5}>
+        <Grid item xs={12} md={2.5}>
           <Typography variant="h2" sx={{ paddingBottom: "0" }}>
             Used skills:
           </Typography>
@@ -79,10 +79,10 @@ const ExoExplorer = (props: ExoExplorerProps) => {
             </ul>
           </Box>
         </Grid>
-        <Grid item xs={7}>
+        <Grid item xs={12} md={7}>
           <VideoPlayer embedId={"dVtItZSd-88?si=c1yXwt692l43pUm_"} />
         </Grid>
-        <Grid item xs={2.5}>
+        <Grid item xs={12} md={2.5}>
           <Typography variant="h2" sx={{ paddingBottom: "0" }}>
             Some techniques used:
           </Typography>

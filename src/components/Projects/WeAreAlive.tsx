@@ -39,7 +39,7 @@ const WeAreAlive = (props: WeAreAliveProps) => {
         </Button>
       </a>
       <Grid container>
-        <Grid item xs={6}>
+        <Grid item xs={12} md={6}>
           <Typography variant="h6" sx={{ margin: "20px" }}>
             In an era where robots are being used every day, one robot starts
             showing emotions, and the world goes crazy. The manufacturers are
@@ -53,7 +53,7 @@ const WeAreAlive = (props: WeAreAliveProps) => {
             pieces of junk.
           </Typography>
         </Grid>
-        <Grid item xs={6}>
+        <Grid item xs={12} md={6}>
           <Typography variant="h6" sx={{ margin: "20px" }}>
             What ending will you get? And will you be able to get them all? The
             player has to avoid guards and watchtowers while finding five

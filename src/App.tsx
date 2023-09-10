@@ -183,6 +183,7 @@ function App() {
             />
             {ProjectList().map((project) => (
               <Route
+                key={project.id}
                 path={project.projectLink}
                 element={project.projectComponent}
               />

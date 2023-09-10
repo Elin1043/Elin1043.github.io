@@ -9,6 +9,8 @@ import {
   Slide,
   Grid,
   Button,
+  Theme,
+  useMediaQuery,
 } from "@mui/material";
 import CloseIcon from "@mui/icons-material/Close";
 import NavigateBeforeIcon from "@mui/icons-material/NavigateBefore";
@@ -23,6 +25,9 @@ const ImageListDisplay = (props: ImageListDisplayProps) => {
   const [open, setOpen] = useState(false);
   const [selectedImageIndex, setSelectedImageIndex] = useState<number | null>(
     null
+  );
+  const isSmScreen = useMediaQuery((responsiveTheme: Theme) =>
+    responsiveTheme.breakpoints.down("sm")
   );
 
   const handleImageClick = (index: number) => {
@@ -49,7 +54,10 @@ const ImageListDisplay = (props: ImageListDisplayProps) => {
     setSelectedImageIndex(null);
   };
   return (
-    <ImageList cols={4}>
+    <ImageList
+      cols={isSmScreen ? 1 : 4}
+      sx={{ display: isSmScreen ? "inline-block" : "grid" }}
+    >
       {imageList.map((item, index) => (
         <ImageListItem key={item} onClick={() => handleImageClick(index)}>
           <img
@@ -59,8 +67,9 @@ const ImageListDisplay = (props: ImageListDisplayProps) => {
             loading="lazy"
             style={{
               cursor: "pointer",
-              width: "385px",
-              height: "217px",
+              width: isSmScreen ? "300px" : "385px",
+              height: isSmScreen ? "169px" : "217px",
+              paddingBottom: isSmScreen ? "5px" : "",
               objectFit: "fill",
             }}
           />
