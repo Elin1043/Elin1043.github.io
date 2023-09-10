@@ -43,7 +43,7 @@ function Contact(props: ContactProps) {
                   <a
                     href="https://www.linkedin.com/in/elin-forsberg-sweden"
                     target="_blank"
-                    style={{ color: "white" }}
+                    style={{ color: "inherit" }}
                   >
                     LinkedIn
                   </a>
@@ -54,7 +54,7 @@ function Contact(props: ContactProps) {
                 <Typography variant={isSmallScreen ? "body1" : "h5"}>
                   <a
                     href="mailto:elinforsbergdev@gmail.com"
-                    style={{ color: "white" }}
+                    style={{ color: "inherit" }}
                   >
                     elinforsbergdev@gmail.com
                   </a>

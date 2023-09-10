@@ -129,7 +129,7 @@ const SkillItem = (props: SkillItemProps) => {
         display: "inline-block",
       }}
     >
-      <Typography variant="body1" fontWeight={700}>
+      <Typography variant="body1" fontWeight={700} color={"#FFF"}>
         {text}
       </Typography>
     </Box>

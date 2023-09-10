@@ -60,7 +60,7 @@ function App() {
               mode: "light",
               primary: {
                 main: "#000000",
-                dark: "#434343",
+                dark: "#dedede",
                 light: "#252525",
               },
               secondary: {
