@@ -69,6 +69,7 @@ const ProjectCard = (props: ProjectCardProps) => {
           <Grid item>
             <Button
               variant="outlined"
+              disabled={project.projectLink === ""}
               onClick={() => {
                 navigate(project.projectLink);
                 scrollToTop();
