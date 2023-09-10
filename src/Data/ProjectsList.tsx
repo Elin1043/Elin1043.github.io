@@ -5,6 +5,7 @@ import chalmersDefenseImage from "../assets/ProjectImages/ChalmersDefense.png";
 import cleverFoxImage from "../assets/ProjectImages/CleverFox.jpg";
 import weAreAliveImage from "../assets/ProjectImages/WeAreAlive.jpg";
 import ExoExplorer from "../components/Projects/ExoExplorer";
+import WeAreAlive from "../components/Projects/WeAreAlive";
 
 export const ProjectList = () => [
   {
@@ -23,9 +24,9 @@ export const ProjectList = () => [
     image: weAreAliveImage,
     projectName: "We Are Alive",
     projectDescription:
-      "3D realistic story game taking place in the future where robots are a part of everyday life. But one day, the robots start showings signs of real human emotions, and society goes into panic mode. All robot models are called back and thrown into junkyards to be destroyed. You are one of these robots, you wake up damaged with missing parts, and you know that you have to repair yourself with scattered spare parts and get out of there. ",
-    projectLink: "",
-    projectComponent: <></>,
+      "3D realistic story game taking place in the future where robots are a part of everyday life. But one day, the robots start showings signs of real human emotions, and society goes into panic mode. All robot models are called back and thrown into junkyards to be destroyed. You are one of these robots, you wake up damaged with missing parts, find some spare parts and get out of there! ",
+    projectLink: "/WeAreAlive",
+    projectComponent: <WeAreAlive />,
     githubLink: "https://github.com/ElinForsbergDev/We_Are_Alive",
     skillsAndTools: "Unity, C#",
   },

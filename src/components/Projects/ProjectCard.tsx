@@ -82,7 +82,7 @@ const ProjectCard = (props: ProjectCardProps) => {
               }}
             >
               <Typography variant="body1" fontWeight={700}>
-                Demo
+                More info
               </Typography>
             </Button>
           </Grid>
