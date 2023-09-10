@@ -18,7 +18,7 @@ function Contact(props: ContactProps) {
     >
       <SlashTag label={"Contact"} textSize={32} withDivider={true}></SlashTag>
       <Container sx={{ height: "100%", display: "flex", alignItems: "center" }}>
-        <Grid className="observer-target" container sx={{ padding: "50px 0" }}>
+        <Grid container sx={{ padding: "50px 0" }}>
           <Grid item xs={12} sm={8}>
             <Typography variant="h5">
               Feel free to connect with me on LinkedIn! For any inquiries or

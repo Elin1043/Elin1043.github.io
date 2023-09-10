@@ -38,7 +38,7 @@ function Home(props: HomeProps) {
   }, [targetId]);
   return (
     <>
-      <Box id="home" className="observer-target" sx={{ height: "90vh" }}>
+      <Box id="home" sx={{ height: "90vh" }}>
         <Grid
           container
           sx={{
