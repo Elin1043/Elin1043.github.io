@@ -47,7 +47,7 @@ export const ProjectList = (): ProjectItem[] => [
     projectLink: "",
     projectComponent: <></>,
     githubLink: "https://github.com/ElinForsbergDev/Chalmers-Defense",
-    skillsAndTools: "Java, JavaFX, GitHub",
+    skillsAndTools: "Java, LibGDX, JUnit, GitHub",
   },
   {
     id: 3,

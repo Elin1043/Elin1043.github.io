@@ -38,8 +38,8 @@ const ProjectCard = (props: ProjectCardProps) => {
       <Box
         component="img"
         sx={{
-          maxHeight: { xs: 300, md: 300 },
-          maxWidth: "100%",
+          maxHeight: { xs: 300, md: 350 },
+          width: "100%",
           alignContent: "center",
           display: "block", // Remove any extra whitespace around the image
           margin: "auto", // Center the image horizontally (optional)

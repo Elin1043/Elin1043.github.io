@@ -1,4 +1,4 @@
-import { Container, Divider, Grid, Typography } from "@mui/material";
+import { Box, Container, Divider, Grid, Typography } from "@mui/material";
 
 type HashTagProps = {
   label: string;
@@ -65,16 +65,16 @@ const SymbolInFrontOfText = (props: SymbolInFrontOfTextProps) => {
       </Grid>
     </Grid>
   ) : (
-    <Container sx={{ display: "flex" }}>
+    <Box sx={{ display: "flex", paddingLeft:"16px" }}>
       <Typography
         sx={{
           color: (theme) => theme.palette.secondary.main,
           fontSize: textSize,
         }}
       >
-        #
+        {symbol}
       </Typography>
       <Typography sx={{ fontSize: textSize }}>{label}</Typography>
-    </Container>
+    </Box>
   );
 };
