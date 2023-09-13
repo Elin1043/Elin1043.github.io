@@ -68,7 +68,7 @@ const ImageListDisplay = (props: ImageListDisplayProps) => {
             style={{
               cursor: "pointer",
               width: isSmScreen ? "300px" : "385px",
-              height: isSmScreen ? "169px" : "217px",
+              maxHeight: isSmScreen ? "169px" : "217px",
               paddingBottom: isSmScreen ? "5px" : "",
               objectFit: "fill",
             }}
@@ -114,7 +114,7 @@ const ImageListDisplay = (props: ImageListDisplayProps) => {
                     alt="Selected image"
                     style={{
                       width: "800px",
-                      height: "450px",
+                      maxHeight: "450px",
                     }}
                   />
                 </Grid>

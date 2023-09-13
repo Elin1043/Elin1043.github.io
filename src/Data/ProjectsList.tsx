@@ -5,10 +5,12 @@ import chalmersDefenseImage from "../assets/ProjectImages/ChalmersDefense.png";
 import cleverFoxImage from "../assets/ProjectImages/CleverFox.jpg";
 import weAreAliveImage from "../assets/ProjectImages/WeAreAlive.jpg";
 import RetroFootballImage from "../assets/ProjectImages/RetroFootball.png";
+import InstantFootballImage from "../assets/ProjectImages/InstantFootball.png";
 import ExoExplorer from "../components/Projects/ExoExplorer";
 import WeAreAlive from "../components/Projects/WeAreAlive";
 import { ProjectItem } from "../Types/ProjectsItem";
 import RetroFootball from "../components/Projects/RetroFootball";
+import InstantFootball from "../components/Projects/InstantFootball";
 
 export const ProjectList = (): ProjectItem[] => [
   {
@@ -80,6 +82,17 @@ export const ProjectList = (): ProjectItem[] => [
     projectDescription: "",
     projectLink: "/RetroFootball",
     projectComponent: <RetroFootball />,
+    githubLink: "",
+    skillsAndTools: "C#, Unity, DevOps",
+  },
+  {
+    id: 6,
+    image: InstantFootballImage,
+    projectCategory: "Professional",
+    projectName: "Instant Premier Football",
+    projectDescription: "",
+    projectLink: "/InstantFootball",
+    projectComponent: <InstantFootball />,
     githubLink: "",
     skillsAndTools: "C#, Unity, DevOps",
   },
