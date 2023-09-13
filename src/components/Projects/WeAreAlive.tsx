@@ -40,27 +40,27 @@ const WeAreAlive = (props: WeAreAliveProps) => {
       </a>
       <Grid container>
         <Grid item xs={12} md={6}>
-          <Typography variant="h6" sx={{ margin: "20px" }}>
+          <Typography textAlign={"start"} variant="h6" sx={{ margin: "20px" }}>
+            Welcome to We Are Alive, a story game developed by a team of three.
             In an era where robots are being used every day, one robot starts
             showing emotions, and the world goes crazy. The manufacturers are
             calling back all the robots to be thrown away and destroyed. You are
-            unfortunatley one of these robots, waking up in a pile of junk all
+            unfortunately one of these robots, waking up in a pile of junk all
             damaged. You need to repair yourself before you can leave this
-            junkyard and decide what to do about the situation outside. “We Are
-            Alive” is a story-rich, first-person adventure game that gives the
-            player different options on how to play and at the same time tells
-            the story about the robots that ended up with you, thrown away as
-            pieces of junk.
+            junkyard and decide what to do about the situation outside.
           </Typography>
         </Grid>
         <Grid item xs={12} md={6}>
-          <Typography variant="h6" sx={{ margin: "20px" }}>
-            What ending will you get? And will you be able to get them all? The
-            player has to avoid guards and watchtowers while finding five
-            different spare parts. The player will also encounter and have
-            conversations with other robots to get to know their story and find
-            companions along the way. The game has different endings depending
-            on the choices the player makes.
+          <Typography textAlign={"start"} variant="h6" sx={{ margin: "20px" }}>
+            “We Are Alive” is a story-rich, first-person adventure game that
+            gives the player different options on how to play and at the same
+            time tells the story about the robots that ended up with you, thrown
+            away as pieces of junk. What ending will you get? And will you be
+            able to get them all? The player has to avoid guards and watchtowers
+            while finding five different spare parts. The player will also
+            encounter and have conversations with other robots to get to know
+            their story and find companions along the way. The game also has
+            different endings depending on the choices the player makes.
           </Typography>
         </Grid>
       </Grid>

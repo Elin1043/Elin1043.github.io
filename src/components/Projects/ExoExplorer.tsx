@@ -40,18 +40,19 @@ const ExoExplorer = (props: ExoExplorerProps) => {
       </a>
       <Grid container>
         <Grid item xs={12} md={6}>
-          <Typography variant="h6" sx={{ margin: "20px" }}>
+          <Typography textAlign={"start"} variant="h6" sx={{ margin: "20px" }}>
             Welcome to Exo Explorer, a procedurally generated space exploration
-            simulation. This application has been designed to provide an
-            immersive and dynamic space exploration experience, with a multitude
-            of celestial bodies and ecosystems to explore. Explore a universe of
-            procedurally generated planets, each full of unique ecosystems and
-            vibrant life. On these diverse worlds, you will encounter a variety
-            of creatures, each with their own behavioral patterns.
+            simulation developed by a team of six for a bachelor thesis project.
+            This application has been designed to provide an immersive and
+            dynamic space exploration experience, with a multitude of celestial
+            bodies and ecosystems to explore. Explore a universe of procedurally
+            generated planets, each full of unique ecosystems and vibrant life.
+            On these diverse worlds, you will encounter a variety of creatures,
+            each with their own behavioral patterns.
           </Typography>
         </Grid>
         <Grid item xs={12} md={6}>
-          <Typography variant="h6" sx={{ margin: "20px" }}>
+          <Typography textAlign={"start"} variant="h6" sx={{ margin: "20px" }}>
             They seek food and water, and when the conditions are right, they
             reproduce, offering a truly dynamic and immersive exploration
             experience. One of the key features of Exo Explorer is its
