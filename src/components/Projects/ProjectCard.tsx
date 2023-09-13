@@ -86,27 +86,30 @@ const ProjectCard = (props: ProjectCardProps) => {
               </Typography>
             </Button>
           </Grid>
-          <Grid item>
-            <a
-              href={project.githubLink}
-              target="_blank"
-              style={{ color: "white" }}
-            >
-              <Button
-                variant="outlined"
-                sx={{
-                  margin: "10px 0",
-                  textTransform: "initial",
-                  borderRadius: "50px",
-                  borderColor: (theme) => theme.palette.secondary.main,
-                }}
+
+          {project.githubLink !== "" && (
+            <Grid item>
+              <a
+                href={project.githubLink}
+                target="_blank"
+                style={{ color: "white" }}
               >
-                <Typography variant="body1" fontWeight={700}>
-                  Github
-                </Typography>
-              </Button>
-            </a>
-          </Grid>
+                <Button
+                  variant="outlined"
+                  sx={{
+                    margin: "10px 0",
+                    textTransform: "initial",
+                    borderRadius: "50px",
+                    borderColor: (theme) => theme.palette.secondary.main,
+                  }}
+                >
+                  <Typography variant="body1" fontWeight={700}>
+                    Github
+                  </Typography>
+                </Button>
+              </a>
+            </Grid>
+          )}
         </Grid>
       </Container>
     </Card>
