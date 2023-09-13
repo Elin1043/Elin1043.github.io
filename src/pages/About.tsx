@@ -78,9 +78,11 @@ type SkillDisplayProps = {};
 const SkillDisplay = (props: SkillDisplayProps) => {
   const skills = SkillsList.map((skill) => (
     <SkillItemDisplay
+      key={skill.id}
       image={skill.image}
       text={skill.text}
       category={skill.category}
+      id={skill.id}
     />
   ));
 
@@ -138,6 +140,7 @@ const SkillItemDisplay = (props: SkillItem) => {
 };
 
 type SkillItem = {
+  id: number;
   image: string;
   text: string;
   category: string;
@@ -145,61 +148,73 @@ type SkillItem = {
 
 const SkillsList = [
   {
+    id: 0,
     image: ReactLogo,
     text: "React",
     category: "Web",
   },
   {
+    id: 1,
     image: HtmlLogo,
     text: "HTML",
     category: "Web",
   },
   {
+    id: 2,
     image: CssLogo,
     text: "CSS",
     category: "Web",
   },
   {
+    id: 3,
     image: MaterialDesignLogo,
     text: "Material Design",
     category: "Web",
   },
   {
+    id: 4,
     image: JavaScriptLogo,
     text: "JavaScript",
     category: "Web",
   },
   {
+    id: 5,
     image: TypeScriptLogo,
     text: "TypeScript",
     category: "Web",
   },
   {
+    id: 6,
     image: GitLogo,
     text: "GitHub",
     category: "Tool",
   },
   {
+    id: 7,
     image: UnityLogo,
     text: "Unity",
     category: "Tool",
   },
   {
+    id: 8,
     image: DevopsLogo,
     text: "Azure Devops",
     category: "Tool",
   },
   {
+    id: 9,
     image: CSharpLogo,
     text: "C#",
     category: "Language",
   },
   {
+    id: 10,
     image: JavaLogo,
     text: "Java",
     category: "Language",
   },
   {
+    id: 11,
     image: PythonLogo,
     text: "Python",
     category: "Language",
