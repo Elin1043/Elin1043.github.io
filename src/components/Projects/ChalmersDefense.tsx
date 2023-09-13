@@ -1,9 +1,10 @@
 import { Box, Button, Grid, Typography } from "@mui/material";
 import ImageListDisplay from "./ImageDisplay";
 import ChalmersDefenseImage from "../../assets/ProjectImages/ChalmersDefense.png";
+import VideoPlayer from "./VideoPlayer";
 
 const images: string[] = [ChalmersDefenseImage];
-for (let i = 1; i <= 4; i++) {
+for (let i = 1; i <= 9; i++) {
   images.push(
     require(`../../assets/ProjectImages/ChalmersDefense/ChalmersDefense${i}.png`)
   );
@@ -63,9 +64,13 @@ const ChalmersDefense = (props: ChalmersDefenseProps) => {
 
       <Grid container sx={{ padding: "20px" }}>
         <Grid item xs={12}>
-          <Typography variant="h2" sx={{ paddingBottom: "0" }}>
+          <Typography variant="h2">
             Used skills: Unity, C#, GitHub, Profiling and Optimization
           </Typography>
+        </Grid>
+
+        <Grid item xs={12} md={12}>
+          <VideoPlayer embedId={"MJJbRNtd9Tk?si=WdavWYzUzrBxJVf4"} />
         </Grid>
       </Grid>
 
