@@ -1,6 +1,5 @@
 import { Box, Button, Grid, Typography } from "@mui/material";
 import ImageListDisplay from "./ImageDisplay";
-import VideoPlayer from "./VideoPlayer";
 import WeAreAliveImage from "../../assets/ProjectImages/WeAreAlive.jpg";
 
 const images: string[] = [WeAreAliveImage];

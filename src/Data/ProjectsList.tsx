@@ -11,6 +11,7 @@ import WeAreAlive from "../components/Projects/WeAreAlive";
 import { ProjectItem } from "../Types/ProjectsItem";
 import RetroFootball from "../components/Projects/RetroFootball";
 import InstantFootball from "../components/Projects/InstantFootball";
+import ChalmersDefense from "../components/Projects/ChalmersDefense";
 
 export const ProjectList = (): ProjectItem[] => [
   {
@@ -44,8 +45,8 @@ export const ProjectList = (): ProjectItem[] => [
     projectName: "Chalmers Defense!",
     projectDescription:
       "A 2D tower defense game with the theme of Chalmers vs Corona virus. Each tower represents a different program at Chalmers and they are fighting against the different variants of the corona virus. The player also has different tower upgrades available and some powerups that are essential for beating the corona bosses on higher rounds.",
-    projectLink: "",
-    projectComponent: <></>,
+    projectLink: "/ChalmersDefense",
+    projectComponent: <ChalmersDefense />,
     githubLink: "https://github.com/ElinForsbergDev/Chalmers-Defense",
     skillsAndTools: "Java, LibGDX, JUnit, GitHub",
   },
