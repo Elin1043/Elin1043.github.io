@@ -79,7 +79,8 @@ export const ProjectList = (): ProjectItem[] => [
     image: RetroFootballImage,
     projectCategory: "Professional",
     projectName: "Retro Football",
-    projectDescription: "",
+    projectDescription:
+      "A casino football betting game in retro style where the player can bet on ten different football matches. There are many markets to choose from and after completing the bets, the player can watch the ten matches play out simultaneously.",
     projectLink: "/RetroFootball",
     projectComponent: <RetroFootball />,
     githubLink: "",
@@ -90,7 +91,8 @@ export const ProjectList = (): ProjectItem[] => [
     image: InstantFootballImage,
     projectCategory: "Professional",
     projectName: "Instant Premier Football",
-    projectDescription: "",
+    projectDescription:
+      "An upgrade to Retro Football. A 3D football simulation casino game where the player can bet on different outcomes of up to 10 different football games in 4 different leagues that are generated in real time.",
     projectLink: "/InstantFootball",
     projectComponent: <InstantFootball />,
     githubLink: "",
