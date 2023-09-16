@@ -158,7 +158,6 @@ function App() {
           sx={{
             "&.MuiContainer-root": {
               maxWidth: "1600px",
-              padding: "0",
             },
           }}
         >
@@ -176,22 +175,21 @@ function App() {
               handleModeUpdate={handleModeUpdate}
             ></DesktopNavBar>
           )}
-          <Container>
-            <Routes>
+
+          <Routes>
+            <Route
+              path="/"
+              element={<Home handleChangeValue={handleChangeValue}></Home>}
+            />
+            {ProjectList().map((project) => (
               <Route
-                path="/"
-                element={<Home handleChangeValue={handleChangeValue}></Home>}
+                key={project.id}
+                path={project.projectLink}
+                element={project.projectComponent}
               />
-              {ProjectList().map((project) => (
-                <Route
-                  key={project.id}
-                  path={project.projectLink}
-                  element={project.projectComponent}
-                />
-              ))}
-              ;
-            </Routes>
-          </Container>
+            ))}
+            ;
+          </Routes>
         </Container>
       </Paper>
     </ThemeProvider>
