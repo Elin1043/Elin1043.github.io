@@ -1,6 +1,7 @@
 import { Box, Button, Grid, Typography } from "@mui/material";
 import ImageListDisplay from "./ImageDisplay";
 import CleverFoxImage from "../../assets/ProjectImages/CleverFox.jpg";
+import VideoPlayer from "./VideoPlayer";
 
 const images: string[] = [CleverFoxImage];
 for (let i = 1; i <= 5; i++) {
@@ -37,6 +38,7 @@ const CleverFox = (props: CleverFoxProps) => {
           </Typography>
         </Button>
       </a>
+
       <Grid container>
         <Grid item xs={12} md={6}>
           <Typography textAlign={"start"} variant="h6" sx={{ margin: "20px" }}>
@@ -63,15 +65,17 @@ const CleverFox = (props: CleverFoxProps) => {
           </Typography>
         </Grid>
       </Grid>
-
       <Grid container sx={{ padding: "20px" }}>
         <Grid item xs={12}>
-          <Typography variant="h2" sx={{ paddingBottom: "0" }}>
-            Used skills: Unity, C#, GitHub, Profiling and Optimization
+          <Typography variant="h2">
+            Used skills: Unity, C#, API calls, Mobile Development (IOS and
+            Andriod), GitHub, Profiling and Optimization
           </Typography>
         </Grid>
+        <Grid item xs={12}>
+          <VideoPlayer embedId={"Oe6FQbx-oBQ?si=QXEpY-cw7kE-UMSm"} />
+        </Grid>
       </Grid>
-
       <Box sx={{ paddingBottom: "50px" }}>
         <ImageListDisplay imageList={images}></ImageListDisplay>
       </Box>
