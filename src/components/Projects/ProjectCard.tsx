@@ -59,8 +59,8 @@ const ProjectCard = (props: ProjectCardProps) => {
           {project.projectName}
         </Typography>
         <Grid container sx={{ display: "flex", justifyContent: "center" }}>
-          {project.skillsAndTools.split(",").map((skill) => (
-            <Grid item>
+          {project.skillsAndTools.split(",").map((skill, index) => (
+            <Grid key={index} item>
               <SkillItem text={skill} />
             </Grid>
           ))}
