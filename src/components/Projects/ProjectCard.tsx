@@ -27,12 +27,18 @@ const ProjectCard = (props: ProjectCardProps) => {
   };
   return (
     <Card
+      className="ProjectCard"
+      onClick={() => {
+        navigate(project.projectLink);
+        scrollToTop();
+      }}
       sx={{
         minHeight: "500px",
         width: isSmallScreen ? "350px" : "600px",
         textAlign: "center",
         backgroundColor: (theme) => theme.palette.primary.dark,
         boxShadow: "5px 5px 10px 0px rgba(0,0,0,0.75)",
+        cursor: "pointer",
       }}
     >
       <Box

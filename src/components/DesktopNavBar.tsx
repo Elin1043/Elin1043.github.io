@@ -50,6 +50,7 @@ const DesktopNavBar = (props: DesktopNavBarProps) => {
           key={"homeButton"}
         >
           <Button
+            className="TextButton"
             onClick={() => {
               navigate("/");
               scrollToTop();
@@ -87,6 +88,7 @@ const DesktopNavBar = (props: DesktopNavBarProps) => {
               key={item.Text}
             >
               <Button
+                className="TextButton"
                 onClick={() =>
                   navigate("/", { state: { targetId: item.Path } })
                 }
@@ -99,6 +101,8 @@ const DesktopNavBar = (props: DesktopNavBarProps) => {
                   },
                   overflow: "visible",
                   textTransform: "initial",
+                  padding: "10px",
+                  marginLeft: "20px",
                 }}
               >
                 <HashTag
@@ -112,6 +116,7 @@ const DesktopNavBar = (props: DesktopNavBarProps) => {
 
           <a href={"/Elin_Forsberg_CV.pdf"} target="_blank" rel="noreferrer">
             <Button
+              className="TextButton"
               sx={{
                 minHeight: "48px",
                 pt: 0,
@@ -121,6 +126,8 @@ const DesktopNavBar = (props: DesktopNavBarProps) => {
                 },
                 overflow: "visible",
                 textTransform: "initial",
+                padding: "10px",
+                marginLeft: "20px",
               }}
             >
               <HashTag label={"CV"} textSize={20} withDivider={false}></HashTag>

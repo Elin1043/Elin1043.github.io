@@ -44,7 +44,7 @@ type SymbolInFrontOfTextProps = {
 const SymbolInFrontOfText = (props: SymbolInFrontOfTextProps) => {
   const { symbol, label, textSize, withDivider } = props;
   return withDivider ? (
-    <Grid container>
+    <Grid container sx={{ display: "flex" }}>
       <Grid item xs={5} sm={3} md={2}>
         <Container sx={{ display: "flex" }}>
           <Typography
@@ -65,7 +65,7 @@ const SymbolInFrontOfText = (props: SymbolInFrontOfTextProps) => {
       </Grid>
     </Grid>
   ) : (
-    <Box sx={{ display: "flex", paddingLeft:"16px" }}>
+    <Box sx={{ display: "flex" }}>
       <Typography
         sx={{
           color: (theme) => theme.palette.secondary.main,
