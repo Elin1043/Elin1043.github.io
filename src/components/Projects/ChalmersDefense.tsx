@@ -41,23 +41,26 @@ const ChalmersDefense = (props: ChalmersDefenseProps) => {
       <Grid container>
         <Grid item xs={12} md={6}>
           <Typography textAlign={"start"} variant="h6" sx={{ margin: "20px" }}>
-            Welcome to Chalmers Defense! A tower defense game where you defend
-            Chalmers from the corona virus. The player can place different types
-            of towers representing different programs at Chalmers. The towers
-            can be upgraded to become more powerful and the player can also sell
-            towers to get money back. The corona virus attacks in form of waves
-            and you have to defend Chalmers from the virus that keeps getting
-            stronger and stronger. The game is over when the virus has been
-            defeated or when Chalmers has taken too much damage.
+            Welcome to Chalmers Defense, a thrilling tower defense game where
+            your mission is to protect Chalmers from the relentless coronavirus
+            threat. In this game, players strategically place different types of
+            towers, each representing various programs at Chalmers, to fend off
+            the virus. These towers can be upgraded to increase their power, and
+            players can also sell towers to regain resources. The virus attacks
+            in waves, growing stronger with each onslaught. The game's outcome
+            hinges on your ability to either defeat the virus entirely or
+            prevent Chalmers from sustaining too much damage.
           </Typography>
         </Grid>
         <Grid item xs={12} md={6}>
           <Typography textAlign={"start"} variant="h6" sx={{ margin: "20px" }}>
-            Chalmers Defense was developed by a team of four using Java and
-            LibGDX. Every team member worked on all parts of the game and it
-            became a fun little project during the outbreak of the corona virus.
-            Features included are: Tower placement, Tower upgrades, Waves of
-            enemies, Settings, Power-ups and more.
+            Chalmers Defense was a collaborative effort by a team of four
+            developers who used Java and LibGDX to bring this exciting game to
+            life. During the outbreak of the coronavirus, this project served as
+            both a creative outlet and a source of fun. The game boasts several
+            key features, including tower placement, upgrades, waves of enemies,
+            settings, power-ups, and much more. Get ready to defend Chalmers in
+            an engaging and challenging tower defense experience!
           </Typography>
         </Grid>
       </Grid>

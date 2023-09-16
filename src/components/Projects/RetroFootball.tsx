@@ -22,12 +22,12 @@ const RetroFootball = (props: RetroFootballProps) => {
       <Grid container>
         <Grid item xs={12} md={6}>
           <Typography textAlign={"start"} variant="h6" sx={{ margin: "20px" }}>
-            Welcome to Retro Football! A casino football betting game where the
-            player can bet on ten different football matches. There are many
-            markets to choose from and after completing the bets, the player can
-            watch the ten matches play out simultaneously. The matches are
-            completely simulated and the player can see the results after all
-            matches have been completed.
+            Welcome to Retro Football! A football simulation game where the
+            player can predict the outcomes of ten different football matches.
+            There are many options to choose from and after making the
+            predictions, the player can watch the ten matches play out
+            simultaneously. The matches are completely simulated and the player
+            can see the results after all matches have been completed.
           </Typography>
         </Grid>
         <Grid item xs={12} md={6}>

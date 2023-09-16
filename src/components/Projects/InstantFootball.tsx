@@ -22,16 +22,15 @@ const InstantFootball = (props: InstantFootballProps) => {
       <Grid container>
         <Grid item xs={12} md={6}>
           <Typography textAlign={"start"} variant="h6" sx={{ margin: "20px" }}>
-            Welcome to Instant Premier Football! In this game, you can bet on
+            Welcome to Instant Premier Football! In this game, you can predict
             different outcomes of up to 10 different football games in 4
             different leagues that are generated in real time, providing you
-            with endless opportunities to win big. The game was designed to be
+            with endless opportunities. The game was designed to be
             mobile-first, meaning it is optimized for mobile devices and can be
             played on multiple aspect ratios. You'll also have access to a wide
-            range of betting options, from predicting the scoreline to guessing
-            the number of goals in a match. The game is designed to be intuitive
-            and easy to use, so you can focus on enjoying the thrill of the game
-            and winning big.
+            range of options, from predicting the scoreline to guessing the
+            number of goals in a match. The game is designed to be intuitive and
+            easy to use, so you can focus on enjoying the thrill of the game.
           </Typography>
         </Grid>
         <Grid item xs={12} md={6}>

@@ -12,6 +12,7 @@ import { ProjectItem } from "../Types/ProjectsItem";
 import RetroFootball from "../components/Projects/RetroFootball";
 import InstantFootball from "../components/Projects/InstantFootball";
 import ChalmersDefense from "../components/Projects/ChalmersDefense";
+import CleverFox from "../components/Projects/CleverFox";
 
 export const ProjectList = (): ProjectItem[] => [
   {
@@ -56,9 +57,9 @@ export const ProjectList = (): ProjectItem[] => [
     projectCategory: "Personal",
     projectName: "Listiga Räven! / Clever Fox!",
     projectDescription:
-      "A 2D learning game for kids. Consists of different minigames teaching kids about math, words and creating music. Also consists of a memory game and a weather game where the kids have to dress a fox depending on real time weather. We used a weather API here to show the realtime weather for the player in their location",
-    projectLink: "",
-    projectComponent: <></>,
+      "A 2D learning game for kids. It consists of different minigames teaching kids about math, words and creating music. It also consists of a memory game and a weather game where the kids have to dress a fox depending on real time weather. We used a weather API here to show the realtime weather for the player in their location",
+    projectLink: "/CleverFox",
+    projectComponent: <CleverFox />,
     githubLink: "https://github.com/Danilll01/DAT257-Group-Orup",
     skillsAndTools: "Unity, C#, API, GitHub",
   },
@@ -81,7 +82,7 @@ export const ProjectList = (): ProjectItem[] => [
     projectCategory: "Professional",
     projectName: "Retro Football",
     projectDescription:
-      "A casino football betting game in retro style where the player can bet on ten different football matches. There are many markets to choose from and after completing the bets, the player can watch the ten matches play out simultaneously.",
+      "A football simulation game in retro style where the player can predict ten different football matches. There are many different prediction options and when the predictions are made, the player can watch the ten matches play out simultaneously.",
     projectLink: "/RetroFootball",
     projectComponent: <RetroFootball />,
     githubLink: "",
@@ -93,7 +94,7 @@ export const ProjectList = (): ProjectItem[] => [
     projectCategory: "Professional",
     projectName: "Instant Premier Football",
     projectDescription:
-      "An upgrade to Retro Football. A 3D football simulation casino game where the player can bet on different outcomes of up to 10 different football games in 4 different leagues that are generated in real time.",
+      "An upgrade to Retro Football. A 3D football simulation game where the player can predict different outcomes of up to 10 different football games in 4 different leagues that are generated in real time.",
     projectLink: "/InstantFootball",
     projectComponent: <InstantFootball />,
     githubLink: "",
