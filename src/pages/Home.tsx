@@ -110,7 +110,7 @@ function Home(props: HomeProps) {
                 padding: "5px",
                 margin: "auto",
                 marginTop: "-7px",
-                width: { xs: 350, md: 400 },
+                width: { xs: 350, md: 450 },
                 maxHeight: { xs: 150, md: 100 },
               }}
             >
@@ -124,13 +124,23 @@ function Home(props: HomeProps) {
               <Typography variant="h6" sx={{ marginLeft: "10px" }}>
                 Currently working on{" "}
                 {
-                  <span
-                    style={{
-                      fontWeight: "700",
-                    }}
-                  >
-                    Portfolio
-                  </span>
+                  <>
+                    <span
+                      style={{
+                        fontWeight: "700",
+                      }}
+                    >
+                      Portfolio
+                    </span>
+                    <span> and </span>
+                    <span
+                      style={{
+                        fontWeight: "700",
+                      }}
+                    >
+                      Skills
+                    </span>
+                  </>
                 }
               </Typography>
             </Box>

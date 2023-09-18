@@ -11,6 +11,7 @@ import {
 import { SlashTag } from "../components/HelperFunctions";
 import ReactLogo from "../assets/SkillsImages/reactIcon.png";
 import CSharpLogo from "../assets/SkillsImages/c#Logo.png";
+import CPlusPlusLogo from "../assets/SkillsImages/c++Logo.png";
 import CssLogo from "../assets/SkillsImages/cssIcon.png";
 import DevopsLogo from "../assets/SkillsImages/devopsLogo.png";
 import GitLogo from "../assets/SkillsImages/gitLogo.png";
@@ -22,6 +23,7 @@ import PythonLogo from "../assets/SkillsImages/pythonLogo.png";
 import TypeScriptLogo from "../assets/SkillsImages/typeScriptLogo.png";
 import UnityLogo from "../assets/SkillsImages/unityLogo.png";
 import profileImage from "../assets/femaleProfile.png";
+import UnrealEngineLogo from "../assets/SkillsImages/unrealEngineLogo.png";
 
 type AboutProps = {
   isSmallScreen: boolean;
@@ -86,6 +88,16 @@ const SkillDisplay = (props: SkillDisplayProps) => {
     />
   ));
 
+  const learningSkills = LearningSkillsList.map((skill) => (
+    <SkillItemDisplay
+      key={skill.id}
+      image={skill.image}
+      text={skill.text}
+      category={skill.category}
+      id={skill.id}
+    />
+  ));
+
   return (
     <Container sx={{ padding: "0px" }}>
       <Grid container textAlign={"center"} spacing={1}>
@@ -115,6 +127,41 @@ const SkillDisplay = (props: SkillDisplayProps) => {
               spacing={5}
             >
               {skills}
+            </Grid>
+          </Grid>
+        </Grid>
+      </Grid>
+      <Grid
+        container
+        spacing={1}
+        sx={{ textAlign: "center", marginTop: "50px" }}
+      >
+        <Grid item xs={12}>
+          <Grid container>
+            <Grid item xs={3} md={4} sx={{ margin: "auto 0" }}>
+              <Divider
+                sx={{ borderColor: (theme) => theme.palette.secondary.main }}
+              ></Divider>
+            </Grid>
+            <Grid item xs={6} md={4}>
+              <Typography variant="h1">Currently learning</Typography>
+            </Grid>
+            <Grid item xs={3} md={4} sx={{ margin: "auto 0" }}>
+              <Divider
+                sx={{ borderColor: (theme) => theme.palette.secondary.main }}
+              ></Divider>
+            </Grid>
+
+            <Grid
+              container
+              sx={{
+                padding: "16px 0",
+                display: "flex",
+                justifyContent: "center",
+              }}
+              spacing={5}
+            >
+              {learningSkills}
             </Grid>
           </Grid>
         </Grid>
@@ -218,6 +265,21 @@ const SkillsList = [
     image: PythonLogo,
     text: "Python",
     category: "Language",
+  },
+];
+
+const LearningSkillsList = [
+  {
+    id: 0,
+    image: CPlusPlusLogo,
+    text: "C++",
+    category: "Language",
+  },
+  {
+    id: 1,
+    image: UnrealEngineLogo,
+    text: "Unreal Engine",
+    category: "Tool",
   },
 ];
 
