@@ -26,6 +26,7 @@ const Projects = (props: ProjectsProps) => {
       xs={12}
       sm={6}
       md={6}
+      lg={4}
       key={projectItem.id}
       sx={{ display: "flex", justifyContent: "center" }}
     >
@@ -41,6 +42,7 @@ const Projects = (props: ProjectsProps) => {
       xs={12}
       sm={6}
       md={6}
+      lg={4}
       key={projectItem.id}
       sx={{ display: "flex", justifyContent: "center" }}
     >

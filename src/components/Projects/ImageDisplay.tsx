@@ -70,7 +70,8 @@ const ImageListDisplay = (props: ImageListDisplayProps) => {
               width: isSmScreen ? "300px" : "385px",
               maxHeight: isSmScreen ? "169px" : "217px",
               paddingBottom: isSmScreen ? "5px" : "",
-              objectFit: "fill",
+              objectFit: "contain",
+              backgroundColor: "black",
             }}
           />
         </ImageListItem>
@@ -115,6 +116,8 @@ const ImageListDisplay = (props: ImageListDisplayProps) => {
                     style={{
                       width: "800px",
                       maxHeight: "450px",
+                      objectFit: "contain",
+                      backgroundColor: "black",
                     }}
                   />
                 </Grid>
@@ -152,13 +155,20 @@ const ImageListDisplay = (props: ImageListDisplayProps) => {
                   height: "113px",
                   cursor: "pointer",
                   opacity: "0.3",
+                  objectFit: "contain",
+                  backgroundColor: "black",
                 }}
                 onClick={handlePrevImage}
               />
               <img
                 src={imageList[selectedImageIndex ? selectedImageIndex : 0]}
                 alt="Selected image"
-                style={{ width: "250px", height: "141px" }}
+                style={{
+                  width: "250px",
+                  height: "141px",
+                  objectFit: "contain",
+                  backgroundColor: "black",
+                }}
               />
               <img
                 src={
@@ -174,6 +184,8 @@ const ImageListDisplay = (props: ImageListDisplayProps) => {
                   height: "113px",
                   cursor: "pointer",
                   opacity: "0.3",
+                  objectFit: "contain",
+                  backgroundColor: "black",
                 }}
                 onClick={handleNextImage}
               />

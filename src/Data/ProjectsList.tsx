@@ -6,6 +6,8 @@ import cleverFoxImage from "../assets/ProjectImages/CleverFox.jpg";
 import weAreAliveImage from "../assets/ProjectImages/WeAreAlive.jpg";
 import RetroFootballImage from "../assets/ProjectImages/RetroFootball.png";
 import InstantFootballImage from "../assets/ProjectImages/InstantFootball.png";
+import Jackpot15Image from "../assets/ProjectImages/Jackpot15.png";
+import PenaltyShootoutImage from "../assets/ProjectImages/PenaltyShootout.png";
 import ExoExplorer from "../components/Projects/ExoExplorer";
 import WeAreAlive from "../components/Projects/WeAreAlive";
 import { ProjectItem } from "../Types/ProjectsItem";
@@ -13,6 +15,8 @@ import RetroFootball from "../components/Projects/RetroFootball";
 import InstantFootball from "../components/Projects/InstantFootball";
 import ChalmersDefense from "../components/Projects/ChalmersDefense";
 import CleverFox from "../components/Projects/CleverFox";
+import Jackpot from "../components/Projects/Jackpot";
+import Penalty from "../components/Projects/Penalty";
 
 export const ProjectList = (): ProjectItem[] => [
   {
@@ -33,7 +37,7 @@ export const ProjectList = (): ProjectItem[] => [
     projectCategory: "Personal",
     projectName: "We Are Alive",
     projectDescription:
-      "3D realistic story game taking place in the future where robots are a part of everyday life. But one day, the robots start showings signs of real human emotions, and society goes into panic mode. All robot models are called back and thrown into junkyards to be destroyed. You are one of these robots, you wake up damaged with missing parts, find some spare parts and get out of there! ",
+      "3D realistic story game where robots are a part of everyday life. But one day, the robots start showings signs of emotions. All robot models are called back and thrown into junkyards to be destroyed. You are one of them, find a way to survive!",
     projectLink: "/WeAreAlive",
     projectComponent: <WeAreAlive />,
     githubLink: "https://github.com/ElinForsbergDev/We_Are_Alive",
@@ -45,7 +49,7 @@ export const ProjectList = (): ProjectItem[] => [
     projectCategory: "Personal",
     projectName: "Chalmers Defense!",
     projectDescription:
-      "A 2D tower defense game with the theme of Chalmers vs Corona virus. Each tower represents a different program at Chalmers and they are fighting against the different variants of the corona virus. The player also has different tower upgrades available and some powerups that are essential for beating the corona bosses on higher rounds.",
+      "A 2D tower defense game with the theme of Chalmers vs Corona virus. Each tower represents a different program at Chalmers and they are fighting against the different variants of the corona virus. ",
     projectLink: "/ChalmersDefense",
     projectComponent: <ChalmersDefense />,
     githubLink: "https://github.com/ElinForsbergDev/Chalmers-Defense",
@@ -57,7 +61,7 @@ export const ProjectList = (): ProjectItem[] => [
     projectCategory: "Personal",
     projectName: "Listiga Räven! / Clever Fox!",
     projectDescription:
-      "A 2D learning game for kids. It consists of different minigames teaching kids about math, words and creating music. It also consists of a memory game and a weather game where the kids have to dress a fox depending on real time weather. We used a weather API here to show the realtime weather for the player in their location",
+      "A 2D learning game for kids. It consists of different minigames teaching kids about math, words and music. It also consists of a memory game and a weather game about dressing a fox depending on real time weather by using an API.",
     projectLink: "/CleverFox",
     projectComponent: <CleverFox />,
     githubLink: "https://github.com/Danilll01/DAT257-Group-Orup",
@@ -78,18 +82,30 @@ export const ProjectList = (): ProjectItem[] => [
   },
   {
     id: 5,
-    image: RetroFootballImage,
+    image: PenaltyShootoutImage,
     projectCategory: "Professional",
-    projectName: "Retro Football",
+    projectName: "Penalty: From the Streets",
     projectDescription:
-      "A football simulation game in retro style where the player can predict ten different football matches. There are many different prediction options and when the predictions are made, the player can watch the ten matches play out simultaneously.",
-    projectLink: "/RetroFootball",
-    projectComponent: <RetroFootball />,
+      "Football penalty game where you try to score against the goalkeeper. The more you score, the higher the multiplier gets. However, be aware, the goalkeeper can catch it and reset you at any moment!",
+    projectLink: "/Penalty",
+    projectComponent: <Penalty />,
     githubLink: "",
     skillsAndTools: "C#, Unity, DevOps",
   },
   {
     id: 6,
+    image: Jackpot15Image,
+    projectCategory: "Professional",
+    projectName: "Jackpot 15",
+    projectDescription:
+      "A website application where the player can predict and see the outcomes of different sport matches. ",
+    projectLink: "/Jackpot",
+    projectComponent: <Jackpot />,
+    githubLink: "",
+    skillsAndTools: "React, TypeScript, C#, HTML, CSS, Material Design, DevOps",
+  },
+  {
+    id: 7,
     image: InstantFootballImage,
     projectCategory: "Professional",
     projectName: "Instant Premier Football",
@@ -97,6 +113,18 @@ export const ProjectList = (): ProjectItem[] => [
       "An upgrade to Retro Football. A 3D football simulation game where the player can predict different outcomes of up to 10 different football games in 4 different leagues that are generated in real time.",
     projectLink: "/InstantFootball",
     projectComponent: <InstantFootball />,
+    githubLink: "",
+    skillsAndTools: "C#, Unity, DevOps",
+  },
+  {
+    id: 8,
+    image: RetroFootballImage,
+    projectCategory: "Professional",
+    projectName: "Retro Football",
+    projectDescription:
+      "A football simulation game in retro style where the player can predict ten different football matches. There are many different prediction options and when the predictions are made, the player can watch the ten matches play out simultaneously.",
+    projectLink: "/RetroFootball",
+    projectComponent: <RetroFootball />,
     githubLink: "",
     skillsAndTools: "C#, Unity, DevOps",
   },

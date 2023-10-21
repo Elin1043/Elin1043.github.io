@@ -17,7 +17,6 @@ type ProjectCardProps = {
 
 const ProjectCard = (props: ProjectCardProps) => {
   const { project, isSmallScreen } = props;
-  const theme = useTheme();
   const navigate = useNavigate();
   const scrollToTop = () => {
     window.scrollTo({
@@ -33,7 +32,7 @@ const ProjectCard = (props: ProjectCardProps) => {
         scrollToTop();
       }}
       sx={{
-        minHeight: "500px",
+        height: "500px",
         width: isSmallScreen ? "350px" : "600px",
         textAlign: "center",
         backgroundColor: (theme) => theme.palette.primary.dark,
@@ -44,17 +43,24 @@ const ProjectCard = (props: ProjectCardProps) => {
       <Box
         component="img"
         sx={{
-          maxHeight: { xs: 300, md: 350 },
+          height: { xs: 200, md: 250 },
           width: "100%",
           alignContent: "center",
           display: "block", // Remove any extra whitespace around the image
           margin: "auto", // Center the image horizontally (optional)
+          objectFit: "fill",
         }}
         alt="Image of project"
         src={project.image}
       />
 
-      <Container>
+      <Box
+        sx={{
+          height: { xs: 300, md: 250 },
+          margin: "0 16px",
+          position: "relative",
+        }}
+      >
         <Typography variant="h2" fontWeight={700} sx={{ paddingBottom: "0" }}>
           {project.projectName}
         </Typography>
@@ -70,7 +76,10 @@ const ProjectCard = (props: ProjectCardProps) => {
         <Grid
           container
           spacing={2}
-          sx={{ display: "flex", justifyContent: "center" }}
+          sx={{
+            display: "flex",
+            justifyContent: "center",
+          }}
         >
           <Grid item>
             <Button
@@ -117,7 +126,7 @@ const ProjectCard = (props: ProjectCardProps) => {
             </Grid>
           )}
         </Grid>
-      </Container>
+      </Box>
     </Card>
   );
 };
