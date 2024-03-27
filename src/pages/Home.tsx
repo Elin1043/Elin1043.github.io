@@ -122,7 +122,7 @@ function Home(props: HomeProps) {
                 }}
               ></Box>
               <Typography variant="h6" sx={{ marginLeft: "10px" }}>
-                Currently working on{" "}
+                Currently working in{" "}
                 {
                   <>
                     <span
@@ -130,15 +130,7 @@ function Home(props: HomeProps) {
                         fontWeight: "700",
                       }}
                     >
-                      Portfolio
-                    </span>
-                    <span> and </span>
-                    <span
-                      style={{
-                        fontWeight: "700",
-                      }}
-                    >
-                      Skills
+                      Roblox Studio
                     </span>
                   </>
                 }

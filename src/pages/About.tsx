@@ -24,6 +24,7 @@ import TypeScriptLogo from "../assets/SkillsImages/typeScriptLogo.png";
 import UnityLogo from "../assets/SkillsImages/unityLogo.png";
 import profileImage from "../assets/femaleProfile.png";
 import UnrealEngineLogo from "../assets/SkillsImages/unrealEngineLogo.png";
+import RobloxStudioLogo from "../assets/SkillsImages/robloxStudioLogo.png";
 
 type AboutProps = {
   isSmallScreen: boolean;
@@ -279,6 +280,12 @@ const LearningSkillsList = [
     id: 1,
     image: UnrealEngineLogo,
     text: "Unreal Engine",
+    category: "Tool",
+  },
+  {
+    id: 2,
+    image: RobloxStudioLogo,
+    text: "Roblox Studio",
     category: "Tool",
   },
 ];
